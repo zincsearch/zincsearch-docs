@@ -1,0 +1,43 @@
+site_name: Zinc Search
+
+# https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin required for nav
+plugins:
+  - search
+#   - awesome-pages
+# nav:
+#   - index.md
+#   - getting-started.md
+#   - installation.md
+#   - ...
+#   - monitoring.md
+extra_css:
+  - stylesheets/extra.css
+extra:
+  analytics:
+    provider: google
+    property: G-ZM6P0XB94J
+theme:
+  name: material
+  features:
+    # - navigation.expand
+    - navigation.instant
+    - navigation.tracking
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate 
+      primary: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+repo_url: https://github.com/prabhatsharma/zinc
+repo_name: prabhatsharma/zinc
+edit_uri: https://github.com/prabhatsharma/zincdocs/edit/master/docs/
+markdown_extensions:
+  - tables
+
