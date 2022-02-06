@@ -37,7 +37,7 @@ theme:
         name: Switch to light mode
 repo_url: https://github.com/prabhatsharma/zinc
 repo_name: prabhatsharma/zinc
-edit_uri: https://github.com/prabhatsharma/zincdocs/edit/master/docs/
+edit_uri: https://github.com/zinclabs/zincsearch-docs/edit/main/docs/
 markdown_extensions:
   - tables
 
