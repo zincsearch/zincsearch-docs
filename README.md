@@ -1,4 +1,4 @@
-# Zinc search engine documentation
+# ZincSearch documentation
 
 It uses material for mkdocs.
 
