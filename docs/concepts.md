@@ -1,3 +1,4 @@
+# Concepts
 
 Zinc is a search engine that allows you to search for your own data when uploaded in Zinc. Think of it as "Google" or "Bing" search, but just for your own data.
 
