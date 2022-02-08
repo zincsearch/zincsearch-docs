@@ -26,8 +26,8 @@ Request Body:
     "sort_fields": ["-@timestamp"],
     "from": 1,
     "max_results": 20,
-    "fields": [
-        "*"
+    "_source": [
+        "Field1", "Field2" // Leave this as empty array to return all fields.
     ]
 }
 ```
@@ -58,7 +58,7 @@ params = {
     },
     "from": 40, # use together with max_results for paginated results.
     "max_results": 20,
-    "fields": ["_all"]
+    "_source": [] # Leave this as empty array to return all fields.
 }
 
 # params = {
@@ -69,7 +69,7 @@ params = {
 #         "start_time": "2021-06-02T14:28:31.894Z",
 #         "end_time": "2021-12-02T15:28:31.894Z"
 #     },
-#     "fields": ["_all"]
+#     "_source": ["_all"]
 # }
 
 headers = {"Content-type": "application/json",

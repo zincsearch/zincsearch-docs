@@ -27,6 +27,5 @@ A fuzzy query is a term query that matches terms within a specified edit distanc
 The date range query finds documents containing a date value in the specified field within the specified range. You can omit one endpoint, but not both. The inclusiveStart and inclusiveEnd properties control whether or not the end points are included or excluded.
 
 ## Query String
-The query language query allows humans to describe complex queries using a simple syntax. There is a separate page with the full query language specification
-
+The query language query allows humans to describe complex queries using a simple syntax. 
 

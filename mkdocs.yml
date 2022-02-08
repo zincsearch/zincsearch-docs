@@ -13,6 +13,8 @@ plugins:
 extra_css:
   - stylesheets/extra.css
 extra:
+  version:
+    provider: mike
   analytics:
     provider: google
     property: G-ZM6P0XB94J
@@ -40,4 +42,6 @@ repo_name: prabhatsharma/zinc
 edit_uri: https://github.com/zinclabs/zincsearch-docs/edit/main/docs/
 markdown_extensions:
   - tables
+  - pymdownx.tabbed:
+      alternate_style: true 
 

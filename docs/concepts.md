@@ -44,7 +44,7 @@ An invertd index for a set of documents might look like
 
 ## Bluge
 
-Bluge us the underlying indexing library used by Zinc on top whivh it provides a lot of functionality.
+Bluge is the underlying indexing library used by Zinc on top which it provides a lot of functionality.
 
 ## Index mapping
 

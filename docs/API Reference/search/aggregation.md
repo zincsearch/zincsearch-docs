@@ -7,7 +7,7 @@ Endpoint - POST /api/:target/_search
 Search for documents with aggregations
 
 e.g. 
-POST http://localhost:4080/api/stackoverflow-6/_search
+POST http://localhost:4080/api/olympics/_search
 
 Request Body: 
 ```json
