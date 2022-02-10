@@ -38,5 +38,32 @@ Request Body:
 
 ## MinIO
 
+Zinc can use MinIO for storing indexes. Just like S3 storage, for using MinIO the index needs to be precreated.
+
+* Precreate the index
+e.g. 
+PUT [http://localhost:4080/api/index](http://localhost:4080/api/index)
+
+Request Body: 
+```json
+{ 
+    "name": "myshinynewindex", 
+    "storage_type": "minio" 
+}
+```
+
+The following environment variables need to be setup:
+
+
+| Environment Variable          | Description                                                               |
+| :---------------------------- | :------------------------------------------------------------------------ |
+| ZINC_MINIO_ENDPOINT           | MinIO server endpoint. e.g localhost:9000 . See no http                   |
+| ZINC_MINIO_ACCESS_KEY_ID      | MinIO ACCESS_KEY_ID                                                       |
+| ZINC_MINIO_SECRET_ACCESS_KEY  | MinIO SECRET_ACCESS_KEY                                                   |
+| ZINC_MINIO_BUCKET             | MinIO bucket for index storage                                            |
+
+
+
+
 
 

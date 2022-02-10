@@ -15,10 +15,10 @@ You may also want to read the initial blog regarding launch of [Zinc](https://pr
 
 ## Features:
 1. Provides full text indexing capability
-1. Single binary for installation and running. Binaries available under releases for multiple platforms.
-1. Web UI for querying data written in Vue
+1. Single binary for installation and running. Binaries available under [releases](https://github.com/prabhatsharma/zinc/releases) for multiple platforms.
+1. Embedded Web UI for querying data written in Vue
 1. Compatibility with Elasticsearch APIs for ingestion of data (single record and bulk API)
 1. Out of the box authentication
 1. Schema less - No need to define schema upfront and different documents in the same index can have different fields.
-1. Index storage in s3 (experimental)
+1. Index storage in s3 and MinIO (experimental)
 1. Aggregation support

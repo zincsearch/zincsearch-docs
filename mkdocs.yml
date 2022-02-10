@@ -13,6 +13,16 @@ plugins:
 extra_css:
   - stylesheets/extra.css
 extra:
+  social:
+    - icon: fontawesome/brands/twitter 
+      link: https://twitter.com/hiprabhat
+    - icon: fontawesome/brands/github 
+      link: https://github.com/prabhatsharma/zinc
+    - icon: fontawesome/brands/docker 
+      link: https://gallery.ecr.aws/prabhat/zinc
+    - icon: fontawesome/brands/slack 
+      link: https://join.slack.com/t/zinc-nvh4832/shared_invite/zt-11r96hv2b-UwxUILuSJ1duzl_6mhJwVg
+  generator: false
   version:
     provider: mike
   analytics:
