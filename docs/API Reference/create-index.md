@@ -13,25 +13,115 @@ PUT http://localhost:4080/api/index
 
 Request Body: 
 ```json
-{ 
-    "name": "myshinynewindex", 
-    "storage_type": "s3" 
+{
+	"name": "article",
+	"storage_type": "s3",
+	"mappings": {
+		"properties": {
+			"title": {
+				"type": "text",
+				"store": true,
+				"sortable": false,
+				"highlightable": true
+			},
+			"content": {
+				"type": "text",
+				"index": true,
+				"store": true,
+				"aggregatable": true,
+				"highlightable": true
+			},
+			"status": {
+				"type": "keyword",
+				"index": true,
+				"sortable": true,
+				"aggregatable": true
+			},
+			"publish_date": {
+				"type": "time",
+				"format": "2006-01-02T15:04:05Z07:00",
+				"index": true,
+				"sortable": true,
+				"aggregatable": true
+			}
+		}
+	}
 }
 ```
 
 OR
 ```json
-{ 
-    "name": "myshinynewindex", 
-    "storage_type": "disk" 
+{
+	"name": "article",
+	"storage_type": "disk",
+	"mappings": {
+		"properties": {
+			"title": {
+				"type": "text",
+				"store": true,
+				"sortable": false,
+				"highlightable": true
+			},
+			"content": {
+				"type": "text",
+				"index": true,
+				"store": true,
+				"aggregatable": true,
+				"highlightable": true
+			},
+			"status": {
+				"type": "keyword",
+				"index": true,
+				"sortable": true,
+				"aggregatable": true
+			},
+			"publish_date": {
+				"type": "time",
+				"format": "2006-01-02T15:04:05Z07:00",
+				"index": true,
+				"sortable": true,
+				"aggregatable": true
+			}
+		}
+	}
 }
 ```
 
 OR
 ```json
-{ 
-    "name": "myshinynewindex", 
-    "storage_type": "minio" 
+{
+	"name": "article",
+	"storage_type": "minio",
+	"mappings": {
+		"properties": {
+			"title": {
+				"type": "text",
+				"store": true,
+				"sortable": false,
+				"highlightable": true
+			},
+			"content": {
+				"type": "text",
+				"index": true,
+				"store": true,
+				"aggregatable": true,
+				"highlightable": true
+			},
+			"status": {
+				"type": "keyword",
+				"index": true,
+				"sortable": true,
+				"aggregatable": true
+			},
+			"publish_date": {
+				"type": "time",
+				"format": "2006-01-02T15:04:05Z07:00",
+				"index": true,
+				"sortable": true,
+				"aggregatable": true
+			}
+		}
+	}
 }
 ```
 
