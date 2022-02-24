@@ -30,6 +30,7 @@ extra:
     property: G-ZM6P0XB94J
 theme:
   name: material
+  custom_dir: overrides
   features:
     # - navigation.expand
     - navigation.instant

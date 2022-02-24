@@ -1,4 +1,12 @@
-# Installation
+# Quickstart
+
+
+We will do 2 things as part of the quickstart:
+
+1. Install Zinc
+1. Load sample data and perform search operations on it.
+
+## Installation
 
 You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment variables when you start zinc for the first time. You don't need them on subsequent runs of zinc.
 
@@ -95,3 +103,25 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
 
+
+
+## Load sample data
+
+We will use bulk API to load sample data
+
+
+```shell
+curl -L https://github.com/prabhatsharma/zinc/releases/download/v0.1.1/olympics.ndjson.gz -o olympics.ndjson.gz
+gzip -d  olympics.ndjson.gz 
+curl http://localhost:4080/api/_bulk -i -u admin:Complexpass#123  --data-binary "@olympics.ndjson"
+```
+
+
+## Search for data
+
+Point your browser to [http://localhost:4080](http://localhost:4080) and login
+
+1. Select the index olympics from drop down in the left
+1. Search for the word Gold in search bar and presse enter.
+
+Click on the info button next to the search bar to see examples on how to search.
