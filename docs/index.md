@@ -18,7 +18,7 @@ You may also want to read the initial blog regarding launch of [Zinc](https://pr
 1. Single binary for installation and running. Binaries available under [releases](https://github.com/prabhatsharma/zinc/releases) for multiple platforms.
 1. Embedded Web UI for querying data written in Vue
 1. Full Compatibility with Elasticsearch APIs for ingestion of data (single record and bulk API)
-1. Compatibility with Ealasticsearch DSL for querying data (This is work in progress. If somerthing does not work, let us know by raising a github issue)
+1. Compatibility with Ealsticsearch DSL for querying data. Check /es endpoints (This is work in progress. If somerthing does not work, let us know by raising a github issue)
 1. Out of the box authentication
 1. Schema less - No need to define schema upfront and different documents in the same index can have different fields.
 1. Index storage in s3 and MinIO (experimental)
