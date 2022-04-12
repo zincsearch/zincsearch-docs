@@ -6,11 +6,11 @@ There are 2 primary items that need to be stored in Zinc.
 
 Metadata of indexes is always stored on disk.
 
-Inexes can be stored in 3 different places.
+Indexes can be stored in 3 different places.
 
 ## Disk
 
-Disk is default stoarge place for indexes. Make sure that you have enough storage available on your disk for index storage. During data ingestion the index name that you provide may not be present. In that case a new disk based index will be created automatically for storing the index data.
+Disk is default storage place for indexes. Make sure that you have enough storage available on your disk for index storage. During data ingestion the index name that you provide may not be present. In that case a new disk based index will be created automatically for storing the index data.
 
 ## S3
 
