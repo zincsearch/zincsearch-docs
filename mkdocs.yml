@@ -17,9 +17,9 @@ extra:
     - icon: fontawesome/brands/twitter 
       link: https://twitter.com/hiprabhat
     - icon: fontawesome/brands/github 
-      link: https://github.com/prabhatsharma/zinc
+      link: https://github.com/zinclabs/zinc
     - icon: fontawesome/brands/docker 
-      link: https://gallery.ecr.aws/prabhat/zinc
+      link: https://gallery.ecr.aws/h9e2j3o7/zinc
     - icon: fontawesome/brands/slack 
       link: https://join.slack.com/t/zinc-nvh4832/shared_invite/zt-11r96hv2b-UwxUILuSJ1duzl_6mhJwVg
   generator: false
@@ -48,8 +48,8 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-repo_url: https://github.com/prabhatsharma/zinc
-repo_name: prabhatsharma/zinc
+repo_url: https://github.com/zinclabs/zinc
+repo_name: zinclabs/zinc
 edit_uri: https://github.com/zinclabs/zincsearch-docs/edit/main/docs/
 markdown_extensions:
   - tables

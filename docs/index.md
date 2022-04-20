@@ -10,12 +10,12 @@ Zinc was started since there was no search engine that was available that could 
 
 While Elasticsearch is a very good product, it is complex and requires lots of resources and is more than a decade old. I built Zinc so it becomes easier for folks to use full text search indexing without doing a lot of work.
 
-You may also want to read the initial blog regarding launch of [Zinc](https://prabhatsharma.in/blog/in-search-of-a-search-engine-beyond-elasticsearch-introducing-zinc/)
+You may also want to read the initial blog regarding launch of [Zinc](https://zinclabs.in/blog/in-search-of-a-search-engine-beyond-elasticsearch-introducing-zinc/)
 
 
 ## Features:
 1. Provides full text indexing capability
-1. Single binary for installation and running. Binaries available under [releases](https://github.com/prabhatsharma/zinc/releases) for multiple platforms.
+1. Single binary for installation and running. Binaries available under [releases](https://github.com/zinclabs/zinc/releases) for multiple platforms.
 1. Embedded Web UI for querying data written in Vue
 1. Full Compatibility with Elasticsearch APIs for ingestion of data (single record and bulk API)
 1. Compatibility with Ealsticsearch DSL for querying data. Check /es endpoints (This is work in progress. If somerthing does not work, let us know by raising a github issue)

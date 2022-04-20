@@ -6,7 +6,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
 === "Windows" 
 
-    Binaries can be downloaded from [releases](https://github.com/prabhatsharma/zinc/releases) page for appropriate platform.
+    Binaries can be downloaded from [releases](https://github.com/zinclabs/zinc/releases) page for appropriate platform.
 
 
         set ZINC_FIRST_ADMIN_USER=admin
@@ -21,15 +21,15 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
     In your terminal:
 
-        brew tap prabhatsharma/tap
-        brew install prabhatsharma/tap/zinc
+        brew tap zinclabs/tap
+        brew install zinclabs/tap/zinc
         mkdir data
         ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 zinc 
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
 
 === "MacOS/Linux Binaries"
-    Binaries can be downloaded from [releases](https://github.com/prabhatsharma/zinc/releases) page for appropriate platform.
+    Binaries can be downloaded from [releases](https://github.com/zinclabs/zinc/releases) page for appropriate platform.
 
     Create a data folder that will store the data
 
@@ -44,12 +44,12 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
     ------------------------
 
 
-    Docker images are available at [https://gallery.ecr.aws/prabhat/zinc](https://gallery.ecr.aws/prabhat/zinc)
+    Docker images are available at [https://gallery.ecr.aws/h9e2j3o7/zinc](https://gallery.ecr.aws/h9e2j3o7/zinc)
 
         mkdir data
         docker run -v /full/path/of/data:/data -e DATA_PATH="/data" -p 4080:4080 \
             -e ZINC_FIRST_ADMIN_USER=admin -e ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 \
-            --name zinc public.ecr.aws/prabhat/zinc:latest
+            --name zinc public.ecr.aws/h9e2j3o7/zinc:latest
 
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
@@ -69,7 +69,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
     Create the deployment and port forward:
 
-        kubectl apply -f https://raw.githubusercontent.com/prabhatsharma/zinc/main/k8s/kube-deployment.yaml
+        kubectl apply -f https://raw.githubusercontent.com/zinclabs/zinc/main/k8s/kube-deployment.yaml
     
     Expose the zinc service by port-forwarding:
 
