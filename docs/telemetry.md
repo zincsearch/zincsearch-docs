@@ -39,5 +39,5 @@ You can set environment variable ZINC_TELEMETRY=disabled to disable telemetry co
 
 ## Do I need to know anything else?
 
-We have implemented [sentry](https://sentry.io) in order to capture any errors happening and be able to fix them. It captures errors as and when they happen and send them to sentry in order for us to analyze and fix them.
+We have implemented [sentry](https://sentry.io) in order to capture any errors happening and be able to fix them. It captures errors as and when they happen and sends them to sentry in order for us to analyze and fix them.
 
