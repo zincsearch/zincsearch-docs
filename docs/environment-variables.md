@@ -16,7 +16,8 @@ We prefer environment variables for configuration as opposed to configuration fi
 | ZINC_MAX_RESULTS              | 100           | No            | Maximum results to be returned from server. Defaults to 1000              |
 | ZINC_BATCH_SIZE               | 1000          | No            | Internal batch size for batching records when bulk indexing is done.      |
 | GIN_MODE                      | None          | No            | if the value is release then gin will run in production mode.             |
-| ZINC_TELEMETRY                | enabled       | No            | Send anonymous telemetry info for improving Zinc. enabled or disabled     |
+| ZINC_TELEMETRY                | true          | No            | Send anonymous telemetry info for improving Zinc. enabled or disabled     |
+| ZINC_SENTRY                   | true          | No            | Send anonymous error reports for debugging                                |
 
 
 
