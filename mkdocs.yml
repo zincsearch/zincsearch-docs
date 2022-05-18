@@ -29,6 +29,7 @@ extra:
     provider: google
     property: G-ZM6P0XB94J
 theme:
+  logo: images/logo.svg
   name: material
   custom_dir: overrides
   features:
