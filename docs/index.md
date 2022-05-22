@@ -10,7 +10,7 @@ Zinc was started since there was no search engine that was available that could 
 
 While Elasticsearch is a very good product, it is complex and requires lots of resources and is more than a decade old. I built Zinc so it becomes easier for folks to use full text search indexing without doing a lot of work.
 
-You may also want to read the initial blog regarding launch of [Zinc](https://zinclabs.in/blog/in-search-of-a-search-engine-beyond-elasticsearch-introducing-zinc/)
+You may also want to read the initial blog regarding launch of [Zinc](https://prabhatsharma.in/blog/in-search-of-a-search-engine-beyond-elasticsearch-introducing-zinc/)
 
 
 ## Features:
