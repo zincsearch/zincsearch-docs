@@ -4,7 +4,7 @@ We prefer environment variables for configuration as opposed to configuration fi
 
 | Environment Variable          | Default Value | Mandatory     | Description                                                               |
 | :---------------------------- | ------------- |-------------- | :------------------------------------------------------------------------ |
-| ZINC_FIRST_ADMIN_USER         | None          | On first run  | First admin user of zinc. Not required after first run of zinc.           |
+| ZINC_FIRST_ADMIN_USER         | None          | On first run  | First admin user of ZincSearch. Not required after first run of ZincSearch.           |
 | ZINC_FIRST_ADMIN_PASSWORD     | None          | On first run  | Password for first admin user                                             |
 | ZINC_PROMETHEUS_ENABLE        | false         | No            | Enables prometheus metrics on /metrics endpoint                           |
 | ZINC_DATA_PATH                | ./data        | No            | Defaults to "data" folder in current working directory if not provided.   |
@@ -16,7 +16,7 @@ We prefer environment variables for configuration as opposed to configuration fi
 | ZINC_MAX_RESULTS              | 100           | No            | Maximum results to be returned from server. Defaults to 1000              |
 | ZINC_BATCH_SIZE               | 1000          | No            | Internal batch size for batching records when bulk indexing is done.      |
 | GIN_MODE                      | None          | No            | if the value is release then gin will run in production mode.             |
-| ZINC_TELEMETRY                | true          | No            | Send anonymous telemetry info for improving Zinc. enabled or disabled     |
+| ZINC_TELEMETRY                | true          | No            | Send anonymous telemetry info for improving ZincSearch. enabled or disabled     |
 | ZINC_SENTRY                   | true          | No            | Send anonymous error reports for debugging                                |
 
 

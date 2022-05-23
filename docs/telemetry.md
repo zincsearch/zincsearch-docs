@@ -4,10 +4,10 @@
 We think of privacy as essential human right. We do not want our privacy to be violated and we would treat you the same way we would ourselves want to be trerated by others. We therefore do not collect any PIIs.
 
 ## Why do you collect telemetry data?
-We collects anonymized data from users in order to understand Zinc's usage and improve Zinc. This can be deactivated at any time, and any data that has already been collected can be deleted on request. Please send an email to admin+privacy@zinclabs.io to request deletion of the anonymized data. Please send the install
+We collects anonymized data from users in order to understand ZincSearch's usage and improve ZincSearch. This can be deactivated at any time, and any data that has already been collected can be deleted on request. Please send an email to admin+privacy@zinclabs.io to request deletion of the anonymized data. Please send the install
 
 ## Do you collect any PII (Personally Identifiable Information) data?
-No. Purpose of telemetry data is to understand and improve Zinc usage and not track you or push you advertisements.
+No. Purpose of telemetry data is to understand and improve ZincSearch usage and not track you or push you advertisements.
 
 ## What tools do we use to collect and visualize data?
 We use Segment, a platform for data collection and management, to collect usage data. We then feed that data into Amplitude, a tool for graphing and highlighting data, so that we can build visualizations according to our needs.
@@ -20,7 +20,7 @@ We use Segment, a platform for data collection and management, to collect usage 
 | total_index_size_mb       | Total size of all indexes             | 600                   |
 | os                        | Running operating system              | linux                 |
 | arch                      | Architecture of the machine           | amd64                 |
-| zinc_version              | version of zinc being used            | 0.1.7                 |
+| zinc_version              | version of ZincSearch being used            | 0.1.7                 |
 | cpu_count                 | Total count of CPUs                   | 8                     |
 | total_memory              | Total memory                          | 2                     |
 | memory_used_percent       | Total memory used percentage          | 40                    |

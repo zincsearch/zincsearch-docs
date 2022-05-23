@@ -1,4 +1,4 @@
-site_name: Zinc Search
+site_name: ZincSearch
 
 # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin required for nav
 plugins:
@@ -14,8 +14,8 @@ extra_css:
   - stylesheets/extra.css
 extra:
   social:
-    - icon: fontawesome/brands/twitter 
-      link: https://twitter.com/hiprabhat
+    - icon: fontawesome/brands/linkedin 
+      link: https://www.linkedin.com/company/zincsearch
     - icon: fontawesome/brands/github 
       link: https://github.com/zinclabs/zinc
     - icon: fontawesome/brands/docker 

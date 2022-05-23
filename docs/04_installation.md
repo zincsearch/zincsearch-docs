@@ -1,6 +1,6 @@
 # Installation
 
-You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment variables when you start zinc for the first time. You don't need them on subsequent runs of zinc.
+You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment variables when you start ZincSearch for the first time. You don't need them on subsequent runs of ZincSearch.
 
 
 
@@ -71,7 +71,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
         kubectl apply -f https://raw.githubusercontent.com/zinclabs/zinc/main/k8s/kube-deployment.yaml
     
-    Expose the zinc service by port-forwarding:
+    Expose the ZincSearch service by port-forwarding:
 
         kubectl -n zinc port-forward svc/z 4080:4080
 
@@ -89,7 +89,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
         helm install zinc helm/zinc -n zinc
 
-    Zinc can be made available with an ingress or port-forward:
+    ZincSearch can be made available with an ingress or port-forward:
     
         kubectl -n zinc port-forward svc/zinc 4080:4080
 

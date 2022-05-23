@@ -3,12 +3,12 @@
 
 We will do 2 things as part of the quickstart:
 
-1. Install Zinc
+1. Install ZincSearch
 1. Load sample data and perform search operations on it.
 
 ## Installation
 
-You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment variables when you start zinc for the first time. You don't need them on subsequent runs of zinc.
+You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment variables when you start ZincSearch for the first time. You don't need them on subsequent runs of ZincSearch.
 
 
 
@@ -97,7 +97,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
         helm install zinc helm/zinc -n zinc
 
-    Zinc can be made available with an ingress or port-forward:
+    ZincSearch can be made available with an ingress or port-forward:
     
         kubectl -n zinc port-forward svc/zinc 4080:4080
 

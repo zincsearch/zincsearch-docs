@@ -1,5 +1,5 @@
 # Version
-Get current version of Zinc
+Get current version of ZincSearch
 
 Endpoint - GET /version
 

@@ -1,8 +1,8 @@
 # Concepts
 
-Zinc is a search engine that allows you to search for your own data when uploaded in Zinc. Think of it as "Google" or "Bing" search, but just for your own data.
+ZincSearch is a search engine that allows you to search for your own data when uploaded in ZincSearch. Think of it as "Google" or "Bing" search, but just for your own data.
 
-Zinc allows you to index your (json) documents and allows to do full text search.
+ZincSearch allows you to index your (json) documents and allows to do full text search.
 
 E.g. You can insert:
 
@@ -15,9 +15,9 @@ E.g. You can insert:
 And many more documents like above and then search for: Prabhat, cool or any word or combination of words.
 
 
-## Zinc Index
+## ZincSearch Index
 
-An index is where all of your data that you push into Zinc is indexed and stored  for fast access. Zinc mainains inverted indexes for the data you push in in Zinc.
+An index is where all of your data that you push into ZincSearch is indexed and stored  for fast access. ZincSearch mainains inverted indexes for the data you push in in ZincSearch.
 
 ## Inverted Index
 
@@ -44,11 +44,11 @@ An invertd index for a set of documents might look like
 
 ## Bluge
 
-Bluge is the underlying indexing library used by Zinc on top of which it provides a lot of functionality.
+Bluge is the underlying indexing library used by ZincSearch on top of which it provides a lot of functionality.
 
 ## Index mapping
 
-A document can have multiple fields. Each field can have a type. A mapping defines which fields have what type for an index. A mapping allows Zinc to index the document properly. If a mapping is not available for a field then Zinc uses reflection to find its type.
+A document can have multiple fields. Each field can have a type. A mapping defines which fields have what type for an index. A mapping allows ZincSearch to index the document properly. If a mapping is not available for a field then ZincSearch uses reflection to find its type.
 
 e.g.
 

@@ -1,6 +1,6 @@
 # Metrics
 
-Get metrics of Zinc in prometheus format
+Get metrics of ZincSearch in prometheus format
 
 Endpoint - GET /metrics
 
