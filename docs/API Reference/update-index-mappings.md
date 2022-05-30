@@ -1,13 +1,13 @@
 # UpdateIndexMappings
 Create/Update an index mapping
 
-Endpoint - PUT /api/:target/_mappings
+Endpoint - PUT /api/:target/_mapping
 
 ## Request
 
 e.g.
 
-PUT http://localhost:4080/api/:target/_mappings
+PUT http://localhost:4080/api/:target/_mapping
 
 Request Body: 
 
