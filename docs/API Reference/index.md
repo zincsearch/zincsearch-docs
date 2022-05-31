@@ -21,7 +21,11 @@ Make sure that you are sending the requests over HTTPS.
 1. [CreateIndex](create-index)
 1. [DeleteIndex](delete-index)
 1. [ListIndexes](list-indexes)
-1. [Search](search)
+1. Search
+    + [Basic Search](search/1_search)
+    + [Aggregation](search/aggregation)
+    + [Search - Elasticsearch compatible](search/seacrh-es)
+    + [Search types](search/search-types)
 1. [UpdateDocumentWithId](update-document-with-id)
 1. [UpdateDocument](update-document)
 1. [DeleteDocument](delete-document)
