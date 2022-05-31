@@ -1,4 +1,5 @@
 # UpdateDocumentsBulk
+
 Upload bulk data
 
 Endpoint - POST /api/_bulk
@@ -33,4 +34,34 @@ e.g. ndjson contents
 {"Year": 1896, "City": "Athens", "Sport": "Aquatics", "Discipline": "Swimming", "Athlete": "CHASAPIS, Spiridon", "Country": "GRE", "Gender": "Men", "Event": "100M Freestyle For Sailors", "Medal": "Silver", "Season": "summer"}
 ```
 
+> First line is index action
+>
+> Second line is document data
 
+### Request action
+
+Index document
+
+```json
+{ "index" : { "_index" : "olympics" } } 
+```
+
+OR
+
+```json
+{ "create" : { "_index" : "olympics" } } 
+```
+
+OR
+
+```json
+{ "update" : { "_index" : "olympics", "_id": "1" } } 
+```
+
+Delete document
+
+```json
+{ "delete" : { "_index" : "olympics", "_id": "1" } } 
+```
+
+> Delete action not need document data.

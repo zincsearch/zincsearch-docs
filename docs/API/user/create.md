@@ -1,17 +1,18 @@
 # UpdateUser
 
-Create a new index
+Create/Update a new index
 
-Endpoint - PUT [/api/user](/api/user)
+Endpoint - POST /api/user
 
-Create or update an new/existing user.
+Create/Update a new/existing user.
 
 ## Request
 
 e.g. 
-PUT http://localhost:4080/api/user
+POST http://localhost:4080/api/user
 
 Request Body: 
+
 ```json
 { 
     "_id": "prabhat",
@@ -20,5 +21,3 @@ Request Body:
 	"password": "Complexpass#123"
 }
 ```
-
-

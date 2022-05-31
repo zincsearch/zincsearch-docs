@@ -15,16 +15,13 @@ aggregation support:
     1. avg, weighted_vg - Supported on fields of type numeric
 
 
-## TODO
-- Percentiles
-
-
-
+## Request
 
 e.g. 
 POST http://localhost:4080/api/olympics/_search
 
-## Request Body: 
+Request Body: 
+
 ```json
 {
     "search_type": "match",
@@ -32,8 +29,8 @@ POST http://localhost:4080/api/olympics/_search
         "term": "Ice Hockey"
     },
     "sort_fields": ["-@timestamp"],
-    "from": 1,
-    "max_results": 0,
+    "from": 0,
+    "max_results": 20,
     "aggs": {
       "Medal": {
         "agg_type": "term",
@@ -89,7 +86,7 @@ POST http://localhost:4080/api/olympics/_search
 }
 ```
 
-## Response Body:
+## Response
 
 ```json
 {

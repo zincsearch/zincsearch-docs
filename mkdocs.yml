@@ -19,7 +19,7 @@ extra:
     - icon: fontawesome/brands/github 
       link: https://github.com/zinclabs/zinc
     - icon: fontawesome/brands/docker 
-      link: https://gallery.ecr.aws/h9e2j3o7/zinc
+      link: https://gallery.ecr.aws/zinclabs/zinc
     - icon: fontawesome/brands/slack 
       link: https://join.slack.com/t/zinc-nvh4832/shared_invite/zt-11r96hv2b-UwxUILuSJ1duzl_6mhJwVg
   generator: false

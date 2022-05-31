@@ -5,7 +5,6 @@ These APIs can be used to programatically interact with ZincSearch.
 All APIs must have an authorization header. Authorization header can be created using base64 encoded values of user id and password. For the sake of simplicity it is HTTP basic authentication mechanism.
 
 
-
 Header creation mechanism:
 
 > Authorization: Basic base64 userId:password")
@@ -16,7 +15,7 @@ e.g. Header:
 
 Make sure that you are sending the requests over HTTPS.
 
-## API List
+## API List of Compatible ElasticSearch
 
 1. GET [/es/](_info)
 1. GET [/es/_license](_license)

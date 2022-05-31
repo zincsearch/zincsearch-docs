@@ -1,0 +1,15 @@
+nav:
+    - Release Notes: release-notes.md
+    - Getting started: getting-started.md
+    - Screenshots: screenshots.md
+    - Installation: installation.md
+    - Quickstart: quickstart.md
+    - Concepts: concepts.md
+    - Environment Variables: environment-variables.md
+    - Monitoring: monitoring.md
+    - Roadmap: roadmap.md
+    - Storage: storage.md
+    - Telemetry: telemetry.md
+    - API Reference: api/index.md
+    - API Reference ES Compatible: api-es-compatible/index.md
+    - Ingestion: ingestion/index.md

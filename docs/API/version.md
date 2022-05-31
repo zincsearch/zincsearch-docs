@@ -8,6 +8,3 @@ Endpoint - GET /version
 
 e.g. 
 PUT http://localhost:4080/version
-
-
-

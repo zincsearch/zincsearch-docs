@@ -1,4 +1,5 @@
 # DeleteIndex
+
 Delete an index
 
 Endpoint - DELETE /api/index/:indexName

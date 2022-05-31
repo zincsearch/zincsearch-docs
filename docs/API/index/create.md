@@ -2,16 +2,17 @@
 
 Create a new index
 
-Endpoint - PUT [/api/index](/api/index)
+Endpoint - POST /api/index
 
 While you do not need to create indexes manually as they are created automatically when you start ingesting the data, you could create them in advance using this API. S3 backed indexes must be created before they can be used.
 
 ## Request
 
 e.g. 
-PUT http://localhost:4080/api/index
+POST http://localhost:4080/api/index
 
 Request Body: 
+
 ```json
 {
 	"name": "article",
@@ -20,15 +21,14 @@ Request Body:
 		"properties": {
 			"title": {
 				"type": "text",
+				"index": true,
 				"store": true,
-				"sortable": false,
 				"highlightable": true
 			},
 			"content": {
 				"type": "text",
 				"index": true,
 				"store": true,
-				"aggregatable": true,
 				"highlightable": true
 			},
 			"status": {
@@ -38,7 +38,7 @@ Request Body:
 				"aggregatable": true
 			},
 			"publish_date": {
-				"type": "time",
+				"type": "date",
 				"format": "2006-01-02T15:04:05Z07:00",
 				"index": true,
 				"sortable": true,
@@ -50,6 +50,7 @@ Request Body:
 ```
 
 OR
+
 ```json
 {
 	"name": "article",
@@ -58,15 +59,14 @@ OR
 		"properties": {
 			"title": {
 				"type": "text",
+				"index": true,
 				"store": true,
-				"sortable": false,
 				"highlightable": true
 			},
 			"content": {
 				"type": "text",
 				"index": true,
 				"store": true,
-				"aggregatable": true,
 				"highlightable": true
 			},
 			"status": {
@@ -76,7 +76,7 @@ OR
 				"aggregatable": true
 			},
 			"publish_date": {
-				"type": "time",
+				"type": "date",
 				"format": "2006-01-02T15:04:05Z07:00",
 				"index": true,
 				"sortable": true,
@@ -88,6 +88,7 @@ OR
 ```
 
 OR
+
 ```json
 {
 	"name": "article",
@@ -96,15 +97,14 @@ OR
 		"properties": {
 			"title": {
 				"type": "text",
+				"index": true,
 				"store": true,
-				"sortable": false,
 				"highlightable": true
 			},
 			"content": {
 				"type": "text",
 				"index": true,
 				"store": true,
-				"aggregatable": true,
 				"highlightable": true
 			},
 			"status": {
@@ -114,7 +114,7 @@ OR
 				"aggregatable": true
 			},
 			"publish_date": {
-				"type": "time",
+				"type": "date",
 				"format": "2006-01-02T15:04:05Z07:00",
 				"index": true,
 				"sortable": true,
@@ -125,4 +125,4 @@ OR
 }
 ```
 
-Default storage_type is disk
+Default `storage_type` is `disk`

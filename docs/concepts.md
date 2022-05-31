@@ -24,23 +24,27 @@ An index is where all of your data that you push into ZincSearch is indexed and 
 An inverted index is a database index storing a mapping from content, such as words or numbers, to its locations in a table, or in a document or a set of documents. The purpose of an inverted index is to allow fast full-text searches, at a cost of increased processing when a document is added to the database.
 
 e.g.
+
 An invertd index for a set of documents might look like
 
+```json
 {"id":1, "message: "Prabhat Sharma is a cool guy to hang with"}
+```
 
+```json
 {"id":2, "message: "Prabhat Sharma is in San Francisco"}
+```
 
-
-| message | Document ID |
-|------|-------------|
-|Prabhat | 1, 2|
-|Sharma | 1, 2|
-|cool | 1 |
-|guy | 1|
-|hang | 1|
-|with | 1 |
-|San | 2 |
-|Francisco | 2 |
+| Message   | Document ID |
+|-----------|-------------|
+| Prabhat   | 1, 2        |
+| Sharma    | 1, 2        |
+| cool      | 1           |
+| guy       | 1           |
+| hang      | 1           |
+| with      | 1           |
+| San       | 2           |
+| Francisco | 2           |
 
 ## Bluge
 
@@ -62,10 +66,10 @@ For olympics index the mapping could look like
                 "type": "text"
             },
             "City": {
-                "type": "text"
+                "type": "keyword"
             },
             "Country": {
-                "type": "text"
+                "type": "keyword"
             },
             "Discipline": {
                 "type": "text"
@@ -77,10 +81,10 @@ For olympics index the mapping could look like
                 "type": "text"
             },
             "Medal": {
-                "type": "text"
+                "type": "keyword"
             },
             "Season": {
-                "type": "text"
+                "type": "keyword"
             },
             "Sport": {
                 "type": "text"
@@ -91,5 +95,4 @@ For olympics index the mapping could look like
         }
     }
 }
-
 ```

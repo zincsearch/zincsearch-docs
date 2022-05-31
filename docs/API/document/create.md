@@ -1,16 +1,18 @@
 # UpdateDocument
+
 Create/Update a document and index it for searches
 
-Endpoint - PUT /api/:target/document
+Endpoint - POST /api/:target/_doc
 
 Create/Update a document and index it for searches
 
 ## Request
 
 e.g. 
-PUT http://localhost:4080/api/myindex/document
+POST http://localhost:4080/api/myindex/_doc
 
 Request Body: 
+
 ```json
 { 
     "name": "Prabhat Sharma" 

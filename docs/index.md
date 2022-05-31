@@ -21,3 +21,4 @@ You may also want to read the initial blog regarding launch of [ZincSearch](http
 1. Schema less - No need to define schema upfront and different documents in the same index can have different fields.
 1. Index storage in s3 and MinIO (experimental)
 1. Aggregation support
+1. Highlight support

@@ -9,8 +9,3 @@ Endpoint - GET /metrics
 
 e.g. 
 PUT http://localhost:4080/metrics
-
-
-
-
-

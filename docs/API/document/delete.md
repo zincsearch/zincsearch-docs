@@ -1,4 +1,5 @@
 # DeleteDocument
+
 Delete a document
 
 Endpoint - DELETE /api/:target/_doc/:id

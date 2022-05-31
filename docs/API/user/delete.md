@@ -1,7 +1,8 @@
 # DeleteUser
+
 Delete a user
 
-Endpoint - DELETE /api/user/:userID
+Endpoint - DELETE /api/user/:id
 
 Delete a user.
 
@@ -9,10 +10,3 @@ Delete a user.
 
 e.g. 
 DELETE http://localhost:4080/api/user/prabhat
-
-
-## Response
-
-
-
-
