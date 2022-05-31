@@ -9,6 +9,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends python3-pip nodejs npm
 
 RUN pip3 install mkdocs-material
+RUN pip3 install mkdocs-awesome-pages-plugin
 
 RUN npm install -g live-server
- 

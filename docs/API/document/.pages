@@ -1,0 +1,5 @@
+nav:
+    - Create / Update: create.md
+    - Update with id: update-with-id.md
+    - Delete: delete.md
+    - Bulk: bulk.md

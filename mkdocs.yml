@@ -3,7 +3,7 @@ site_name: ZincSearch
 # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin required for nav
 plugins:
   - search
-#   - awesome-pages
+  - awesome-pages
 # nav:
 #   - index.md
 #   - getting-started.md

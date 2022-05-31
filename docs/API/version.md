@@ -1,4 +1,5 @@
 # Version
+
 Get current version of ZincSearch
 
 Endpoint - GET /version
@@ -7,4 +8,4 @@ Endpoint - GET /version
 ## Request
 
 e.g. 
-PUT http://localhost:4080/version
+GET http://localhost:4080/version

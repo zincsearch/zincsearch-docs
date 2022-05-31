@@ -52,12 +52,12 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
     ------------------------
 
 
-    Docker images are available at [https://gallery.ecr.aws/h9e2j3o7/zinc](https://gallery.ecr.aws/h9e2j3o7/zinc)
+    Docker images are available at [https://gallery.ecr.aws/zinclabs/zinc](https://gallery.ecr.aws/zinclabs/zinc)
 
         mkdir data
-        docker run -v /full/path/of/data:/data -e DATA_PATH="/data" -p 4080:4080 \
+        docker run -v /full/path/of/data:/data -e ZINC_DATA_PATH="/data" -p 4080:4080 \
             -e ZINC_FIRST_ADMIN_USER=admin -e ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 \
-            --name zinc public.ecr.aws/h9e2j3o7/zinc:latest
+            --name zinc public.ecr.aws/zinclabs/zinc:latest
 
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login

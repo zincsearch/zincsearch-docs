@@ -1,17 +1,5 @@
 # Search Types
 
-
-1. matchall
-1. match
-1. matchphrase
-1. term
-1. querystring
-1. prefix
-1. wildcard
-1. fuzzy
-1. daterange
-
-
 ## Match All
 
 ```json
