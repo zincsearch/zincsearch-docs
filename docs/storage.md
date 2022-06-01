@@ -18,7 +18,7 @@ To use S3 for storing index data following needs to be done:
 
 * Precreate the index
 e.g. 
-PUT [http://localhost:4080/api/index](http://localhost:4080/api/index)
+POST [http://localhost:4080/api/index](http://localhost:4080/api/index)
 
 Request Body: 
 ```json
@@ -61,9 +61,3 @@ The following environment variables need to be setup:
 | ZINC_MINIO_ACCESS_KEY_ID      | MinIO ACCESS_KEY_ID                                                       |
 | ZINC_MINIO_SECRET_ACCESS_KEY  | MinIO SECRET_ACCESS_KEY                                                   |
 | ZINC_MINIO_BUCKET             | MinIO bucket for index storage                                            |
-
-
-
-
-
-
