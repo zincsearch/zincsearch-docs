@@ -1,11 +1,10 @@
 # _info
 
-
 Info about the server and build
 
 ### Request
 
-GET [/es/](_info)
+GET /es/
 
 ### Response
 
@@ -15,7 +14,7 @@ GET [/es/](_info)
   "cluster_name": "N/A",
   "cluster_uuid": "N/A",
   "version": {
-    "number": "0.2.1",
+    "number": "0.2.3",
     "build_flavor": "default",
     "build_hash": "1bb11543e00d866ff7c3b2347154c1a81b61e138",
     "build_date": "2022-05-11T21:32:26Z",

@@ -79,7 +79,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
 === "Kubernetes - Helm"
 
-    Update Helm values located in [values.yaml](helm/zinc/values.yaml)
+    Update Helm values located in [values.yaml](https://github.com/zinclabs/zinc/blob/main/helm/zinc/values.yaml)
 
     Create the namespace:
 

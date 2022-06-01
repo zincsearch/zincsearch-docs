@@ -2,4 +2,7 @@ nav:
     - Create / Update: create.md
     - Delete: delete.md
     - List: list.md
-    - Mapping: mapping
+    - Get Mapping: get-mapping.md
+    - Update Mapping: update-mapping.md
+    - Get Settings: get-settings.md
+    - Update Settings: update-settings.md

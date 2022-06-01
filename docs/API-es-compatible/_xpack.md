@@ -1,6 +1,5 @@
 # _xpack
 
-
 Dummy API to provide API compatibility with ES
 
 ### Request

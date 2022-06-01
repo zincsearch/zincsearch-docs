@@ -11,6 +11,3 @@ curl -L https://github.com/zinclabs/zinc/releases/download/v0.1.1/olympics.ndjso
 gzip -d  olympics.ndjson.gz 
 curl http://localhost:4080/api/_bulk -i -u admin:Complexpass#123  --data-binary "@olympics.ndjson"
 ```
-
-
-

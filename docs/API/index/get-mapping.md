@@ -2,7 +2,7 @@
 
 Get an index mapping
 
-Endpoint - GET /es/:target/_mapping
+Endpoint - GET /api/:target/_mapping
 
 Get an index mapping
 
@@ -10,7 +10,7 @@ Get an index mapping
 
 e.g. 
 
-GET http://localhost:4080/es/olympics/_mapping
+GET http://localhost:4080/api/myindex/_mapping
 
 
 ## Response

@@ -1,18 +1,21 @@
-# Get Template
+# CreateUpdateTemplate
 
-Analyze the text and generate tokens.
+Create or update a template.
+
+Create `POST /es/_index_template`
+
+Update `PUT /es/_index_template/:target`
 
 ## Request
 
-GET /es/_index_template/:target
-
-## Response
+POST /es/_index_template
 
 ```json
 {
-	"index_patterns": ["game-*"],
-	"priority": 199,
-	"template": {
+  "name": "t2",
+  "index_patterns": ["game-*"],
+  "priority": 100,
+  "template": {
     "settings": {
       "analysis": {
         "analyzer": {
@@ -36,4 +39,10 @@ GET /es/_index_template/:target
     }
   }
 }
+```
+
+## Response
+
+```json
+{"message": "template t2 created"}
 ```

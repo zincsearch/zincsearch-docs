@@ -1,92 +1,92 @@
 # Aggregation
 
-Endpoint - POST /api/:target/_search
+Endpoint - POST /es/:target/_search
 
 Search for documents with aggregations
 
 aggregation support:
 
 1. Bucketing
-    1. term - Supported on fields of type text, keyword, numeric
-    1. range - Supported on fields of type numeric
-    1. date_range - Supported on fields of type time
+    1. `terms` - Supported on fields of type keyword, numeric
+    1. `range` - Supported on fields of type numeric, date
+    1. `date_range` - Supported on fields of type date
+    1. `histogram` - Supported on fields of type numeric, date
+    1. `date_histogram` - Supported on fields of type date
+    1. `auto_date_histogram` - Supported on fields of type date
 1. Metrics
-    1. min, max, count, sum - Supported on fields of numeric type
-    1. avg, weighted_vg - Supported on fields of type numeric
+    1. `min`, `max`, `count`, `sum` - Supported on fields of type numeric
+    1. `avg`, `weighted_vg` - Supported on fields of type numeric
+    1. `Cardinality` - Supported on fields of type numeric
 
 
 ## Request
 
 e.g. 
-POST http://localhost:4080/api/olympics/_search
+POST http://localhost:4080/es/myindex/_search
 
 Request Body: 
 
 ```json
 {
-    "search_type": "match",
     "query": {
-        "term": "Ice Hockey"
+        "bool": {
+            "should": {
+                "match": {
+                    "_all": "Ice Hockey"
+                }
+            }
+        }
     },
-    "sort_fields": ["-@timestamp"],
+    "sort": ["-@timestamp"],
     "from": 0,
-    "max_results": 20,
+    "size": 20,
     "aggs": {
         "Medal": {
-            "agg_type": "term",
-            "field": "Medal",
-            "size": 10
+            "terms": {
+                "field": "Medal",
+                "size": 10
+            }
         },
         "Year": {
-            "agg_type": "range",
-            "field": "Year",
-            "size": 10,
-            "ranges": [
-                {"from": 1900, "to": 1920},
-                {"from": 1921, "to": 1950},
-                {"from": 1951, "to": 2000},
-                {"from": 2000, "to": 2021}
-            ]
+            "range": {
+                "field": "Year",
+                "ranges": [
+                    { "from": 1900, "to": 1920},
+                    { "from": 1921, "to": 1950},
+                    { "from": 1951, "to": 2000},
+                    { "from": 2000, "to": 2021}
+                ]
+            }
         },
         "@timestamp": {
-            "agg_type": "date_range",
-            "field": "@timestamp",
-            "size": 10,
-            "date_ranges": [
-                {
-                    "from": "2020-01-21T09:22:50.604Z",
-                    "to": "2021-01-21T09:22:50.604Z"
-                },
-                {
-                    "from": "2021-01-22T09:22:50.604Z",
-                    "to": "2023-01-21T09:22:50.604Z"
-                }
-            ]
+            "date_range": {
+                "field": "@timestamp",
+                "ranges": [
+                    { "from": "2020-01-21T09:22:50.604Z", "to": "2021-01-21T09:22:50.604Z"},
+                    { "from": "2021-01-22T09:22:50.604Z", "to": "2023-01-21T09:22:50.604Z"}
+                ]
+            }
         },
         "max_Year": {
-            "agg_type": "max",
-            "field": "Year"
+            "max": { "field": "Year" }
         },
         "min_Year": {
-            "agg_type": "min",
-            "field": "Year"
+            "min": { "field": "Year" }
         },
         "avg_Year": {
-            "agg_type": "avg",
-            "field": "Year"
+            "avg": { "field": "Year" }
         },
         "weighted_avg_Year": {
-            "agg_type": "weighted_avg",
-            "field": "Year",
-            "weight_field": "Year"
+            "weighted_avg": { 
+                "field": "Year", 
+                "weight_field": "Year" 
+            }
         },
         "sum_Year": {
-            "agg_type": "sum",
-            "field": "Year"
+            "sum": { "field": "Year" }
         },
         "count_Sport": {
-            "agg_type": "count",
-            "field": "Sport"
+            "count": { "field": "Sport" }
         }
     }
 }

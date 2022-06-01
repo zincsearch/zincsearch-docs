@@ -1,118 +1,67 @@
-# Create/Update Mapping
+# UpdateIndexMapping
 
+Update an index mapping
 
+Endpoint - PUT /es/:target/_mapping
 
-### Request
+Update an index mapping
 
-PUT /es/:target/_mapping
+## Request
 
-```json
-{
-  "properties": {
-    "@timestamp": {
-      "type": "time",
-      "index": true,
-      "store": false,
-      "sortable": true,
-      "aggregatable": true,
-      "highlightable": false
-    },
-    "Athlete": {
-      "type": "text",
-      "index": true,
-      "store": false,
-      "sortable": false,
-      "aggregatable": false,
-      "highlightable": false
-    },
-    "City": {
-      "type": "text",
-      "index": true,
-      "store": false,
-      "sortable": false,
-      "aggregatable": false,
-      "highlightable": false
-    },
-    "Country": {
-      "type": "text",
-      "index": true,
-      "store": false,
-      "sortable": false,
-      "aggregatable": false,
-      "highlightable": false
-    },
-    "Discipline": {
-      "type": "text",
-      "index": true,
-      "store": false,
-      "sortable": false,
-      "aggregatable": false,
-      "highlightable": false
-    },
-    "Event": {
-      "type": "text",
-      "index": true,
-      "store": false,
-      "sortable": false,
-      "aggregatable": false,
-      "highlightable": false
-    },
-    "Gender": {
-      "type": "text",
-      "index": true,
-      "store": false,
-      "sortable": false,
-      "aggregatable": false,
-      "highlightable": false
-    },
-    "Medal": {
-      "type": "text",
-      "index": true,
-      "store": false,
-      "sortable": false,
-      "aggregatable": false,
-      "highlightable": false
-    },
-    "Season": {
-      "type": "text",
-      "index": true,
-      "store": false,
-      "sortable": false,
-      "aggregatable": false,
-      "highlightable": false
-    },
-    "Sport": {
-      "type": "text",
-      "index": true,
-      "store": false,
-      "sortable": false,
-      "aggregatable": false,
-      "highlightable": false
-    },
-    "Year": {
-      "type": "numeric",
-      "index": true,
-      "store": false,
-      "sortable": true,
-      "aggregatable": true,
-      "highlightable": false
-    },
-    "_id": {
-      "type": "keyword",
-      "index": true,
-      "store": false,
-      "sortable": true,
-      "aggregatable": true,
-      "highlightable": false
-    }
-  }
-}
-```
+e.g.
 
-### Response
+PUT http://localhost:4080/es/olympics/_mapping
+
+Request Body: 
 
 ```json
 {
-    "message": "ok"
+	"mappings": {
+		"properties": {
+			"name": {
+				"type": "text",
+				"index": true,
+                "store": true,
+                "sortable": false,
+                "aggregatable": false,
+                "highlightable": true
+			},
+			"author": {
+				"type": "keyword",
+				"index": true,
+                "store": false,
+                "sortable": true,
+                "aggregatable": true,
+                "highlightable": false
+			},
+			"price": {
+				"type": "numeric",
+				"index": true,
+                "store": false,
+                "sortable": true,
+                "aggregatable": true,
+                "highlightable": false
+			},
+			"published": {
+				"type": "bool",
+				"index": true,
+                "store": false,
+                "sortable": true,
+                "aggregatable": true,
+                "highlightable": false
+			},
+			"create_at": {
+				"type": "date",
+				"format": "2006-01-02T15:04:05Z07:00",
+				"index": true,
+                "store": false,
+                "sortable": true,
+                "aggregatable": true,
+                "highlightable": false
+			}
+		}
+	}
 }
 ```
+
+> Mapping also can defines when create index.

@@ -2,7 +2,7 @@
 
 Get an index settings
 
-Endpoint - GET /es/:target/_settings
+Endpoint - GET /api/:target/_settings
 
 Get an index settings
 
@@ -10,7 +10,7 @@ Get an index settings
 
 e.g. 
 
-GET http://localhost:4080/es/myindex/_settings
+GET http://localhost:4080/api/myindex/_settings
 
 
 ## Response

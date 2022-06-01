@@ -4,7 +4,7 @@ Executes several searches with a single API request
 
 Is similar to _search but can accept multiple requests
 
-### Request
+## Request
 
 POST /es/_msearch
 
@@ -28,9 +28,6 @@ e.g.
 {"query" : {"match_all" : {}}}
 ```
 
-### Response
-
-
-
+## Response
 
 

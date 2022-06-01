@@ -2,10 +2,9 @@
 
 Dummy API to provide API compatibility with ES
 
-
 ### Request
 
-GET /es/license
+GET /es/_license
 
 ### Response
 

@@ -2,16 +2,14 @@
 
 Deletes an existing template
 
-
-### Request
+## Request
 
 DELETE /es/_index_template/:target
 
-### Response
+## Response
 
 ```json
 {
     "message": "ok"
 }
 ```
-

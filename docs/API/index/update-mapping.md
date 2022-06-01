@@ -1,4 +1,4 @@
-# UpdateIndexMappings
+# UpdateIndexMapping
 
 Update an index mapping
 
@@ -10,7 +10,7 @@ Update an index mapping
 
 e.g.
 
-PUT http://localhost:4080/api/:target/_mapping
+PUT http://localhost:4080/api/myindex/_mapping
 
 Request Body: 
 

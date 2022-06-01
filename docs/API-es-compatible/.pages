@@ -1,6 +1,7 @@
 nav:
-    - Single Record: single-record.md
-    - Bulk Ingestion: bulk-ingestion.md
-    - Filebeat: filebeat.md
-    - Fluent-bit: fluent-bit.md
-    - Syslog-ng: syslog-ng.md
+    - _info: info.md
+    - _license: license.md
+    - _xpack: xpack.md
+    - Index: index
+    - Document: document
+    - Search: search

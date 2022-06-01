@@ -2,7 +2,7 @@
 
 Update an index settings
 
-Endpoint - PUT /es/:target/_settings
+Endpoint - PUT /api/:target/_settings
 
 Update an index settings
 
@@ -10,7 +10,7 @@ Update an index settings
 
 e.g.
 
-PUT http://localhost:4080/es/myindex/_settings
+PUT http://localhost:4080/api/myindex/_settings
 
 Request Body: 
 

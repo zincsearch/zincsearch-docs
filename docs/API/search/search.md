@@ -45,9 +45,7 @@ import requests
 
 user = "admin"
 password = "Complexpass#123"
-bas64encoded_creds = base64.b64encode(
-    bytes(user + ":" + password, "utf-8")).decode("utf-8")
-
+bas64encoded_creds = base64.b64encode(bytes(user + ":" + password, "utf-8")).decode("utf-8")
 
 params = {
     "search_type": "match",
@@ -73,8 +71,7 @@ params = {
 #     "_source": ["_all"]
 # }
 
-headers = {"Content-type": "application/json",
-           "Authorization": "Basic " + bas64encoded_creds}
+headers = {"Content-type": "application/json",  "Authorization": "Basic " + bas64encoded_creds}
 index = "games3"
 zinc_host = "http://localhost:4080"
 zinc_url = zinc_host + "/api/" + index + "/_search"
@@ -136,75 +133,75 @@ func main() {
 
 ```json
 {
-  "took": 0,
-  "timed_out": false,
-  "max_score": 7.6978611753656345,
-  "hits": {
-    "total": {
-      "value": 3
+    "took": 0,
+    "timed_out": false,
+    "max_score": 7.6978611753656345,
+    "hits": {
+        "total": {
+            "value": 3
+        },
+        "hits": [
+            {
+                "_index": "games3",
+                "_type": "games3",
+                "_id": "bd3e67f0-679b-4aa4-b0f5-81b9dc86a26a",
+                "_score": 7.6978611753656345,
+                "@timestamp": "2021-10-20T04:56:39.000871Z",
+                "_source": {
+                    "Athlete": "DEMTSCHENKO, Albert",
+                    "City": "Turin",
+                    "Country": "RUS",
+                    "Discipline": "Luge",
+                    "Event": "Singles",
+                    "Gender": "Men",
+                    "Medal": "Silver",
+                    "Season": "winter",
+                    "Sport": "Luge",
+                    "Year": 2006
+                }
+            },
+            {
+                "_index": "games3",
+                "_type": "games3",
+                "_id": "230349d9-72b3-4225-bac7-a8ab31af046d",
+                "_score": 7.6978611753656345,
+                "@timestamp": "2021-10-20T04:56:39.215124Z",
+                "_source": {
+                    "Athlete": "DEMTSCHENKO, Albert",
+                    "City": "Sochi",
+                    "Country": "RUS",
+                    "Discipline": "Luge",
+                    "Event": "Singles",
+                    "Gender": "Men",
+                    "Medal": "Silver",
+                    "Season": "winter",
+                    "Sport": "Luge",
+                    "Year": 2014
+                }
+            },
+            {
+                "_index": "games3",
+                "_type": "games3",
+                "_id": "338fea31-81f2-4b56-a096-b8294fb6cc92",
+                "_score": 7.671309826309841,
+                "@timestamp": "2021-10-20T04:56:39.215067Z",
+                "_source": {
+                    "Athlete": "DEMTSCHENKO, Albert",
+                    "City": "Sochi",
+                    "Country": "RUS",
+                    "Discipline": "Luge",
+                    "Event": "Mixed Relay",
+                    "Gender": "Men",
+                    "Medal": "Silver",
+                    "Season": "winter",
+                    "Sport": "Luge",
+                    "Year": 2014
+                }
+            }
+        ]
     },
-    "hits": [
-      {
-        "_index": "games3",
-        "_type": "games3",
-        "_id": "bd3e67f0-679b-4aa4-b0f5-81b9dc86a26a",
-        "_score": 7.6978611753656345,
-        "@timestamp": "2021-10-20T04:56:39.000871Z",
-        "_source": {
-          "Athlete": "DEMTSCHENKO, Albert",
-          "City": "Turin",
-          "Country": "RUS",
-          "Discipline": "Luge",
-          "Event": "Singles",
-          "Gender": "Men",
-          "Medal": "Silver",
-          "Season": "winter",
-          "Sport": "Luge",
-          "Year": 2006
-        }
-      },
-      {
-        "_index": "games3",
-        "_type": "games3",
-        "_id": "230349d9-72b3-4225-bac7-a8ab31af046d",
-        "_score": 7.6978611753656345,
-        "@timestamp": "2021-10-20T04:56:39.215124Z",
-        "_source": {
-          "Athlete": "DEMTSCHENKO, Albert",
-          "City": "Sochi",
-          "Country": "RUS",
-          "Discipline": "Luge",
-          "Event": "Singles",
-          "Gender": "Men",
-          "Medal": "Silver",
-          "Season": "winter",
-          "Sport": "Luge",
-          "Year": 2014
-        }
-      },
-      {
-        "_index": "games3",
-        "_type": "games3",
-        "_id": "338fea31-81f2-4b56-a096-b8294fb6cc92",
-        "_score": 7.671309826309841,
-        "@timestamp": "2021-10-20T04:56:39.215067Z",
-        "_source": {
-          "Athlete": "DEMTSCHENKO, Albert",
-          "City": "Sochi",
-          "Country": "RUS",
-          "Discipline": "Luge",
-          "Event": "Mixed Relay",
-          "Gender": "Men",
-          "Medal": "Silver",
-          "Season": "winter",
-          "Sport": "Luge",
-          "Year": 2014
-        }
-      }
-    ]
-  },
-  "buckets": null,
-  "error": ""
+    "buckets": null,
+    "error": ""
 }
 ```
 
