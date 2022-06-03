@@ -16,27 +16,25 @@ Request Body:
 
 ```json
 {
-    "settings": {
-        "analysis": {
-            "analyzer": {
-                "default": {
-                    "type": "standard"
-                },
-                "my_analyzer": {
-                    "tokenizer": "standard",
-                    "char_filter": [
-                        "my_mappings_char_filter"
-                    ]
-                }
+    "analysis": {
+        "analyzer": {
+            "default": {
+                "type": "standard"
             },
-            "char_filter": {
-                "my_mappings_char_filter": {
-                    "type": "mapping",
-                    "mappings": [
-                        ":) => _happy_",
-                        ":( => _sad_"
-                    ]
-                }
+            "my_analyzer": {
+                "tokenizer": "standard",
+                "char_filter": [
+                    "my_mappings_char_filter"
+                ]
+            }
+        },
+        "char_filter": {
+            "my_mappings_char_filter": {
+                "type": "mapping",
+                "mappings": [
+                    ":) => _happy_",
+                    ":( => _sad_"
+                ]
             }
         }
     }

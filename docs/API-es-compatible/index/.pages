@@ -4,7 +4,7 @@ nav:
     - Get Settings: get-settings.md
     - Update Settings: update-settings.md
     - Create Template: create-template.md
-    - Update Template: update-template.md
+    - Update Template: create-template.md
     - Delete Template: delete-template.md
     - Get Template: get-template.md
     - List Template: list-template.md

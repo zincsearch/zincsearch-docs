@@ -16,49 +16,47 @@ Request Body:
 
 ```json
 {
-	"mappings": {
-		"properties": {
-			"name": {
-				"type": "text",
-				"index": true,
-                "store": true,
-                "sortable": false,
-                "aggregatable": false,
-                "highlightable": true
-			},
-			"author": {
-				"type": "keyword",
-				"index": true,
-                "store": false,
-                "sortable": true,
-                "aggregatable": true,
-                "highlightable": false
-			},
-			"price": {
-				"type": "numeric",
-				"index": true,
-                "store": false,
-                "sortable": true,
-                "aggregatable": true,
-                "highlightable": false
-			},
-			"published": {
-				"type": "bool",
-				"index": true,
-                "store": false,
-                "sortable": true,
-                "aggregatable": true,
-                "highlightable": false
-			},
-			"create_at": {
-				"type": "date",
-				"format": "2006-01-02T15:04:05Z07:00",
-				"index": true,
-                "store": false,
-                "sortable": true,
-                "aggregatable": true,
-                "highlightable": false
-			}
+	"properties": {
+		"name": {
+			"type": "text",
+			"index": true,
+			"store": true,
+			"sortable": false,
+			"aggregatable": false,
+			"highlightable": true
+		},
+		"author": {
+			"type": "keyword",
+			"index": true,
+			"store": false,
+			"sortable": true,
+			"aggregatable": true,
+			"highlightable": false
+		},
+		"price": {
+			"type": "numeric",
+			"index": true,
+			"store": false,
+			"sortable": true,
+			"aggregatable": true,
+			"highlightable": false
+		},
+		"published": {
+			"type": "bool",
+			"index": true,
+			"store": false,
+			"sortable": true,
+			"aggregatable": true,
+			"highlightable": false
+		},
+		"create_at": {
+			"type": "date",
+			"format": "2006-01-02T15:04:05Z07:00",
+			"index": true,
+			"store": false,
+			"sortable": true,
+			"aggregatable": true,
+			"highlightable": false
 		}
 	}
 }
