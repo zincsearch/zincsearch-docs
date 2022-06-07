@@ -17,7 +17,7 @@ And many more documents like above and then search for: Prabhat, cool or any wor
 
 ## ZincSearch Index
 
-An index is where all of your data that you push into ZincSearch is indexed and stored  for fast access. ZincSearch mainains inverted indexes for the data you push in in ZincSearch.
+An index is where all of your data that you push into ZincSearch is indexed and stored  for fast access. ZincSearch maintains inverted indexes for the data you push in in ZincSearch.
 
 ## Inverted Index
 
