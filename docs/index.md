@@ -22,3 +22,7 @@ You may also want to read the initial blog regarding launch of [ZincSearch](http
 1. Index storage in s3 and MinIO (experimental)
 1. Aggregation support
 1. Highlight support
+
+## Project Status:
+
+ZincSearch is in Pre GA (General Availability)  and will be marked as production ready at v1.0.0 . 
