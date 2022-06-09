@@ -1,4 +1,4 @@
-# DeleteDocument
+# Delete document
 
 Delete a document
 

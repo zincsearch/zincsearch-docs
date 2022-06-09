@@ -1,4 +1,4 @@
-# GetIndexMapping
+# Get index mapping
 
 Get an index mapping
 

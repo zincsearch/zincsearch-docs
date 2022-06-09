@@ -1,4 +1,4 @@
-# Get Template
+# Get template
 
 Analyze the text and generate tokens.
 

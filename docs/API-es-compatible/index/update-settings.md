@@ -1,4 +1,4 @@
-# UpdateIndexSettings
+# Update index settings
 
 Update an index settings
 

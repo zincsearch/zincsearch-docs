@@ -1,6 +1,6 @@
-# UpdateDocumentWithId
+# Create document with id
 
-Create/Update a document and index it for searches. Provide a doc Id
+Create a document and index it for searches. Provide a doc Id
 
 Endpoint - PUT /api/:target/_doc/:id 
 
@@ -18,4 +18,3 @@ Request Body:
     "name": "Prabhat Sharma is meeting friends in San Francisco" 
 }
 ```
-

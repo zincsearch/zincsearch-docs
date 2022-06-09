@@ -1,4 +1,5 @@
-# _delete
+# Delete document
+
 Delete a document
 
 Endpoint - DELETE /es/:target/_doc/:id

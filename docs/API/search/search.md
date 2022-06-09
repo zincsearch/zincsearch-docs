@@ -1,5 +1,3 @@
-
-
 # Search
 
 ## Basic Search

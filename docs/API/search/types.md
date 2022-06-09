@@ -1,4 +1,4 @@
-# Search Types
+# Search types
 
 ## Match All
 

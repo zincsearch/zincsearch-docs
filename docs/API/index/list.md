@@ -1,4 +1,4 @@
-# ListIndexes
+# List indexes
 
 List existing indexes
 

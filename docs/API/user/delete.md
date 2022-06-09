@@ -1,4 +1,4 @@
-# DeleteUser
+# Delete user
 
 Delete a user
 

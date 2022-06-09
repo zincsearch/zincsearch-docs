@@ -1,4 +1,4 @@
-# CreateIndex
+# Create index
 
 Create a new index
 

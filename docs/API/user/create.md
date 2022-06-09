@@ -1,4 +1,4 @@
-# CreateUpdateUser
+# Create update user
 
 Create/Update a new index
 

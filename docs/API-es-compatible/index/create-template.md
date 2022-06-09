@@ -1,4 +1,4 @@
-# CreateUpdateTemplate
+# Create update template
 
 Create or update a template.
 

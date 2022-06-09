@@ -1,4 +1,4 @@
-# Delete Template
+# Delete template
 
 Deletes an existing template
 

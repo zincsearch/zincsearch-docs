@@ -1,4 +1,4 @@
-# GetIndexSettings
+# Get index settings
 
 Get an index settings
 

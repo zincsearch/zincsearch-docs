@@ -1,6 +1,5 @@
 # _search
 
-
 POST http://localhost:4080/es/olympics/_search
 
 ```json

@@ -1,4 +1,4 @@
-# List Users
+# List users
 
 List all users
 

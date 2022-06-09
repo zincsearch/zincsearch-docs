@@ -1,6 +1,6 @@
-# CreateUpdateDocument
+# Create document
 
-Create/Update a document and index it for searches
+Create a document and index it for searches
 
 ## Request
 
@@ -8,7 +8,6 @@ Create/Update a document and index it for searches
 1. PUT /es/:target/_doc/:id
 1. PUT /es/:target/_create/:id
 1. POST /es/:target/_create/:id
-1. POST /es/:target/_update/:id
 
 ```json
 { 

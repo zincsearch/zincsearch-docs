@@ -1,4 +1,4 @@
-# DeleteIndex
+# Delete index
 
 Delete an index
 

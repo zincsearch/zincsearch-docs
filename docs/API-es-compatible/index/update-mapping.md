@@ -1,4 +1,4 @@
-# UpdateIndexMapping
+# Update index mapping
 
 Update an index mapping
 

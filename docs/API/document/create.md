@@ -1,10 +1,10 @@
-# CreateUpdateDocument
+# Create document
 
-Create/Update a document and index it for searches
+Create a document and index it for searches
 
 Endpoint - POST /api/:target/_doc
 
-Create/Update a document and index it for searches
+Create a document and index it for searches
 
 ## Request
 
