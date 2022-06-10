@@ -7,3 +7,4 @@
 1. [Update Mapping](get-mapping)
 1. [Get Settings](get-settings)
 1. [Update Settings](get-settings)
+1. [Analyze](analyze)

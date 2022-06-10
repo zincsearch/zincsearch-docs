@@ -3,7 +3,7 @@ We prefer environment variables for configuration as opposed to configuration fi
 
 
 | Environment Variable          | Default Value | Mandatory     | Description                                                               |
-| :---------------------------- | ------------- |-------------- | :------------------------------------------------------------------------ |
+| ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
 | ZINC_FIRST_ADMIN_USER         | None          | On first run  | First admin user of ZincSearch. Not required after first run of ZincSearch.  |
 | ZINC_FIRST_ADMIN_PASSWORD     | None          | On first run  | Password for first admin user                                             |
 | ZINC_SERVER_PORT              | 4080          | No            | zinc server listen http port                                              |
