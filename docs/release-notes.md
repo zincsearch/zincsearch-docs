@@ -1,5 +1,36 @@
 # Release Notes
 
+## v0.2.4 Jun 1, 2022
+
+> You need set `ZINC_ICE_COMPRESSOR=zstd` for compatible v0.2.3
+
+- ee52452 1、alter text "npm run serve" -> "npm run dev" in file: CONTRIBUTING.md（Description error）； (#190)
+- 52aa400 Merge branch 'main' of github.com:zinclabs/zinc
+- 7a52024 Merge pull request #182 from zinclabs/autoloadindex
+- 780f731 Merge pull request #183 from karatekaneen/main
+- 584a48c Merge pull request #191 from zinclabs/profiler
+- 1d9ca4c Merge pull request #193 from zinclabs/compress-s2
+- e7b3b9b Normalize http api
+- e09cd3c added paopao
+- df2ecf6 added profiling using pyroscope
+- 5ecd723 change default compressor to s2 for segment file (#192)
+- b55717b change default preallocate size of badger
+- 57ebb4f feat(swagger): Added gin-swagger integration and initial docs (#178)
+- 688a4c6 feat: Added override of default Sentry DSN
+- 36bbf9c feat: allow add field to exist mapping
+- c21f754 fix docNum and storageSize for metadata (#194)
+- e73416c fix docker build
+- ec7c550 fix goreleaser
+- 4a155c2 fix: update setting and mapping api
+- 54e8bfc i18n bundler configs
+- a945200 just update go mod
+- c3d0fb5 now pulling from config
+- 3d9287f support other algorithms for compress
+- 8a1e475 update bluge version
+- c567226 update go version
+- 1f53d2e update index list on load and catch empty index load error
+- 210bf89 user id case insensitive - #186
+
 ## v0.2.3 Jun 1, 2022
 
 - 1f68f34 added env variables for etcd
