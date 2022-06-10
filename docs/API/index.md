@@ -26,6 +26,7 @@ Make sure that you are sending the requests over HTTPS.
     1. [Get Settings](index/get-settings)
     1. [Update Settings](index/update-settings)
     1. [Analyze](index/analyze)
+    1. [Refresh Data](refresh-data)
 1. [Document](document/index)
     1. [Create](document/create)
     1. [Create with id](document/create-with-id)

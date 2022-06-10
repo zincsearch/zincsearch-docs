@@ -7,3 +7,4 @@ nav:
     - Get Settings: get-settings.md
     - Update Settings: update-settings.md
     - Analyze: analyze.md
+    - Refresh Data: refresh-data.md

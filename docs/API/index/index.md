@@ -8,3 +8,4 @@
 1. [Get Settings](get-settings)
 1. [Update Settings](get-settings)
 1. [Analyze](analyze)
+1. [Refresh Data](refresh-data)
