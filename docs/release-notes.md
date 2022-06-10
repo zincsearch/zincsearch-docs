@@ -1,6 +1,6 @@
 # Release Notes
 
-## v0.2.4 Jun 1, 2022
+## v0.2.4 Jun 7, 2022
 
 > You need set `ZINC_ICE_COMPRESSOR=zstd` for compatible v0.2.3
 
