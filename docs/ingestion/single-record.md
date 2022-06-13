@@ -57,7 +57,7 @@ import (
 )
 
 func main() {
-    data = `{
+    data := `{
         "Athlete": "DEMTSCHENKO, Albert",
         "City": "Turin",
         "Country": "RUS",
