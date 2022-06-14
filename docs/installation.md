@@ -97,7 +97,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
 === "Kubernetes - Juju"
 
-    You can use [Juju](https://juju.is] to deploy Zinc on any CNCF-conformant Kubnernetes. 
+    You can use [Juju](https://juju.is) to deploy Zinc on any CNCF-conformant Kubnernetes. 
     
     To get started, ensure that you have bootstrapped Juju on Kubernetes. You can find how-to guides for various Kubernetes platforms in the Juju docs ([MicroK8s](https://juju.is/docs/olm/microk8s) / [EKS](https://juju.is/docs/olm/amazon-elastic-kubernetes-service-(amazon-eks)) / [AKS](https://juju.is/docs/olm/azure-kubernetes-service-(azure-aks)) / [GKE](https://juju.is/docs/olm/google-kubernetes-engine-(gke))).
 
