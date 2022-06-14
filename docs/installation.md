@@ -95,3 +95,32 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
 
+=== "Kubernetes - Juju"
+
+    You can use [Juju](https://juju.is] to deploy Zinc on any CNCF-conformant Kubnernetes. 
+    
+    To get started, ensure that you have bootstrapped Juju on Kubernetes. You can find how-to guides for various Kubernetes platforms in the Juju docs ([MicroK8s](https://juju.is/docs/olm/microk8s) / [EKS](https://juju.is/docs/olm/amazon-elastic-kubernetes-service-(amazon-eks)) / [AKS](https://juju.is/docs/olm/azure-kubernetes-service-(azure-aks)) / [GKE](https://juju.is/docs/olm/google-kubernetes-engine-(gke))).
+
+    Create a new model:
+    
+        juju add-model zinc
+    
+    Deploy the charm:
+
+        juju deploy --trust zinc-k8s 
+
+    Check the status - wait until charm shows `active/idle`:
+
+        juju status --watch 1s --color
+
+    Fetch the auto-generated login password:
+    
+        juju run-action --wait zinc-k8s/0 get-admin-password
+
+    If you're deployed on MicroK8s, you can use the address shown in `juju status` to reach Zinc directly. For other Kubernetes platforms, you can access Zinc using a port-forward:
+    
+        kubectl -n zinc port-forward svc/zinc-k8s 4080:4080
+    
+    Point your browser to [http://localhost:4080](http://localhost:4080) and login!
+    
+    Now Zinc is deployed, you can also deploy the [Canonical Observability Stack](https://charmhub.io/topics/canonical-observability-stack) and create relations to Zinc to enable automatic scraping with Prometheus, Grafana dashboard integration and log scraping with Loki.
