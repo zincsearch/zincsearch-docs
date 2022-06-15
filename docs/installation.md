@@ -123,4 +123,4 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
     
     Point your browser to [http://localhost:4080](http://localhost:4080) and login!
     
-    Now Zinc is deployed, you can also deploy the [Canonical Observability Stack](https://charmhub.io/topics/canonical-observability-stack) and create relations to Zinc to enable automatic scraping with Prometheus, Grafana dashboard integration and log scraping with Loki.
+    Now Zinc is deployed, you can also deploy the [Canonical Observability Stack](https://charmhub.io/topics/canonical-observability-stack) and create relations to Zinc to enable automatic scraping with Prometheus, and Grafana dashboard integration.
