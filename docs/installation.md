@@ -54,11 +54,15 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
 
-    **Error pulling image if you have AWS CLI installed?**
+    **Getting Error?**
 
-    If you have AWS CLI installed and get login error then run below command:
+    Error - 1 : If you have AWS CLI installed and get login error then run below command:
 
         aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
+    
+    Error - 2  : If you get error around permission denied when running docker command then you may want to fix permissions of data folder. zinc executable in docker runs as non-root and would need permissions to write to data folder. You can run below command to fix it:
+
+        chmod a+rwx ./data
 
 
 === "Kubernetes - Manifest"
