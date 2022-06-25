@@ -215,3 +215,27 @@ Or use epoch_millis:
 Actually `@timestamp` is a [date](#date) field, just named `@timestamp`.
 
 After defined with mapping, you can use your own time format value for `@timestamp` field.
+
+Just add the field in you document, like this:
+
+e.g. 
+POST http://localhost:4080/api/myindex/_doc
+
+Request Body: 
+
+```json
+{
+    "name": "Prabhat Sharma",
+	"@timestamp": 1656155409850
+}
+```
+
+Or use bulk API:
+
+e.g. 
+POST /api/_bulk
+
+```json
+{ "index" : { "_index" : "myindex" } } 
+{ "name": "Prabhat Sharma", "@timestamp": 1656155409850 }
+```
