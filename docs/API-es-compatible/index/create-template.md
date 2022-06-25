@@ -9,7 +9,7 @@ Update `PUT /es/_index_template/:target`
 
 Template is a template of index match the `index_patterns`.
 
-When create an index, we will check template by `index_patterns` if match index name, if matched, we will use the settings and mappings prefined in template for the index.
+When create an index, we will check template by `index_patterns` match index name, if matched, we will use the settings and mappings predefined in template for the index.
 
 
 ## Request
