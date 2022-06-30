@@ -22,7 +22,7 @@ phases:
       - GIT_COMMIT_HASH="$(git rev-parse --short HEAD)"
       - mkdocs build
       - aws s3 cp ./site s3://zincdocs-dev/$GIT_COMMIT_HASH/ --recursive
-      - echo "Deployed to https://zincdocs-dev/$GIT_COMMIT_HASH/"
+      - echo "Deployed to http://zincdocs-dev.s3-website-us-west-2.amazonaws.com/$GIT_COMMIT_HASH/"
       
       # Build binary and container images using goreleaser
       
