@@ -1,6 +1,6 @@
 nav:
     - Welcome to ZincSearch: index.md
-    - Release Notes: release-notes.md
+    - Releases: releases.md
     - Getting started: getting-started.md
     - Screenshots: screenshots.md
     - Installation: installation.md

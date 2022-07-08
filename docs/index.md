@@ -1,6 +1,5 @@
 # Welcome to ZincSearch
 
-ZincSearch was first released on Dec 3rd, 2021.
 
 ## Why ZincSearch
 
