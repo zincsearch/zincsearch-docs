@@ -33,6 +33,8 @@ Make sure that you are sending the requests over HTTPS.
     1. [Update](document/update)
     1. [Delete](document/delete)
     1. [Bulk](document/bulk)
+    1. [Bulk V2](document/bulkv2)
+    1. [Multi](document/multi)
 1. [Search](search/index)
     1. [Search](search/search)
     1. [Search Types](search/types)

@@ -4,3 +4,5 @@ nav:
     - Update: update.md
     - Delete: delete.md
     - Bulk: bulk.md
+    - BulkV2: bulkv2.md
+    - Multi: multi.md

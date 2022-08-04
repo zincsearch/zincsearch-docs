@@ -17,6 +17,7 @@ Request Body:
 {
 	"name": "article",
 	"storage_type": "disk",
+	"shard_num": 1,
 	"mappings": {
 		"properties": {
 			"title": {
@@ -55,6 +56,7 @@ OR use `s3` to storage data:
 {
 	"name": "article",
 	"storage_type": "s3",
+	"shard_num": 3,
 	"mappings": {
 		"properties": {
 			"title": {
@@ -93,6 +95,7 @@ OR use `minIO` to storage data:
 {
 	"name": "article",
 	"storage_type": "minio",
+	"shard_num": 3,
 	"mappings": {
 		"properties": {
 			"title": {
@@ -151,3 +154,23 @@ You can set the environments to config minIO.
 | ZINC_MINIO_ACCESS_KEY_ID      | None          | No            | MinIO ACCESS_KEY_ID                                                       |
 | ZINC_MINIO_SECRET_ACCESS_KEY  | None          | No            | MinIO SECRET_ACCESS_KEY                                                   |
 | ZINC_MINIO_BUCKET             | None          | No            | MinIO bucket for index storage                                            |
+
+## Use Shards
+
+We added `shard_num` option when create index, if you not set this field, it has default value. Default shards num is `3`.
+
+You can change the default value by environment `ZINC_SHARD_NUM`
+
+You can set `shard_num` to `1` to keep it simply, if you don't have very much documents or performance issue.
+
+### What is shards?
+
+Shards is a solution to improve performance, it let us can concurrent writes and reads.
+
+When create index we will set a shardsNum, default is 3.
+
+When write documents, we will use docID do HASHING then distribute documents to different shard.
+
+A shard is a real backend index, it will accept data and write to storage.
+
+With shards, it also give us the ability to concurrently reads, as result we also improve query speed.
