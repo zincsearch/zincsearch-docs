@@ -8,3 +8,4 @@ nav:
     - Update Settings: update-settings.md
     - Analyze: analyze.md
     - Refresh Data: refresh-data.md
+    - Check Exists: exists.md
