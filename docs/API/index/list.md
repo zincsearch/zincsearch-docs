@@ -11,7 +11,7 @@ Get the list of existing indexes
 e.g. 
 GET http://localhost:4080/api/index?page_num=1&page_size=20&sort_by=name&desc=false&name=f
 
-### 请求参数
+### Request params
 
 | Param     | Position    | Type    | Required | Explain                                                                                              |
 |-----------|-------------|---------|----------|------------------------------------------------------------------------------------------------------|
@@ -58,14 +58,6 @@ GET http://localhost:4080/api/index?page_num=1&page_size=20&sort_by=name&desc=fa
             "aggregatable": false,
             "highlightable": false
           },
-          "next_retry_time": {
-            "type": "text",
-            "index": true,
-            "store": false,
-            "sortable": false,
-            "aggregatable": false,
-            "highlightable": false
-          },
           "retry_times": {
             "type": "numeric",
             "index": true,
@@ -100,10 +92,12 @@ Return the list of index name
 
 GET /api/index_name
 
+## Request
+
 e.g.
 GET http://localhost:4080/api/index_name?name=f
 
-### 请求参数
+### Request params
 
 | Param | Position | Type   | Required | Explain             |
 |-------|----------|--------|----------|---------------------|
