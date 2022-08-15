@@ -201,7 +201,7 @@ GET http://localhost:4080/api/index?page_num=1&page_size=20&sort_by=name&desc=fa
 
 ```
 
-## GET List index Name
+# GET List index Name
 
 GET /api/index_name
 
@@ -224,3 +224,5 @@ GET http://localhost:4080/api/index_name?name=f
   "fluent.warn-20220803"
 ]
 ```
+
+>Return 30 items at most
