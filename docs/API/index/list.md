@@ -13,13 +13,13 @@ GET http://localhost:4080/api/index?page_num=1&page_size=20&sort_by=name&desc=fa
 
 ### 请求参数
 
-| Param     | Position    | Type    | Required | Explain                                     |
-|-----------|-------------|---------|----------|---------------------------------------------|
-| page_num  | query       | integer | false    | page num from 1                             |
-| page_size | query       | integer | false    | if page size is empty or 0, then return all |
-| sort_by   | query       | string  | false    | sort field, like "name"                     |
-| desc      | query       | string  | false    | Sort in descending order                    |
-| name      | query       | string  | false    | Fuzzy query by name                         |
+| Param     | Position    | Type    | Required | Explain                                                                                              |
+|-----------|-------------|---------|----------|------------------------------------------------------------------------------------------------------|
+| page_num  | query       | integer | false    | page num from 1                                                                                      |
+| page_size | query       | integer | false    | if page size is empty or 0, then return all                                                          |
+| sort_by   | query       | string  | false    | sort field, the default is "name", Sortable fields: name,doc_num,shard_num,storage_size,storage_type |
+| desc      | query       | string  | false    | Sort in descending order                                                                             |
+| name      | query       | string  | false    | Fuzzy query by name                                                                                  |
 
 
 ## Response
