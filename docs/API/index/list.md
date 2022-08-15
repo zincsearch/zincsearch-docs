@@ -202,6 +202,7 @@ GET http://localhost:4080/api/index?page_num=1&page_size=20&sort_by=name&desc=fa
 ```
 
 # GET List index Name
+Return the list of index name
 
 GET /api/index_name
 
