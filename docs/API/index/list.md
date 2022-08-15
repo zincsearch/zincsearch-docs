@@ -30,17 +30,10 @@ GET http://localhost:4080/api/index?page_num=1&page_size=20&sort_by=name&desc=fa
     {
       "name": "fluent.warn-20220803",
       "storage_type": "disk",
+      "shard_num": 3,
       "settings": {},
       "mappings": {
         "properties": {
-          "@log_name": {
-            "type": "text",
-            "index": true,
-            "store": false,
-            "sortable": false,
-            "aggregatable": false,
-            "highlightable": false
-          },
           "@timestamp": {
             "type": "date",
             "index": true,
@@ -65,30 +58,6 @@ GET http://localhost:4080/api/index?page_num=1&page_size=20&sort_by=name&desc=fa
             "aggregatable": false,
             "highlightable": false
           },
-          "chunk_id": {
-            "type": "text",
-            "index": true,
-            "store": false,
-            "sortable": false,
-            "aggregatable": false,
-            "highlightable": false
-          },
-          "error": {
-            "type": "text",
-            "index": true,
-            "store": false,
-            "sortable": false,
-            "aggregatable": false,
-            "highlightable": false
-          },
-          "message": {
-            "type": "text",
-            "index": true,
-            "store": false,
-            "sortable": false,
-            "aggregatable": false,
-            "highlightable": false
-          },
           "next_retry_time": {
             "type": "text",
             "index": true,
@@ -104,81 +73,6 @@ GET http://localhost:4080/api/index?page_num=1&page_size=20&sort_by=name&desc=fa
             "sortable": true,
             "aggregatable": true,
             "highlightable": false
-          }
-        }
-      },
-      "shard_num": 3,
-      "shards": {
-        "1QQO6hBnSOk": {
-          "id": "1QQO6hBnSOk",
-          "node_id": "",
-          "shard_num": 1,
-          "shards": [
-            {
-              "id": 0,
-              "stats": {
-                "doc_time_min": 1659518099160961024,
-                "doc_time_max": 1659518114106690560,
-                "doc_num": 3,
-                "storage_size": 23672,
-                "wal_size": 0
-              }
-            }
-          ],
-          "stats": {
-            "doc_time_min": 1659518099160961024,
-            "doc_time_max": 1659518114106690560,
-            "doc_num": 3,
-            "storage_size": 23672,
-            "wal_size": 0
-          }
-        },
-        "1QQO6hBnTSo": {
-          "id": "1QQO6hBnTSo",
-          "node_id": "",
-          "shard_num": 1,
-          "shards": [
-            {
-              "id": 0,
-              "stats": {
-                "doc_time_min": 1659518100172261888,
-                "doc_time_max": 1659518161360404480,
-                "doc_num": 3,
-                "storage_size": 22431,
-                "wal_size": 0
-              }
-            }
-          ],
-          "stats": {
-            "doc_time_min": 1659518100172261888,
-            "doc_time_max": 1659518161360404480,
-            "doc_num": 3,
-            "storage_size": 22431,
-            "wal_size": 0
-          }
-        },
-        "1QQO6hBnUWs": {
-          "id": "1QQO6hBnUWs",
-          "node_id": "",
-          "shard_num": 1,
-          "shards": [
-            {
-              "id": 0,
-              "stats": {
-                "doc_time_min": 1659518101951646208,
-                "doc_time_max": 1659518101951646208,
-                "doc_num": 1,
-                "storage_size": 15411,
-                "wal_size": 0
-              }
-            }
-          ],
-          "stats": {
-            "doc_time_min": 1659518101951646208,
-            "doc_time_max": 1659518101951646208,
-            "doc_num": 1,
-            "storage_size": 15411,
-            "wal_size": 0
           }
         }
       },
