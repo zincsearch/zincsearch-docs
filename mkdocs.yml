@@ -33,6 +33,8 @@ theme:
   custom_dir: overrides
   features:
     # - navigation.expand
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.instant
     - navigation.tracking
   palette:
