@@ -25,7 +25,7 @@ An inverted index is a database index storing a mapping from content, such as wo
 
 e.g.
 
-An invertd index for a set of documents might look like
+An inverted index for a set of documents might look like
 
 ```json
 {"id":1, "message: "Prabhat Sharma is a cool guy to hang with"}
