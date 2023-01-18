@@ -1,0 +1,7 @@
+nav:
+    - Stream: stream
+    - Ingestion: ingestion
+    - Search: search
+    - Transform: transform
+    - User: user
+    - Metrics: metrics.md

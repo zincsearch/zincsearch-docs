@@ -1,0 +1,13 @@
+nav:
+    - Welcome: index.md
+    - Getting started: getting-started.md
+    - Screenshots: screenshots.md
+    - Quickstart: quickstart.md
+    - Architecture: architecture.md
+    - Components: components.md
+    - Environment Variables: environment-variables.md
+    - Storage: storage.md
+    - Manual Guide: manual-guide
+    - Operations Guide: op-guide
+    - API Reference: api
+    - Ingestion: ingestion
