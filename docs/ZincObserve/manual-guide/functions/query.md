@@ -12,4 +12,4 @@ While defining query function, one has to :
 
 
 
-![Query Functions](./images/Query_function.jpg)
+![Query Functions](../../images/Query_function.jpg)

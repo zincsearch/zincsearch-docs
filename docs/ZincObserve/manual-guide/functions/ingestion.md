@@ -16,5 +16,5 @@ While defining ingest time function, one has to :
 
 During ingestion function 1 will be applied to 'demo' as it has lower order 1 , as compared to function 2 with order 2
 
-![Ingest Functions](./images/Ingest_time_function.jpg)
+![Ingest Functions](../../images/Ingest_time_function.jpg)
 
