@@ -4,7 +4,7 @@
 
 Query function is defined using [lua script](https://www.lua.org/) & act on specified input columns (fields) of stream being queried.
 
-While defining ingest time function, one has to :
+While defining query function, one has to :
 
 1. make sure toggle 'Is Ingest Time Function?' is turned ** Off ** 
 1. specify function name
