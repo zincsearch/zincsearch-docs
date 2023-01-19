@@ -1,3 +1,4 @@
 nav:
+    - Concepts: concepts.md
     - Log Search: log-search.md
     - Functions: functions
