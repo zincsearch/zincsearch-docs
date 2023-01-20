@@ -1,14 +1,13 @@
 # Quickstart
 
-
 We will do 2 things as part of the quickstart:
 
-1. Install ZincSearch
+1. Install ZincObserve
 1. Load sample data and perform search operations on it.
 
 ## Installation
 
-You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment variables when you start ZincSearch for the first time. You don't need them on subsequent runs of ZincSearch.
+You would need ZIOX_USER_NAME and ZIOX_USER_PASSWORD environment variables when you start ZincObserve for the first time. You don't need them on subsequent runs of ZincObserve.
 
 
 
@@ -17,13 +16,13 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
     Binaries can be downloaded from [releases](https://github.com/zinclabs/zinc/releases) page for appropriate platform.
 
 
-        set ZINC_FIRST_ADMIN_USER=admin
-        set ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123
+        set ZIOX_USER_NAME=admin
+        set ZIOX_USER_PASSWORD=Complexpass#123
         mkdir data
         zinc.exe
 
 
-    Now point your browser to [http://localhost:4080](http://localhost:4080) and login
+    Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
 === "MacOS - Homebrew"
 
@@ -32,9 +31,9 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
         brew tap zinclabs/tap
         brew install zinclabs/tap/zinc
         mkdir data
-        ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 zinc 
+        ZIOX_USER_NAME=admin ZIOX_USER_PASSWORD=Complexpass#123 zinc 
 
-    Now point your browser to [http://localhost:4080](http://localhost:4080) and login
+    Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
 === "MacOS/Linux Binaries"
     Binaries can be downloaded from [releases](https://github.com/zinclabs/zinc/releases) page for appropriate platform.
@@ -42,10 +41,10 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
     Create a data folder that will store the data
 
         mkdir data
-        ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 ./zinc 
+        ZIOX_USER_NAME=admin ZIOX_USER_PASSWORD=Complexpass#123 ./zinc 
 
 
-    Now point your browser to [http://localhost:4080](http://localhost:4080) and login
+    Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
 === "Docker"
 
@@ -55,12 +54,12 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
     Docker images are available at [https://gallery.ecr.aws/zinclabs/zinc](https://gallery.ecr.aws/zinclabs/zinc)
 
         mkdir data
-        docker run -v /full/path/of/data:/data -e ZINC_DATA_PATH="/data" -p 4080:4080 \
-            -e ZINC_FIRST_ADMIN_USER=admin -e ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 \
+        docker run -v /full/path/of/data:/data -e ZIOX_DATA_DIR="/data" -p 5080:5080 \
+            -e ZIOX_USER_NAME=admin -e ZIOX_USER_PASSWORD=Complexpass#123 \
             --name zinc public.ecr.aws/zinclabs/zinc:latest
 
 
-    Now point your browser to [http://localhost:4080](http://localhost:4080) and login
+    Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
     **Error pulling image if you have AWS CLI installed?**
 
@@ -81,9 +80,9 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
     
     Expose the zinc service by port-forwarding:
 
-        kubectl -n zinc port-forward svc/z 4080:4080
+        kubectl -n zinc port-forward svc/z 5080:5080
 
-    Now point your browser to [http://localhost:4080](http://localhost:4080) and login
+    Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
 === "Kubernetes - Helm"
 
@@ -97,11 +96,11 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
         helm install zinc helm/zinc -n zinc
 
-    ZincSearch can be made available with an ingress or port-forward:
+    ZincObserve can be made available with an ingress or port-forward:
     
-        kubectl -n zinc port-forward svc/zinc 4080:4080
+        kubectl -n zinc port-forward svc/zinc 5080:5080
 
-    Now point your browser to [http://localhost:4080](http://localhost:4080) and login
+    Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
 
 
@@ -113,13 +112,13 @@ We will use bulk API to load sample data
 ```shell
 curl -L https://github.com/zinclabs/zinc/releases/download/v0.1.1/olympics.ndjson.gz -o olympics.ndjson.gz
 gzip -d  olympics.ndjson.gz 
-curl http://localhost:4080/api/_bulk -i -u admin:Complexpass#123  --data-binary "@olympics.ndjson"
+curl http://localhost:5080/api/default/_bulk -i -u admin:Complexpass#123  --data-binary "@olympics.ndjson"
 ```
 
 
 ## Search for data
 
-Point your browser to [http://localhost:4080](http://localhost:4080) and login
+Point your browser to [http://localhost:5080](http://localhost:5080) and login
 
 1. Select the index olympics from drop down in the left
 1. Search for the word Gold in search bar and presse enter.

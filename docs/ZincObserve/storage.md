@@ -1,5 +1,5 @@
 
-There are 2 primary items that need to be stored in ZincSearch. 
+There are 2 primary items that need to be stored in ZincObserve. 
 
 1. Indexes
 1. Metadata of indexes
@@ -28,7 +28,7 @@ Request Body:
 }
 ```
 
-* Make AWS IAM credentials available to ZincSearch by any supported mechanism. ZincSearch uses AWS Go SDK which looks for credentials through:
+* Make AWS IAM credentials available to ZincObserve by any supported mechanism. ZincObserve uses AWS Go SDK which looks for credentials through:
 
     - Environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY (Not recommended due to security concerns)
     - Your aws CLI credentials stored in ~/.aws/credentials
@@ -38,7 +38,7 @@ Request Body:
 
 ## MinIO
 
-ZincSearch can use MinIO for storing indexes. Just like S3 storage, for using MinIO the index needs to be precreated.
+ZincObserve can use MinIO for storing indexes. Just like S3 storage, for using MinIO the index needs to be precreated.
 
 * Precreate the index
 e.g. 

@@ -1,10 +1,11 @@
 # Getting Started
-Check the below video for a quick demo/getting started of ZincSearch.
 
-Check [installation](/installation) for docs on how to install or [quickstart](./quickstart.md) to experience the power and simplicity of ZincSearch. 
+Check the below video for a quick demo/getting started of ZincObserve.
+
+Check [quickstart](./quickstart.md) to experience the power and simplicity of ZincObserve. 
 
 You could also watch the below demo.
 
 ## Youtube demo
 
-[![ZincSearch Youtube](./images/zinc-youtube.jpg)](https://www.youtube.com/watch?v=niaWr5bsxpU)
+[![ZincObserve Youtube](./images/zinc-youtube.jpg)](https://www.youtube.com/watch?v=niaWr5bsxpU)

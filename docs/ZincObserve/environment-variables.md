@@ -1,33 +1,88 @@
 
 We prefer environment variables for configuration as opposed to configuration files or command line options as its easier to provide environment variables in a containerized environment as well as local setup.
 
+## common
 
 | Environment Variable          | Default Value | Mandatory     | Description                                                               |
 | ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
-| ZINC_FIRST_ADMIN_USER         | -             | On first run  | First admin user of ZincSearch. Not required after first run of ZincSearch.  |
-| ZINC_FIRST_ADMIN_PASSWORD     | -             | On first run  | Password for first admin user                                             |
-| ZINC_SERVER_PORT              | 4080          | No            | zinc server listen http port                                              |
-| GIN_MODE                      | -             | No            | if the value is release then gin will run in production mode.             |
-| ZINC_DATA_PATH                | ./data        | No            | Defaults to "data" folder in current working directory if not provided.   |
-| ZINC_ICE_COMPRESSOR           | s2            | No            | Algorithm of compress segment file, default is: s2, supports: snappy, s2, zstd |
-| ZINC_S3_BUCKET                | -             | No            | S3 bucket to be used for index storage                                    |
-| ZINC_MINIO_ENDPOINT           | -             | No            | MinIO server endpoint. e.g localhost:9000 . See no http                   |
-| ZINC_MINIO_ACCESS_KEY_ID      | -             | No            | MinIO ACCESS_KEY_ID                                                       |
-| ZINC_MINIO_SECRET_ACCESS_KEY  | -             | No            | MinIO SECRET_ACCESS_KEY                                                   |
-| ZINC_MINIO_BUCKET             | -             | No            | MinIO bucket for index storage                                            |
-| ZINC_MAX_RESULTS              | 100           | No            | Maximum results to be returned from server. Defaults to 1000              |
-| ZINC_BATCH_SIZE               | 1024          | No            | Internal batch size for batching records when bulk indexing is done.      |
-| ZINC_AGGREGATION_TERMS_SIZE   | 1000          | No            | terms aggregation returns max bucket size                                 |
-| ZINC_SHARD_MAX_SIZE           | 1073741824    | No            | We use multiple backend indexes for one big index, limit one shard size default is 1GB |
-| ZINC_TELEMETRY                | true          | No            | Send anonymous telemetry info for improving ZincSearch. enabled or disabled.  |
-| ZINC_SENTRY                   | true          | No            | Send anonymous error reports for debugging                                |
-| ZINC_SENTRY_DSN               | -             | No            | Entry DNS, default is: https://15b6d9b8be824b44896f32b0234c32b7@o1218932.ingest.sentry.io/6360942 |
-| ZINC_PROMETHEUS_ENABLE        | false         | No            | Enables prometheus metrics on /metrics endpoint                           |
-| ZINC_PLUGIN_ES_VERSION        | -             | No            | es version, for compatible elasticsearch                                  |
-| ZINC_PLUGIN_GSE_ENABLE        | false         | No            | plugin, GSE support Chinese analysis                                      |
-| ZINC_PLUGIN_GSE_DICT_EMBED    | small         | No            | plugin, GSE which size dict need to load, `small` or `big`                |
-| ZINC_PLUGIN_GSE_DICT_PATH     | ./plugins/gse/dict     | No   | plugin, GSE where to load user custom dictionary                          |
-| ZINC_PROFILER                 | false         | No            | Default is false, we use pyroscope server to profiling                    |
-| ZINC_PROFILER_SERVER          | -             | No            | default pyroscope server is: https://pyroscope.dev.zincsearch.com         |
-| ZINC_PROFILER_API_KEY         | -             | No            | pyroscope server api key                                                  |
-| ZINC_PROFILER_FRIENDLY_PROFILE_ID | -         | No            | pyroscope identifier id, example: zinc-alex                               |
+| ZIOX_USER_NAME         | -             | On first run  | First admin user. Not required after first run of ZincObserve.  |
+| ZIOX_USER_PASSWORD     | -             | On first run  | Password for first admin user |
+| ZIOX_LOCAL_MODE        | true          | No            | true is local mode, just support single node, false is cluster mode, support multiple node role and nodes. for local mode you also need config `sled db`, for cluster mode you also need config `redis`. |
+| ZIOX_LOCAL_MODE_STORAGE | disk         | No            | local mode default use local disk as stoarge, but support s3 in local mode. and not support local disk in cluster mode. |
+| ZIOX_NODE_ROLE         | all           | No            | support: all, ingester, quierier, compactor, router, alter_manager |
+| ZIOX_HTTP_PORT         | 5080          | No            | zinc server listen http port |
+| ZIOX_GRPC_PORT         | 5081          | No            | zinc server listen grpc port |
+| ZIOX_GRPC_TIMEOUT      | 600           | No            | grpc query timeout, default is 500 seconds | 
+| ZIOX_GRPC_ORG_HEADER_KEY | zinc-org-id | No            | TODO |
+| ZIOX_ROUTE_TIMEOUT     | 600           | No            | timeout for router node.             |
+| ZIOX_INSTANCE_NAME     | -             | No            | in the cluster mode, each node has a instance name, default is instance hostname. |
+| ZINC_DATA_DIR                 | ./data        | No            | Defaults to "data" folder in current working directory if not provided.   |
+| ZIOX_DATA_WAL_DIR             | ./data/wal/   | No            | local WAL data directory. |
+| ZIOX_DATA_STREAM_DIR          | ./data/stream/   | No         | local stream data storage directory. |
+| ZIOX_TIME_STAMP_COL           | _timestamp    | No            | for each log line, we add a timestamp for it, used to query with time range. |
+| ZIOX_WIDENING_SCHEMA_EVOLUTION | false        | No            | default we can add new column but no support change data type of exists files. |
+| ZIOX_FEATURE_PER_THREAD_LOCK  | false         | No            | default we shared a lock for each thread for WAL, enable this option can create per lock for per thread, it can improve ingest performance, but will create more small data files, but at the finally we will use a compactor to merge it to big files. |
+| ZIOX_FEATURE_FULLTEXT_ON_ALL_FIELDS | false   | No            | default full text search just on `log`, `message`, `data` or use selected fileds. enable this option will do full text search on each field. |
+| ZIOX_UI_ENABLED               | true          | No            | default we enable emebed UI, you can disable it. |
+| ZIOX_METRICS_DEDUP_ENABLED    | true          | No            | TODO |
+| ZIOX_TRACING_ENABLED          | false         | No            | enable it will send tracing information to remote trace server. |
+| OTEL_OTLP_HTTP_ENDPOINT       | -             | No            | the remote trace server endpoint. |
+| ZIOX_TRACING_HEADER_KEY       | Authorization | No            | the remote trace server endpoint authentication header key. |
+| ZIOX_TRACING_HEADER_VALUE     | -             | No            | the remote trace server endpoint authentication header value. |
+| ZIOX_MAX_FILE_SIZE_ON_DISK    | 10            | No            | max WAL file size before move to storage. default is 10MB, unit: MB |
+| ZIOX_MAX_FILE_RETENTION_TIME  | 600           | No            | the max WAL file retention ttl, default is 600s, unit: second |
+| ZIOX_FILE_PUSH_INTERVAL       | 10            | No            | the interval of job to move WAL to storage. default 10s, unit: second |
+| ZIOX_FILE_MOVE_THREAD_NUM     | -             | No            | the thread num of job to move WAL to storage, default equal to cpu_num. |
+| ZIOX_QUERY_THREAD_NUM         | -             | No            | the thread num of search to query data files. |
+| ZIOX_TS_ALLOWED_UPTO          | 5             | No            | just allow ingest `now - 5 hours` data. |
+| ZIOX_METRICS_LEADER_PUSH_INTERVAL | -         | No            | TODO |
+| ZIOX_METRICS_LEADER_ELECTION_INTERVAL | -     | No            | TODO |
+| ZIOX_COMPACT_ENABLED          | true          | No            | enable compact for small files. |
+| ZIOX_COMPACT_INTERVAL         | 600           | No            | the interval of job to compact small files into big files. default is 600s, unit: second |
+| ZIOX_COMPACT_MAX_FILE_SIZE    | 256           | No            | the max file size of single file. after compact single file will not over this value. default is 256MB, unit: MB |
+| ZIOX_MEMORY_CACHE_ENABLED     | true          | No            | enable memory cache for storage files. default is true, we will cache the latest files for accelerate query. |
+| ZIOX_MEMORY_CACHE_CACHE_LATEST_FILES | false  | No            | default we just cache the files which queried, enable this option, we will cache the latest files, we will cache the file when a new file generate. this can accelerate the query for latest 24 hours. Of course, the memory cache has max size limit, maybe just can cache the latest 2 hours files, it depends on the max cache size. |
+| ZIOX_MEMORY_CACHE_MAX_SIZE    | -             | No            | default we use the 50% of the total memory as memory cache. you can set it. unit: MB |
+| ZIOX_MEMORY_CACHE_RELEASE_SIZE | -            | No            | default we will drop 1% files in memory cache once time when the cache is full. you can set it. unit: MB |
+| RUST_LOG                      | info          | No            | log level, default is info, support: error, warn, info, debug, trace |
+
+
+> For local mode, we use sled db as the metadata.
+> For cluster mode, we use etcd as the metadata. we will support redis, postgreSQL for cluster mode.
+
+## Etcd
+
+| Environment Variable          | Default Value | Mandatory     | Description                                                               |
+| ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
+| ZIOX_ETCD_ADDR                | localhost:2379 | No           | default etcd endpoint |
+| ZIOX_ETCD_PREFIX              | /zinc/oxide/  | No            | etcd keys prefix      |
+| ZIOX_ETCD_CONNECT_TIMEOUT     | 2             | No            | endpoint connect timeout, unit: second |
+| ZIOX_ETCD_COMMAND_TIMEOUT     | 5             | No            | command execute timeout, unit: second |
+| ZIOX_ETCD_LOCK_WAIT_TIMEOUT   | 60            | No            | max ttl for a lock, the lock will report timeout over this limit. |
+| ZIOX_ETCD_LOAD_PAGE_SIZE      | 10000         | No            | we will use pagenation for load data from etcd. |
+| ZIOX_ETCD_USER                | -             | No            | authentication, username, refer: https://etcd.io/docs/v3.5/op-guide/authentication/rbac/ |
+| ZIOX_ETCD_PASSWORD            | -             | No            | authentication, password |
+| ZIOX_ETCD_CLIENT_CERT_AUTH    | false         | No            | authentication with TLS, default is disabled, refer: https://etcd.io/docs/v3.5/op-guide/security/ |
+| ZIOX_ETCD_TRUSTED_CA_FILE     | -             | No            | authentication with TLS, ca file path |
+| ZIOX_ETCD_CERT_FILE           | -             | No            | authentication with TLS, cert file path |
+| ZIOX_ETCD_KEY_FILE            | -             | No            | authentication with TLS, key file path |
+| ZIOX_ETCD_DOMAIN_NAME         | -             | No            | authentication with TLS, cert domain name, default is empty, we will use the domain in the cert |
+
+
+## sled db
+
+| Environment Variable          | Default Value | Mandatory     | Description                                                               |
+| ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
+| ZIOX_SLED_DATA_DIR            | ./data/db/    | No            | sled db data directory. |
+| ZIOX_SLED_PREFIX              | /zinc/oxide/  | No            | sled db keys prefix . |
+
+
+## S3
+
+| Environment Variable          | Default Value | Mandatory     | Description                                                               |
+| ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
+| ZIOX_S3_SERVER_URL            | -             | No            | default for aws s3 you can leave it empty, but for `minIO`, `gcs` you should config it. |
+| ZIOX_S3_REGION_NAME           | -             | No            | region name |
+| ZIOX_S3_ACCESS_KEY            | -             | No            | access key |
+| ZIOX_S3_SECRET_KEY            | -             | No            | secret key |
+| ZIOX_S3_BUCKET_NAME           | -             | No            | bucket name |
