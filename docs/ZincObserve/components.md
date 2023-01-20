@@ -1,1 +1,9 @@
-component
+## Ingester
+
+## Querier
+
+## Compactor
+
+## Router
+
+## AlertManager
