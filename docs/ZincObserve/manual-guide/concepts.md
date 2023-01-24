@@ -25,4 +25,3 @@ A user in zinc observe can have role admin or member.
 ## Functions
 
 Functions in zinc observe can used during ingestion & query to aid advanced capabilities like enrichment, redaction, log reduction, compliance, etc.A function is defined in lua script.
-
