@@ -15,7 +15,9 @@ Based on function applicability , functions can be categorized as :
 
 To navigate to functions in zinc observe , select preferred organization using organization selection control, then click on ![Functions](../../images/functions.jpg) menu , which will take one to  functions list screen. The screen lists all (ingest time & query type) the functions for selected organization.  
 
+<kbd>
 ![Functions](../../images/functions_list.jpg)
+</kbd>
 
 List screen details :
 

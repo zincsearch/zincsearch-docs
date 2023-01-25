@@ -9,6 +9,8 @@ A stream in zinc observe is sequence of events(logs/metrics/traces) that share t
 ## Data Ingestion
 TBD
 
+### Data Partitioning
+
 ## Logs
 Log is a type of stream, which caters to log events from applications.
 
@@ -25,3 +27,10 @@ A user in zinc observe can have role admin or member.
 ## Functions
 
 Functions in zinc observe can used during ingestion & query to aid advanced capabilities like enrichment, redaction, log reduction, compliance, etc.A function is defined in lua script.
+
+## Timestamp
+
+
+## Searching
+### Full text search
+

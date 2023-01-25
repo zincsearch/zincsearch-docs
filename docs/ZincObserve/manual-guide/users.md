@@ -8,7 +8,9 @@ A user will always access all the entities & associated data in context of an or
 To navigate to users in zinc observe , select preferred organization using organization selection control, then click on ![Users](../../images/users_menu.jpg) menu , which will take one to users list screen. The screen lists all users for selected organization.  
 
 
+<kbd>
 ![Users](../../images/users_list.jpg)
+</kbd>
 
 Users screen details :
 
@@ -26,4 +28,6 @@ Users screen details :
 
 To update user click on update user control on users page , only role of the user can be changed to admin or member.
 
+<kbd>
 ![Update User](../../images/update_user.jpg)
+</kbd>

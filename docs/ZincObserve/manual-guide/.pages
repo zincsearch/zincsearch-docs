@@ -3,4 +3,5 @@ nav:
     - Log Search: log-search.md
     - Organizations: organizations.md
     - Users: users.md
+    - Streams: streams.md
     - Functions: functions

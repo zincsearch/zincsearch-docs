@@ -11,5 +11,6 @@ While defining query function, one has to :
 1. provide script defining behaviour of function with appropriate number of parameters as input, as mentioned above during query time the columns/fields of stream should be used as input to the function being defined.
 
 
-
+<kbd>
 ![Query Functions](../../images/Query_function.jpg)
+</kbd>
