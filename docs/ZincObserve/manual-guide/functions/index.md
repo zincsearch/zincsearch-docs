@@ -19,7 +19,7 @@ To navigate to functions in zinc observe , select preferred organization using o
 
 List screen details :
 
-1. Search in listed function
+1. Search in listed functions
 1. Add new function
 1. Lua script for existing function
 1. Name of stream if function is ingest time function

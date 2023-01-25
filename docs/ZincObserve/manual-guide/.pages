@@ -1,4 +1,6 @@
 nav:
     - Concepts: concepts.md
     - Log Search: log-search.md
+    - Organizations: organizations.md
+    - Users: users.md
     - Functions: functions
