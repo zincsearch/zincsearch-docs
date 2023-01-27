@@ -1,4 +1,4 @@
 # API Index - Document
 
 1. [Search](search)
-1. [SQL](sql)
+1. [Functions](functions)
