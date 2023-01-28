@@ -40,7 +40,7 @@ Description
 
 ## Response
 
-```
+```json
 {
 	"took": 155,
 	"hits": [
@@ -122,6 +122,18 @@ Description
 | aggs.{name} | array    | -             | records for the aggregation, the fields are selected by your aggregation SQL. |
 
 
+## SQL Syntax
+
+Please refer to [PostgreSQL](https://www.postgresql.org/docs/current/sql-syntax.html) for SQL Syntax.
+
+Something need highlighted:
+
+- We have a build-in time field, `_timestamp` you can use it to do time range filter.
+- Field name can not start with `@`.
+- Field name can use double quote or without quote.
+- Field integer value without quote.
+- Field string value must use single quote.
+
 ## Limitation
 
 - For now, we don't support `union`, `join` in SQL, we supported only one table for query.
@@ -168,7 +180,7 @@ Here list some common examples, if you want more example please create a issue t
 ```json
 {
     "query": {
-        "sql": "SELECT * FROM {stream_name} WHERE kubernetes.namespace_name = 'default' ",
+        "sql": "SELECT * FROM {stream_name} WHERE kubernetes.namespace_name='default' AND code=200 ",
         "start_time": 1674789786006000,
         "end_time": 1674789786006000,
         "from": 0,

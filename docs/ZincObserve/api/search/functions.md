@@ -1,288 +1,350 @@
 
-## Functions
+# Functions
 
-### Scalar Functions
 
-These can use in query SQL.
+## Query Functions
 
-#### Query Functions
+### match(field, 'v')
 
-- match(field, 'keyword')
-- match_no_case(field, 'keyword')
-- match_all('keyword')
-- match_all_no_case('keyword')
+filter the keyword in the field.
 
-#### Math Functions
-abs(x)
+### match_no_case(field, 'v')
+
+filter the keyword in the field with case_insensitive. it can match `KeyWord` or `keyWord`.
+
+### match_all('v')
+
+filter the kekyword in multiple fields. default will search in fields: `log`, `message`, `content`, `data`. you can set the full text search fields in the UI or through `index.setting` API.
+
+### match_all_no_case('v')
+
+filter the kekyword in multiple fields with case_insensitive.
+
+### re_match(field, 'pattern')
+
+use regexp to match the pattern in the field. Please refer to [Regex](https://docs.rs/regex/latest/regex/) for Regex Syntax.
+
+eg:
+
+find `err` or `panic` in log field.
+
+```sql
+SELECT * FROM {stream_name} WHERE re_match(log, '(err|panic)') 
+```
+
+find `err` with case case_insensitive in log field.
+
+```sql
+SELECT * FROM {stream_name} WHERE re_match(log, '(?i)err') 
+```
+
+### re_not_match(field, 'pattern')
+
+use regexp to not match the pattern in the field.
+
+## Math Functions
+
+### abs(x)
+
 absolute value
 
-acos(x)
+### acos(x)
+
 inverse cosine
 
-asin(x)
+### asin(x)
+
 inverse sine
 
-atan(x)
+### atan(x)
+
 inverse tangent
 
-atan2(y, x)
+### atan2(y, x)
+
 inverse tangent of y / x
 
-ceil(x)
+### ceil(x)
+
 nearest integer greater than or equal to argument
 
-cos(x)
+### cos(x)
+
 cosine
 
-exp(x)
+### exp(x)
+
 exponential
 
-floor(x)
+### floor(x)
+
 nearest integer less than or equal to argument
 
-ln(x)
+### ln(x)
+
 natural logarithm
 
-log10(x)
+### log10(x)
+
 base 10 logarithm
 
-log2(x)
+### log2(x)
+
 base 2 logarithm
 
-power(base, exponent)
+### power(base, exponent)
+
 base raised to the power of exponent
 
-round(x)
+### round(x)
+
 round to nearest integer
 
-signum(x)
+### signum(x)
+
 sign of the argument (-1, 0, +1)
 
-sin(x)
+### sin(x)
+
 sine
 
-sqrt(x)
+### sqrt(x)
+
 square root
 
-tan(x)
+### tan(x)
+
 tangent
 
-trunc(x)
+### trunc(x)
+
 truncate toward zero
 
-#### String Functions
+## String Functions
 
-ascii
-bit_length
-btrim
-char_length
-character_length
-concat
-concat_ws
-chr
-initcap
-left
-length
-lower
-lpad
-ltrim
-md5
-octet_length
-repeat
-replace
-reverse
-right
-rpad
-rtrim
-digest
-split_part
-starts_with
-strpos
-substr
-translate
-trim
-upper
+### ascii
 
-#### Temporal Functions
+### bit_length
 
-to_timestamp
-to_timestamp() is similar to the standard SQL function. It performs conversions to type Timestamp(Nanoseconds, None), from:
+### btrim
 
-Timestamp strings
+### char_length
 
-1997-01-31T09:26:56.123Z # RCF3339
+### character_length
 
-1997-01-31T09:26:56.123-05:00 # RCF3339
+### concat
 
-1997-01-31 09:26:56.123-05:00 # close to RCF3339 but with a space er than T
+### concat_ws
 
-1997-01-31T09:26:56.123 # close to RCF3339 but no timezone et specified
+### chr
 
-1997-01-31 09:26:56.123 # close to RCF3339 but uses a space and timezone offset
+### initcap
 
-1997-01-31 09:26:56 # close to RCF3339, no fractional seconds
+### left
 
-An Int64 array/column, values are nanoseconds since Epoch UTC
+### length
 
-Other Timestamp() columns or values
+### lower
 
-Note that conversions from other Timestamp and Int64 types can also be performed using CAST(.. AS Timestamp). However, the conversion functionality here is present for consistency with the other to_timestamp_xx() functions.
+### lpad
 
-to_timestamp_millis
-to_timestamp_millis() does conversions to type Timestamp(Milliseconds, None), from:
+### ltrim
 
-Timestamp strings, the same as supported by the regular timestamp() function (except the output is a timestamp of Milliseconds resolution)
+### md5
 
-1997-01-31T09:26:56.123Z # RCF3339
+### octet_length
 
-1997-01-31T09:26:56.123-05:00 # RCF3339
+### repeat
 
-1997-01-31 09:26:56.123-05:00 # close to RCF3339 but with a space er than T
+### replace
 
-1997-01-31T09:26:56.123 # close to RCF3339 but no timezone et specified
+### reverse
 
-1997-01-31 09:26:56.123 # close to RCF3339 but uses a space and timezone offset
+### right
 
-1997-01-31 09:26:56 # close to RCF3339, no fractional seconds
+### rpad
 
-An Int64 array/column, values are milliseconds since Epoch UTC
+### rtrim
 
-Other Timestamp() columns or values
+### digest
 
-Note that CAST(.. AS Timestamp) converts to Timestamps with Nanosecond resolution; this function is the only way to convert/cast to millisecond resolution.
+### split_part
 
-to_timestamp_micros
-to_timestamp_micros() does conversions to type Timestamp(Microseconds, None), from:
+### starts_with
 
-Timestamp strings, the same as supported by the regular timestamp() function (except the output is a timestamp of microseconds resolution)
+### strpos
 
-1997-01-31T09:26:56.123Z # RCF3339
+### substr
 
-1997-01-31T09:26:56.123-05:00 # RCF3339
+### translate
 
-1997-01-31 09:26:56.123-05:00 # close to RCF3339 but with a space er than T
+### trim
 
-1997-01-31T09:26:56.123 # close to RCF3339 but no timezone et specified
+### upper
 
-1997-01-31 09:26:56.123 # close to RCF3339 but uses a space and timezone offset
+## Temporal Functions
 
-1997-01-31 09:26:56 # close to RCF3339, no fractional seconds
+### to_timestamp
 
-An Int64 array/column, values are microseconds since Epoch UTC
+`to_timestamp()` is similar to the standard SQL function. It performs conversions to type `Timestamp(Nanoseconds, None)`, from:
 
-Other Timestamp() columns or values
+- Timestamp strings
+    - `1997-01-31T09:26:56.123Z` # RCF3339
+    - `1997-01-31T09:26:56.123-05:00` # RCF3339
+    - `1997-01-31 09:26:56.123-05:00` # close to RCF3339 but with a space er than T
+    - `1997-01-31T09:26:56.123` # close to RCF3339 but no timezone et specified
+    - `1997-01-31 09:26:56.123` # close to RCF3339 but uses a space and timezone offset
+    - `1997-01-31 09:26:56` # close to RCF3339, no fractional seconds
+- An Int64 array/column, values are nanoseconds since Epoch UTC
+- Other Timestamp() columns or values
 
-Note that CAST(.. AS Timestamp) converts to Timestamps with Nanosecond resolution; this function is the only way to convert/cast to microsecond resolution.
+Note that conversions from other Timestamp and Int64 types can also be performed using `CAST(.. AS Timestamp)`. However, the conversion functionality here is present for consistency with the other `to_timestamp_xx()` functions.
 
-to_timestamp_seconds
-to_timestamp_seconds() does conversions to type Timestamp(Seconds, None), from:
+### to_timestamp_millis
 
-Timestamp strings, the same as supported by the regular timestamp() function (except the output is a timestamp of secondseconds resolution)
+`to_timestamp_millis()` does conversions to type `Timestamp(Milliseconds, None)`, from:
 
-1997-01-31T09:26:56.123Z # RCF3339
+- Timestamp strings, the same as supported by the regular timestamp() function (except the output is a timestamp of Milliseconds resolution)
+    - `1997-01-31T09:26:56.123Z` # RCF3339
+    - `1997-01-31T09:26:56.123-05:00` # RCF3339
+    - `1997-01-31 09:26:56.123-05:00` # close to RCF3339 but with a space er than T
+    - `1997-01-31T09:26:56.123` # close to RCF3339 but no timezone et specified
+    - `1997-01-31 09:26:56.123` # close to RCF3339 but uses a space and timezone offset
+    - `1997-01-31 09:26:56` # close to RCF3339, no fractional seconds
+- An Int64 array/column, values are milliseconds since Epoch UTC
+- Other Timestamp() columns or values
 
-1997-01-31T09:26:56.123-05:00 # RCF3339
+Note that `CAST(.. AS Timestamp)` converts to Timestamps with Nanosecond resolution; this function is the only way to convert/cast to millisecond resolution.
 
-1997-01-31 09:26:56.123-05:00 # close to RCF3339 but with a space er than T
+### to_timestamp_micros
 
-1997-01-31T09:26:56.123 # close to RCF3339 but no timezone et specified
+`to_timestamp_micros()` does conversions to type `Timestamp(Microseconds, None)`, from:
 
-1997-01-31 09:26:56.123 # close to RCF3339 but uses a space and timezone offset
+- Timestamp strings, the same as supported by the regular timestamp() function (except the output is a timestamp of microseconds resolution)
+    - `1997-01-31T09:26:56.123Z` # RCF3339
+    - `1997-01-31T09:26:56.123-05:00` # RCF3339
+    - `1997-01-31 09:26:56.123-05:00` # close to RCF3339 but with a space er than T
+    - `1997-01-31T09:26:56.123` # close to RCF3339 but no timezone et specified
+    - `1997-01-31 09:26:56.123` # close to RCF3339 but uses a space and timezone offset
+    - `1997-01-31 09:26:56` # close to RCF3339, no fractional seconds
+- An Int64 array/column, values are microseconds since Epoch UTC
+- Other Timestamp() columns or values
 
-1997-01-31 09:26:56 # close to RCF3339, no fractional seconds
+Note that `CAST(.. AS Timestamp)` converts to Timestamps with Nanosecond resolution; this function is the only way to convert/cast to microsecond resolution.
 
-An Int64 array/column, values are seconds since Epoch UTC
+### to_timestamp_seconds
 
-Other Timestamp() columns or values
+`to_timestamp_seconds()` does conversions to type `Timestamp(Seconds, None)`, from:
 
-Note that CAST(.. AS Timestamp) converts to Timestamps with Nanosecond resolution; this function is the only way to convert/cast to seconds resolution.
+- Timestamp strings, the same as supported by the regular timestamp() function (except the output is a timestamp of secondseconds resolution)
+    - `1997-01-31T09:26:56.123Z` # RCF3339
+    - `1997-01-31T09:26:56.123-05:00` # RCF3339
+    - `1997-01-31 09:26:56.123-05:00` # close to RCF3339 but with a space er than T
+    - `1997-01-31T09:26:56.123` # close to RCF3339 but no timezone et specified
+    - `1997-01-31 09:26:56.123` # close to RCF3339 but uses a space and timezone offset
+    - `1997-01-31 09:26:56` # close to RCF3339, no fractional seconds
+- An Int64 array/column, values are seconds since Epoch UTC
+- Other Timestamp() columns or values
 
-extract
-extract(field FROM source)
+Note that `CAST(.. AS Timestamp)` converts to Timestamps with Nanosecond resolution; this function is the only way to convert/cast to seconds resolution.
 
-The extract function retrieves subfields such as year or hour from date/time values. source must be a value expression of type timestamp, Date32, or Date64. field is an identifier that selects what field to extract from the source value. The extract function returns values of type u32.
+### extract
 
-year :extract(year FROM to_timestamp('2020-09-08T12:00:00+00:00')) -> 2020
+`extract(field FROM source)`
 
-month:extract(month FROM to_timestamp('2020-09-08T12:00:00+00:00')) -> 9
+The `extract` function retrieves subfields such as year or hour from date/time values. `source` must be a value expression of type timestamp, Date32, or Date64. `field` is an identifier that selects what field to extract from the source value. The `extract` function returns values of type u32.
 
-week :extract(week FROM to_timestamp('2020-09-08T12:00:00+00:00')) -> 37
+- `year :extract(year FROM to_timestamp('2020-09-08T12:00:00+00:00')) -> 2020`
+- `month:extract(month FROM to_timestamp('2020-09-08T12:00:00+00:00')) -> 9`
+- `week :extract(week FROM to_timestamp('2020-09-08T12:00:00+00:00')) -> 37`
+- `day: extract(day FROM to_timestamp('2020-09-08T12:00:00+00:00')) -> 8`
+- `hour: extract(hour FROM to_timestamp('2020-09-08T12:00:00+00:00')) -> 12`
+- `minute: extract(minute FROM to_timestamp('2020-09-08T12:01:00+00:00')) -> 1`
+- `second: extract(second FROM to_timestamp('2020-09-08T12:00:03+00:00')) -> 3`
 
-day: extract(day FROM to_timestamp('2020-09-08T12:00:00+00:00')) -> 8
+### date_part
 
-hour: extract(hour FROM to_timestamp('2020-09-08T12:00:00+00:00')) -> 12
+`date_part('field', source)`
 
-minute: extract(minute FROM to_timestamp('2020-09-08T12:01:00+00:00')) -> 1
+The `date_part` function is modeled on the postgres equivalent to the SQL-standard function `extract`. Note that here the field parameter needs to be a string value, not a name. The valid field names for `date_part` are the same as for `extract`.
 
-second: extract(second FROM to_timestamp('2020-09-08T12:00:03+00:00')) -> 3
+- `date_part('second', to_timestamp('2020-09-08T12:00:12+00:00')) -> 12`
 
-date_part
-date_part('field', source)
+### date_trunc
 
-The date_part function is modeled on the postgres equivalent to the SQL-standard function extract. Note that here the field parameter needs to be a string value, not a name. The valid field names for date_part are the same as for extract.
+### date_bin
 
-date_part('second', to_timestamp('2020-09-08T12:00:12+00:00')) -> 12
+### from_unixtime
 
-date_trunc
-date_bin
-from_unixtime
-now
-Returns current time as Timestamp(Nanoseconds, UTC). Returns same value for the function wherever it appears in the statement, using a value chosen at planning time.
+### now
+
+Returns current time as `Timestamp(Nanoseconds, UTC)`. Returns same value for the function wherever it appears in the statement, using a value chosen at planning time.
 
 
-
-
-### Aggregate Functions
+## Aggregate Functions
 
 Aggregate functions operate on a set of values to compute a single result. Please refer to PostgreSQL for usage of standard SQL functions.
 
-### General
+### histogram
 
-histogram
+`histogram(field, 'interval')`
 
-min
+histogram of the field values
 
-max
+- field: must be a timestamp field
+- interval: step of histogram
 
-count
+The `interval` supported:
 
-avg
+- second
+- minute
+- hour
+- day
+- week
 
-sum
+eg:
 
-array_agg
+date interval is `30 seconds`
 
-Statistical
-var / var_samp / var_pop
+```sql
+SELECT histogram(_timestamp, '30 seconds') AS key, COUNT(*) AS num FROM {stream_name} GROUP BY key ORDER BY key
+```
 
-stddev / stddev_samp / stddev_pop
+response:
 
-covar / covar_samp / covar_pop
+```json
+[
+    {
+        "key": "2023-01-15 14:00:00",
+        "num": 345940
+    },
+    {
+        "key": "2023-01-15 14:00:30",
+        "num": 384026
+    },
+    {
+        "key": "2023-01-20 14:01:00",
+        "num": 731871
+    }
+]
+```
 
-corr
+### min
 
-Approximate
-approx_distinct
-approx_distinct(x) -> uint64 returns the approximate number (HyperLogLog) of distinct input values
+minimum of the field values
 
-approx_median
-approx_median(x) -> x returns the approximate median of input values. it is an alias of approx_percentile_cont(x, 0.5).
+### max
 
-approx_percentile_cont
-approx_percentile_cont(x, p) -> x return the approximate percentile (TDigest) of input values, where p is a float64 between 0 and 1 (inclusive).
+maximum of the field values
 
-It supports raw data as input and build Tdigest sketches during query time, and is approximately equal to approx_percentile_cont_with_weight(x, 1, p).
+### count
 
-approx_percentile_cont(x, p, n) -> x return the approximate percentile (TDigest) of input values, where p is a float64 between 0 and 1 (inclusive),
+count the records
 
-and n (default 100) is the number of centroids in Tdigest which means that if there are n or fewer unique values in x, you can expect an exact result.
+### avg
 
-A higher value of n results in a more accurate approximation and the cost of higher memory usage.
+average of the field values
 
-approx_percentile_cont_with_weight
-approx_percentile_cont_with_weight(x, w, p) -> x returns the approximate percentile (TDigest) of input values with weight, where w is weight column expression and p is a float64 between 0 and 1 (inclusive).
+### sum
 
-It supports raw data as input or pre-aggregated TDigest sketches, then builds or merges Tdigest sketches during query time. TDigest sketches are a list of centroid (x, w), where x stands for mean and w stands for weight.
-
-It is suitable for low latency OLAP system where a streaming compute engine (e.g. Spark Streaming/Flink) pre-aggregates data to a data store, then queries using Datafusion.
-
+sum of the field values

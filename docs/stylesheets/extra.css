@@ -12,4 +12,7 @@
       transform: none;   
     }
   }
-  
+
+.md-typeset code {
+  color: #ef5552;
+}
