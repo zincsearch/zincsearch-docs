@@ -2,6 +2,6 @@ nav:
     - Stream: stream
     - Ingestion: ingestion
     - Search: search
-    - Transform: transform
+    - Function: function
     - User: user
     - Metrics: metrics.md

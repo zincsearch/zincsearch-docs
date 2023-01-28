@@ -7,7 +7,7 @@ All APIs must have an authorization header. Authorization header can be created 
 
 Header creation mechanism:
 
-> Authorization: Basic base64("userId:password")
+> Authorization: Basic base64("username:password")
 
 e.g. Header:
 
@@ -17,29 +17,23 @@ Make sure that you are sending the requests over HTTPS.
 
 ## API List
 
-1. [Index](index/index)
-    1. [Create / Update](index/create)
-    1. [Delete](index/delete)
-    1. [List](index/list)
-    1. [Get Mapping](index/get-mapping)
-    1. [Update Mapping](index/update-mapping)
-    1. [Get Settings](index/get-settings)
-    1. [Update Settings](index/update-settings)
-    1. [Analyze](index/analyze)
-    1. [Refresh Data](refresh-data)
-1. [Document](document/index)
-    1. [Create](document/create)
-    1. [Create with id](document/create-with-id)
-    1. [Update](document/update)
-    1. [Delete](document/delete)
-    1. [Bulk](document/bulk)
+1. [Stream](stream/index)
+    1. [List](stream/list)
+    1. [Schema](stream/schema)
+    1. [Setting](stream/setting)
+1. [Ingestion](ingestion/index)
+    1. [Bulk](ingestion/bulk)
+    1. [Json](ingestion/json)
+    1. [Multi](ingestion/multi)
 1. [Search](search/index)
     1. [Search](search/search)
-    1. [Search Types](search/types)
-    1. [Aggregations](search/aggregation)
-    1. [Highlight](search/highlight)
+    1. [Functions](search/functions)
+1. [Function](function/index)
+    1. [Create](function/create)
+    1. [Delete](function/delete)
+    1. [List](function/list)
 1. [User](user/index)
-    1. [Create / Update](user/create)
+    1. [Create](user/create)
     1. [Delete](user/delete)
     1. [List](user/list)
 1. [Metrics](metrics)
