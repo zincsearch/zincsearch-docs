@@ -1,23 +1,30 @@
-# Create update user
+# Create or update user
 
-Create/Update a new index
-
-Endpoint - POST /api/user
-
-Create/Update a new/existing user.
+Endpoint: `POST /api/{organization}/user`
 
 ## Request
 
-e.g. 
-POST http://localhost:4080/api/user
+```json
+{
+	"name": "newuser",
+	"password": "complex#pass",
+	"role": "admin"
+}
+```
 
-Request Body: 
+Description
+
+| Field name | Data type | Default value | Description |
+|------------|-----------|---------------|-------------|
+| name       | string    | -             | user name |
+| password   | string    | -             | user password |
+| role       | string    | -             | user role, supported: admin / user |
+
+## Response
 
 ```json
-{ 
-    "_id": "prabhat",
-	"name": "Prabhat Sharma",
-	"role": "admin", // or user
-	"password": "Complexpass#123"
+{
+	"code": 200,
+	"message": "User saved successfully"
 }
 ```

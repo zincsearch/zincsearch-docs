@@ -1,12 +1,16 @@
 # Delete user
 
-Delete a user
-
-Endpoint - DELETE /api/user/:id
-
-Delete a user.
+Endpoint: `DELETE /api/{organization}/user/{user_name}`
 
 ## Request
 
-e.g. 
-DELETE http://localhost:4080/api/user/prabhat
+None
+
+## Response
+
+```json
+{
+	"code": 200,
+	"message": "User deleted"
+}
+```
