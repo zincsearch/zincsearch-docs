@@ -1,4 +1,3 @@
 nav:
-    - Create: create.md
-    - Delete: delete.md
-    - List: list.md
+    - Ingestion: ingestion
+    - Query: query

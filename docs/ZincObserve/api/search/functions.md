@@ -29,13 +29,13 @@ eg:
 find `err` or `panic` in log field.
 
 ```sql
-SELECT * FROM {stream_name} WHERE re_match(log, '(err|panic)') 
+SELECT * FROM {stream} WHERE re_match(log, '(err|panic)') 
 ```
 
 find `err` with case case_insensitive in log field.
 
 ```sql
-SELECT * FROM {stream_name} WHERE re_match(log, '(?i)err') 
+SELECT * FROM {stream} WHERE re_match(log, '(?i)err') 
 ```
 
 ### re_not_match(field, 'pattern')
@@ -307,7 +307,7 @@ eg:
 date interval is `30 seconds`
 
 ```sql
-SELECT histogram(_timestamp, '30 seconds') AS key, COUNT(*) AS num FROM {stream_name} GROUP BY key ORDER BY key
+SELECT histogram(_timestamp, '30 seconds') AS key, COUNT(*) AS num FROM {stream} GROUP BY key ORDER BY key
 ```
 
 response:

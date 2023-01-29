@@ -7,7 +7,7 @@ Endpoint: `POST /api/{organization}/_search`
 ```json
 {
     "query": {
-        "sql": "SELECT * FROM {stream_name} WHERE [condition]",
+        "sql": "SELECT * FROM {stream} WHERE [condition]",
         "start_time": 1674789786006000,
         "end_time": 1674789786006000,
         "from": 0,
@@ -149,7 +149,7 @@ Here list some common examples, if you want more example please create a issue t
 ```json
 {
     "query": {
-        "sql": "SELECT * FROM {stream_name}",
+        "sql": "SELECT * FROM {stream}",
         "start_time": 1674789786006000,
         "end_time": 1674789786006000,
         "from": 0,
@@ -166,7 +166,7 @@ Here list some common examples, if you want more example please create a issue t
 ```json
 {
     "query": {
-        "sql": "SELECT * FROM {stream_name}",
+        "sql": "SELECT * FROM {stream}",
         "start_time": 1674789786006000,
         "end_time": 1674789786006000,
         "from": 0,
@@ -180,7 +180,7 @@ Here list some common examples, if you want more example please create a issue t
 ```json
 {
     "query": {
-        "sql": "SELECT * FROM {stream_name} WHERE kubernetes.namespace_name='default' AND code=200 ",
+        "sql": "SELECT * FROM {stream} WHERE kubernetes.namespace_name='default' AND code=200 ",
         "start_time": 1674789786006000,
         "end_time": 1674789786006000,
         "from": 0,
@@ -194,7 +194,7 @@ Here list some common examples, if you want more example please create a issue t
 ```json
 {
     "query": {
-        "sql": "SELECT * FROM {stream_name} WHERE match_all('err') ",
+        "sql": "SELECT * FROM {stream} WHERE match_all('err') ",
         "start_time": 1674789786006000,
         "end_time": 1674789786006000,
         "from": 0,
@@ -208,7 +208,7 @@ Here list some common examples, if you want more example please create a issue t
 ```json
 {
     "query": {
-        "sql": "SELECT * FROM {stream_name} WHERE match(log, 'err') ",
+        "sql": "SELECT * FROM {stream} WHERE match(log, 'err') ",
         "start_time": 1674789786006000,
         "end_time": 1674789786006000,
         "from": 0,
@@ -222,7 +222,7 @@ Here list some common examples, if you want more example please create a issue t
 ```json
 {
     "query": {
-       "sql": "SELECT histogram(_timestamp, '5 minute') AS key, COUNT(*) AS num FROM {stream_name} GROUP BY key ORDER BY key",
+       "sql": "SELECT histogram(_timestamp, '5 minute') AS key, COUNT(*) AS num FROM {stream} GROUP BY key ORDER BY key",
         "start_time": 1674789786006000,
         "end_time": 1674789786006000,
         "sql_mode": "full"
@@ -235,7 +235,7 @@ Here list some common examples, if you want more example please create a issue t
 ```json
 {
     "query": {
-       "sql": "SELECT kubernetes.namespace_name AS namespace, COUNT(*) AS num FROM {stream_name} GROUP BY namespace ORDER BY namespace",
+       "sql": "SELECT kubernetes.namespace_name AS namespace, COUNT(*) AS num FROM {stream} GROUP BY namespace ORDER BY namespace",
         "start_time": 1674789786006000,
         "end_time": 1674789786006000,
         "sql_mode": "full"
@@ -248,7 +248,7 @@ Here list some common examples, if you want more example please create a issue t
 ```json
 {
     "query": {
-       "sql": "SELECT *, my_func(log) as mykey FROM {stream_name}",
+       "sql": "SELECT *, my_func(log) as mykey FROM {stream}",
         "start_time": 1674789786006000,
         "end_time": 1674789786006000,
         "from": 0,
