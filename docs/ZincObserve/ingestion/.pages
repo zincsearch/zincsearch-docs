@@ -1,7 +1,5 @@
 nav:
-    - Single Record: single-record.md
-    - Bulk Ingestion: bulk-ingestion.md
+    - Http: http.md
     - Vector: vector.md
     - Fluent-bit: fluent-bit.md
     - Fluentd: fluentd.md
-    - Syslog-ng: syslog-ng.md

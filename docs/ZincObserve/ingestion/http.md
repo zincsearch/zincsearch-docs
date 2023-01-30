@@ -1,4 +1,4 @@
-# Single record
+# http
 
 ## curl
 
@@ -6,8 +6,8 @@
 curl \
   -u admin:Complexpass#123 \
   -XPUT \
-  -d '{"author":"Prabhat Sharma"}' \
-  http://localhost:4080/api/myshinynewindex/_doc
+  -d '[{"author":"Prabhat Sharma"}]' \
+  http://localhost:5080/api/org1/stream1/_json
 ```
 
 ## Python
@@ -20,8 +20,7 @@ user = "admin"
 password = "Complexpass#123"
 bas64encoded_creds = base64.b64encode(bytes(user + ":" + password, "utf-8")).decode("utf-8")
 
-
-data = {
+data = [{
     "Athlete": "DEMTSCHENKO, Albert",
     "City": "Turin",
     "Country": "RUS",
@@ -32,15 +31,15 @@ data = {
     "Season": "winter",
     "Sport": "Luge",
     "Year": 2006
-  }
+  }]
 
 headers = {"Content-type": "application/json", "Authorization": "Basic " + bas64encoded_creds}
-index = "olympics"
-zinc_host = "http://localhost:4080"
-zinc_url = zinc_host + "/api/" + index + "/_doc"
+org = "org1"
+stream = "stream1"
+zinc_host = "http://localhost:5080"
+zinc_url = zinc_host + "/api/" + org + "/" + stream + "/_json"
 
 res = requests.put(zinc_url, headers=headers, data=json.dumps(data))
-
 ```
 
 ## Golang
@@ -57,7 +56,7 @@ import (
 )
 
 func main() {
-    data := `{
+    data := `[{
         "Athlete": "DEMTSCHENKO, Albert",
         "City": "Turin",
         "Country": "RUS",
@@ -68,8 +67,8 @@ func main() {
         "Season": "winter",
         "Sport": "Luge",
         "Year": 2006
-    }`
-    req, err := http.NewRequest("POST", "http://localhost:4080/api/games3/_doc", strings.NewReader(data))
+    }]`
+    req, err := http.NewRequest("POST", "http://localhost:5080/api/org1/stream1/_json", strings.NewReader(data))
     if err != nil {
         log.Fatal(err)
     }

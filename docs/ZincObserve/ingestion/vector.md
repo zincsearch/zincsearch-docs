@@ -1,25 +1,16 @@
-# filebeat
+# Vector
 
-Here is a sample filebeat.yml config:
-
-
-```yaml
-
-setup.ilm.enabled: false
-setup.template.name: "nginx-log"
-setup.template.pattern: "nginx-log-*"
-
-filebeat.inputs:
-- type: log
-  enabled: true
-  paths:
-    - /var/log/nginx/*.log
-
-output.elasticsearch:
-  hosts: ["http://127.0.0.1:4080"]
-  path: "/es/"
-  index: "nginx-log-%{+yyyy.MM.dd}"
-  username: "admin"
-  password: "Complexpass#123"
-
+```toml
+[sinks.zinc]
+type = "http"
+inputs = [ source or transform id ]
+endpoint = "http://localhost:5080/api/{organization}/{stream}/_json"
+auth.strategy = "basic"
+auth.user = "hengfei.yang@gmail.com"
+auth.password = "29ClqBTg7HS34861A5P0"
+acknowledgements = null
+compression = "none"
+encoding.codec = "json"
+encoding.timestamp_format = "rfc3339"
+healthcheck.enabled = false
 ```

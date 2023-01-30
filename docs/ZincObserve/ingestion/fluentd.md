@@ -1,10 +1,6 @@
-# fluentd
+# fluent-bit
 
-Here is a sample fluentd config( fluentd need fluent-plugin-elasticsearch):
-
-## fluentd.conf
-
-```shell
+```toml
 <source>
   @type forward
   port 24224
@@ -12,27 +8,14 @@ Here is a sample fluentd config( fluentd need fluent-plugin-elasticsearch):
 </source>
 
 <match **>
-  @type copy
-  <store>
-    @type elasticsearch
-    host 192.168.3.22
-    port 4080
-    path /es
-    user admin
-    password "Complexpass#123"
-    logstash_format true
-    logstash_prefix ${tag}
-    logstash_dateformat %Y%m%d
-    include_tag_key true
-    type_name access_log
-    tag_key @log_name
-  </store>
-  <store>
-    @type stdout
-  </store>
+  @type http
+  endpoint http://localhost:5080/api/{organization}/{stream}/_json
+  content_type json
+  json_array true
+  <auth>
+    method basic
+    username admin
+    password password
+  </auth>
 </match>
-
-
 ```
-
-
