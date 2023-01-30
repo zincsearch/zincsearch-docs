@@ -5,11 +5,11 @@ We prefer environment variables for configuration as opposed to configuration fi
 
 | Environment Variable          | Default Value | Mandatory     | Description                                                               |
 | ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
-| ZIOX_USER_NAME         | -             | On first run  | First admin user. Not required after first run of ZincObserve.  |
-| ZIOX_USER_PASSWORD     | -             | On first run  | Password for first admin user |
-| ZIOX_LOCAL_MODE        | true          | No            | true is local mode, just support single node, false is cluster mode, support multiple node role and nodes. for local mode you also need config `sled db`, for cluster mode you also need config `redis`. |
-| ZIOX_LOCAL_MODE_STORAGE | disk         | No            | local mode default use local disk as stoarge, but support s3 in local mode. and not support local disk in cluster mode. |
-| ZIOX_NODE_ROLE         | all           | No            | support: all, ingester, quierier, compactor, router, alter_manager |
+| ZIOX_USER_NAME         | -             | On first run  | First/super admin user  |
+| ZIOX_USER_PASSWORD     | -             | On first run  | Password for first/super admin user |
+| ZIOX_LOCAL_MODE        | true          | No            | If local mode is set to true, we just support single node deployment, false indicated cluster mode deployment, supports multiple nodes with different roles. For local mode you also need configure `sled db`, for cluster mode you also need config `redis`. |
+| ZIOX_LOCAL_MODE_STORAGE | disk         | No            | Applicable only for local mode , by default local disk is used as stoarge, we als0 support s3 in local mode. |
+| ZIOX_NODE_ROLE         | all           | No            | Possible values are : all, ingester, quierier, compactor, router, alertmanager |
 | ZIOX_HTTP_PORT         | 5080          | No            | zinc server listen http port |
 | ZIOX_GRPC_PORT         | 5081          | No            | zinc server listen grpc port |
 | ZIOX_GRPC_TIMEOUT      | 600           | No            | grpc query timeout, default is 500 seconds | 
@@ -18,8 +18,8 @@ We prefer environment variables for configuration as opposed to configuration fi
 | ZIOX_INSTANCE_NAME     | -             | No            | in the cluster mode, each node has a instance name, default is instance hostname. |
 | ZINC_DATA_DIR                 | ./data        | No            | Defaults to "data" folder in current working directory if not provided.   |
 | ZIOX_DATA_WAL_DIR             | ./data/wal/   | No            | local WAL data directory. |
-| ZIOX_DATA_STREAM_DIR          | ./data/stream/   | No         | local stream data storage directory. |
-| ZIOX_TIME_STAMP_COL           | _timestamp    | No            | for each log line, we add a timestamp for it, used to query with time range. |
+| ZIOX_DATA_STREAM_DIR          | ./data/stream/   | No         | local stream data storage directory ,applicable only for local mode. |
+| ZIOX_TIME_STAMP_COL           | _timestamp    | No            | for each log line, if not present with this as key , we add a timestamp with this as key, used to query with time range. |
 | ZIOX_WIDENING_SCHEMA_EVOLUTION | false        | No            | default we can add new column but no support change data type of exists files. |
 | ZIOX_FEATURE_PER_THREAD_LOCK  | false         | No            | default we shared a lock for each thread for WAL, enable this option can create per lock for per thread, it can improve ingest performance, but will create more small data files, but at the finally we will use a compactor to merge it to big files. |
 | ZIOX_FEATURE_FULLTEXT_ON_ALL_FIELDS | false   | No            | default full text search just on `log`, `message`, `data` or use selected fileds. enable this option will do full text search on each field. |
