@@ -24,5 +24,4 @@ Description
 | Field name | Data type | Default value | Description |
 |------------|-----------|---------------|-------------|
 | name       | string    | -             | user name |
-| password   | string    | -             | user password |
 | role       | string    | -             | user role, supported: admin / user |
