@@ -32,3 +32,7 @@ To add orgnization please enter name, organization identifier will be generated 
 ## Invite Teammates
 
 The screen list all invited members to the organization.
+
+<kbd>
+![invited members](../../images/invited_members.jpg)
+</kbd>

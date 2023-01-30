@@ -5,3 +5,4 @@ nav:
     - Users: users.md
     - Streams: streams.md
     - Functions: functions
+    - Ingestion: ingestion.md
