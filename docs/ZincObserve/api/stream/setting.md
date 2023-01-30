@@ -1,4 +1,4 @@
-# Get schema for stream
+# Set Settings for stream
 
 Endpoint: `POST /api/{organization}/{stream}/settings`
 

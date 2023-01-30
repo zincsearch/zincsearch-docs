@@ -7,7 +7,7 @@ nav:
     - Components: components.md
     - Environment Variables: environment-variables.md
     - Storage: storage.md
-    - Manual Guide: manual-guide
-    - Operations Guide: op-guide
+    - User Guide: user-guide
+    - Operator Guide: op-guide
     - API Reference: api
     - Ingestion: ingestion

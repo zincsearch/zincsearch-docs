@@ -1,4 +1,4 @@
-# fluent-bit
+# fluentd
 
 ```toml
 <source>

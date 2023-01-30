@@ -1,4 +1,4 @@
 nav:
-    - Create / Update: create.md
+    - Create: create.md
     - Delete: delete.md
     - List: list.md
