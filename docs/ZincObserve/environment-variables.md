@@ -7,24 +7,24 @@ We prefer environment variables for configuration as opposed to configuration fi
 | ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
 | ZIOX_USER_NAME         | -             | On first run  | User name of first/super admin user  |
 | ZIOX_USER_PASSWORD     | -             | On first run  | Password for first/super admin user |
-| ZIOX_LOCAL_MODE        | true          | No            | If local mode is set to true ,zinc observe becomes single node deployment, false indicates cluster mode deployment which supports multiple nodes with different roles. For local mode you need to configure `sled db`, for cluster mode you need to config `redis`. |
+| ZIOX_LOCAL_MODE        | true          | No            | If local mode is set to true ,zinc observe becomes single node deployment, false indicates cluster mode deployment which supports multiple nodes with different roles. For local mode one needs to configure `sled db`, for cluster mode one needs to config `redis`. |
 | ZIOX_LOCAL_MODE_STORAGE | disk         | No            | Applicable only for local mode , by default local disk is used as stoarge, we also support s3 in local mode. |
 | ZIOX_NODE_ROLE         | all           | No            | Possible values are : all, ingester, quierier, compactor, router, alertmanager |
 | ZIOX_HTTP_PORT         | 5080          | No            | zinc server listen http port |
 | ZIOX_GRPC_PORT         | 5081          | No            | zinc server listen grpc port |
 | ZIOX_GRPC_TIMEOUT      | 600           | No            | grpc query timeout, default is 500 seconds | 
-| ZIOX_GRPC_ORG_HEADER_KEY | zinc-org-id | No            | TODO |
+| ZIOX_GRPC_ORG_HEADER_KEY | zinc-org-id | No            | header key for sending orgnization information for `traces` using OTLP over grpc |
 | ZIOX_ROUTE_TIMEOUT     | 600           | No            | timeout for router node.             |
 | ZIOX_INSTANCE_NAME     | -             | No            | in the cluster mode, each node has a instance name, default is instance hostname. |
 | ZINC_DATA_DIR                 | ./data        | No            | Defaults to "data" folder in current working directory if not provided.   |
 | ZIOX_DATA_WAL_DIR             | ./data/wal/   | No            | local WAL data directory. |
 | ZIOX_DATA_STREAM_DIR          | ./data/stream/   | No         | streams local data storage directory ,applicable only for local mode. |
 | ZIOX_TIME_STAMP_COL           | _timestamp    | No            | for each log line, if not present with this key , we add a timestamp with this key, used for queries with time range. |
-| ZIOX_WIDENING_SCHEMA_EVOLUTION | false        | No            | if set to false user can add new columns to data being ingested but changes to data type are not supported for existing data. |
+| ZIOX_WIDENING_SCHEMA_EVOLUTION | false        | No            | if set to false user can add new columns to data being ingested but changes to existing data for data type are not supported . |
 | ZIOX_FEATURE_PER_THREAD_LOCK  | false         | No            | default we share a lock for each thread for WAL, enable this option to create one lock for per thread, it improves ingest performance, but results in more small data files, which will be merged by compactor to create larger merged files. |
 | ZIOX_FEATURE_FULLTEXT_ON_ALL_FIELDS | false   | No            | default full text search uses `log`, `message`, `data` or selected stream fileds. enabling this option will perform full text search on each field, may hamper full text search performance |
-| ZIOX_UI_ENABLED               | true          | No            | default we enable emebed UI, you can disable it. |
-| ZIOX_METRICS_DEDUP_ENABLED    | true          | No            | TODO |
+| ZIOX_UI_ENABLED               | true          | No            | default we enable emebed UI, one can disable it. |
+| ZIOX_METRICS_DEDUP_ENABLED    | true          | No            | enable de-dupliction for metrics |
 | ZIOX_TRACING_ENABLED          | false         | No            | enable it to send traces to remote trace server. |
 | OTEL_OTLP_HTTP_ENDPOINT       | -             | No            | remote trace server endpoint. |
 | ZIOX_TRACING_HEADER_KEY       | Authorization | No            | remote trace server endpoint authentication header key. |
@@ -34,9 +34,9 @@ We prefer environment variables for configuration as opposed to configuration fi
 | ZIOX_FILE_PUSH_INTERVAL       | 10            | No            | interval at which job moves files from WAL to storage, default 10s, unit: second |
 | ZIOX_FILE_MOVE_THREAD_NUM     | -             | No            | number of threads for job to move WAL to storage, default equal to cpu_num. |
 | ZIOX_QUERY_THREAD_NUM         | -             | No            | number of threads for searching in data files. |
-| ZIOX_TS_ALLOWED_UPTO          | 5             | No            | just allow ingest `now - 5 hours` data. |
-| ZIOX_METRICS_LEADER_PUSH_INTERVAL | -         | No            | TODO |
-| ZIOX_METRICS_LEADER_ELECTION_INTERVAL | -     | No            | TODO |
+| ZIOX_TS_ALLOWED_UPTO          | 5             | No            | allow historical data ingest upto `now - 5 hours` data, default 5 hours, unit: hours  |
+| ZIOX_METRICS_LEADER_PUSH_INTERVAL | 15         | No            | interval at which current leader information is updated to metadata store , default 15s, unit: second |
+| ZIOX_METRICS_LEADER_ELECTION_INTERVAL | 30     | No            | interval after which new leader for metrics will be elected , when data isnt received from current leader, default 30s, unit: second  |
 | ZIOX_COMPACT_ENABLED          | true          | No            | enable compact for small files. |
 | ZIOX_COMPACT_INTERVAL         | 600           | No            | interval at which job compacts small files into larger files. default is 600s, unit: second |
 | ZIOX_COMPACT_MAX_FILE_SIZE    | 256           | No            | max file size for a single compacted file, after compaction all files will be below this value. default is 256MB, unit: MB |
