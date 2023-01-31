@@ -208,7 +208,7 @@ Here list some common examples, if you want more example please create a issue t
 ```json
 {
     "query": {
-        "sql": "SELECT * FROM {stream} WHERE match(log, 'err') ",
+        "sql": "SELECT * FROM {stream} WHERE str_matchlog, 'err') ",
         "start_time": 1674789786006000,
         "end_time": 1674789786006000,
         "from": 0,

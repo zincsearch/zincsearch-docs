@@ -4,11 +4,11 @@
 
 ## Query Functions
 
-### match(field, 'v')
+### str_match(field, 'v')
 
 filter the keyword in the field.
 
-### match_no_case(field, 'v')
+### str_match_no_case(field, 'v')
 
 filter the keyword in the field with case_insensitive. it can match `KeyWord` or `keyWord`.
 
