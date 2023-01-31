@@ -40,6 +40,7 @@ RFC 3339 and ISO 8601 date and time string such as 1996-12-19T16:39:57-08:00
 RFC 2822 date and time string such as Tue, 1 Jul 2003 10:52:37 +0200
 
 > Applicable only to open source version
+
 If user wants support for key other than _timestamp/@timestamp user can use ZIOX_TIME_STAMP_COL configuation to specify timestamp key.
 
 ## Searching
