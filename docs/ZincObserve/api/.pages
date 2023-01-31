@@ -1,7 +1,7 @@
 nav:
-    - Stream: stream
+    - Streams: stream
     - Ingestion: ingestion
     - Search: search
-    - Function: function
-    - User: user
-    - Metrics: metrics.md
+    - Functions: function
+    - Users: user
+

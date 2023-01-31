@@ -1,10 +1,10 @@
 # Welcome to ZincObserve
 
-ZincObserve is a search engine built specifically for log search and analytics. You can use it to search and analyze terabytes of logs.
+ZincObserve is a search engine built specifically for log search & analytics. One can use it to search & analyze terabytes of logs.
 
 ## Features:
 1. Best in class GUI.
-1. Single binary for installation and running. Binaries available under [releases](https://github.com/zinclabs/zinc/releases) for multiple platforms.
+1. Single binary for installation & running. Binaries available under [releases](https://github.com/zinclabs/zinc/releases) for multiple platforms.
 1. SQL for sophisticated queries, no need to learn yet another query language.
 1. Embedded scripting functions for ingestion & query to aid advanced capabilities like enrichment, redaction, log reduction, compliance, etc.
 1. Dynamic Schema
@@ -25,4 +25,4 @@ ZincObserve is a search engine built specifically for log search and analytics. 
 
 ## Project Status:
 
-ZincObserve is in Beta. 
+ZincObserve is Generally available for logs now. 
