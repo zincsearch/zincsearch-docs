@@ -1,26 +1,16 @@
 # Search around
 
-Endpoint: `POST /api/{organization}/_around`
+Endpoint: `GET /api/{organization}/{stream}/_around?key={timestamp}&size=10`
 
 ## Request
-
-```json
-{
-    "stream": "{stream_name}",
-    "id": 1674789786006000,
-    "size": 10
-}
-```
 
 Description
 
 | Field name | Data type | Default value | Description |
 |------------|-----------|---------------|-------------|
 | stream     | string    | -             | stream name |
-| id         | int64 | 0           | the `_timestamp` of the record what you want to search around |
-| 
+| key        | int64 | 0           | the `_timestamp` of the record what you want to search around |
 | size | int64     | 0             | how many records do you want to response around the record, we will search the record forward & backward 5 minutes |
-
 
 ## Response
 
