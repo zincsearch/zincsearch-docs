@@ -11,7 +11,6 @@ This will upload multiple records in batch with ndjson (newline delimited json).
 {"Year": 1896, "City": "Athens", "Sport": "Aquatics", "Discipline": "Swimming", "Athlete": "Alfred", "Country": "HUN"}
 { "index" : { "_index" : "olympics" } } 
 {"Year": 1896, "City": "Athens", "Sport": "Aquatics", "Discipline": "Swimming", "Athlete": "HERSCHMANN", "Country":"CHN"}
-{ "index" : { "_index" : "olympics" } } 
 ```
 
 > First line is index action
