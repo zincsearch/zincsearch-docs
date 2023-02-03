@@ -1,6 +1,6 @@
 # Delete ingestion function
 
-Endpoint: `DELETE /api/{organization}/{stream}/transform/{name}`
+Endpoint: `DELETE /api/{organization}/{stream}/functions/{name}`
 
 ## Request
 
@@ -11,6 +11,6 @@ None
 ```json
 {
 	"code": 200,
-	"message": "Transform deleted"
+	"message": "Function deleted"
 }
 ```

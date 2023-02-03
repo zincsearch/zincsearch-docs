@@ -1,6 +1,6 @@
 # Delete query function
 
-Endpoint: `DELETE /api/{organization}/transform/{name}`
+Endpoint: `DELETE /api/{organization}/functions/{name}`
 
 ## Request
 
@@ -11,6 +11,6 @@ None
 ```json
 {
 	"code": 200,
-	"message": "Transform deleted"
+	"message": "Function deleted"
 }
 ```

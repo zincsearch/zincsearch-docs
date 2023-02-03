@@ -1,6 +1,6 @@
 # List ingestion functions
 
-Endpoint: `GET /api/{organization}/{stream}/transform`
+Endpoint: `GET /api/{organization}/{stream}/functions`
 
 ## Request
 

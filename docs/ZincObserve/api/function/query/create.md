@@ -1,6 +1,6 @@
 # Create or update query function
 
-Endpoint: `POST /api/{organization}/transform/{name}`
+Endpoint: `POST /api/{organization}/functions/{name}`
 
 Query function used in query SQL. you can use it to extract some new field from exist fields.
 
@@ -25,6 +25,6 @@ Description
 ```json
 {
 	"code": 200,
-	"message": "Transform saved successfully"
+	"message": "Function saved successfully"
 }
 ```

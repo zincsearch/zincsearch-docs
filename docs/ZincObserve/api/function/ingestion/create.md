@@ -1,6 +1,6 @@
 # Create or update ingestion function
 
-Endpoint: `POST /api/{organization}/{stream}/transform/{name}`
+Endpoint: `POST /api/{organization}/{stream}/functions/{name}`
 
 Ingestion function used to modify data what you input. you can use it to drop some feilds, convert some fileds data type, or drop some records.
 
@@ -27,6 +27,6 @@ Description
 ```json
 {
 	"code": 200,
-	"message": "Transform saved successfully"
+	"message": "Function saved successfully"
 }
 ```
