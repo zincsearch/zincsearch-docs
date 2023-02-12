@@ -1,0 +1,4 @@
+nav:
+    - Bulk: bulk.md
+    - Json: json.md
+    - Multi: multi.md
