@@ -7,7 +7,7 @@ We will do 2 things as part of the quickstart:
 
 ## Installation
 
-You would need ZIOX_USER_NAME and ZIOX_USER_PASSWORD environment variables when you start ZincObserve for the first time. You don't need them on subsequent runs of ZincObserve.
+You would need ZO_USER_NAME and ZO_USER_PASSWORD environment variables when you start ZincObserve for the first time. You don't need them on subsequent runs of ZincObserve.
 
 
 
@@ -16,10 +16,10 @@ You would need ZIOX_USER_NAME and ZIOX_USER_PASSWORD environment variables when 
     Binaries can be downloaded from [releases](https://github.com/zinclabs/zinc/releases) page for appropriate platform.
 
 
-        set ZIOX_USER_NAME=admin
-        set ZIOX_USER_PASSWORD=Complexpass#123
+        set ZO_USER_NAME=admin
+        set ZO_USER_PASSWORD=Complexpass#123
         mkdir data
-        zinc.exe
+        zinc-observe.exe
 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
@@ -31,7 +31,7 @@ You would need ZIOX_USER_NAME and ZIOX_USER_PASSWORD environment variables when 
         brew tap zinclabs/tap
         brew install zinclabs/tap/zinc
         mkdir data
-        ZIOX_USER_NAME=admin ZIOX_USER_PASSWORD=Complexpass#123 zinc 
+        ZO_USER_NAME=admin ZO_USER_PASSWORD=Complexpass#123 zinc-observe 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
@@ -41,7 +41,7 @@ You would need ZIOX_USER_NAME and ZIOX_USER_PASSWORD environment variables when 
     Create a data folder that will store the data
 
         mkdir data
-        ZIOX_USER_NAME=admin ZIOX_USER_PASSWORD=Complexpass#123 ./zinc 
+        ZO_USER_NAME=admin ZO_USER_PASSWORD=Complexpass#123 ./zinc-observe
 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
@@ -54,9 +54,9 @@ You would need ZIOX_USER_NAME and ZIOX_USER_PASSWORD environment variables when 
     Docker images are available at [https://gallery.ecr.aws/zinclabs/zinc](https://gallery.ecr.aws/zinclabs/zinc)
 
         mkdir data
-        docker run -v /full/path/of/data:/data -e ZIOX_DATA_DIR="/data" -p 5080:5080 \
-            -e ZIOX_USER_NAME=admin -e ZIOX_USER_PASSWORD=Complexpass#123 \
-            --name zinc public.ecr.aws/zinclabs/zinc:latest
+        docker run -v /full/path/of/data:/data -e ZO_DATA_DIR="/data" -p 5080:5080 \
+            -e ZO_USER_NAME=admin -e ZO_USER_PASSWORD=Complexpass#123 \
+            --name zinc public.ecr.aws/zinclabs/zinc-observe:latest
 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
@@ -106,13 +106,13 @@ You would need ZIOX_USER_NAME and ZIOX_USER_PASSWORD environment variables when 
 
 ## Load sample data
 
-We will use bulk API to load sample data
+We will use JSON API to load sample log data. 
 
 
 ```shell
-curl -L https://github.com/zinclabs/zinc/releases/download/v0.1.1/olympics.ndjson.gz -o olympics.ndjson.gz
-gzip -d  olympics.ndjson.gz 
-curl http://localhost:5080/api/default/_bulk -i -u admin:Complexpass#123  --data-binary "@olympics.ndjson"
+curl -L https://zinc-public-data.s3.us-west-2.amazonaws.com/zinc-enl/sample-k8s-logs/k8slog_json.json.zip -o k8slog_json.json.zip
+unzip k8slog_json.json.zip
+curl http://localhost:5080/api/default/quickstart1/_json -i -u admin:Complexpass#123  --data-binary "@k8slog_json.json"
 ```
 
 
@@ -120,7 +120,7 @@ curl http://localhost:5080/api/default/_bulk -i -u admin:Complexpass#123  --data
 
 Point your browser to [http://localhost:5080](http://localhost:5080) and login
 
-1. Select the index olympics from drop down in the left
-1. Search for the word Gold in search bar and presse enter.
+1. Select the index quickstart1 from drop down in the left
+1. Search for match_all('error') in search bar and click the search button on right.
 
 Click on the info button next to the search bar to see examples on how to search.

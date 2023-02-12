@@ -1,4 +1,4 @@
-# Welcome to ZincSearch
+# Welcome to Zinc (classic)
 
 
 ## Why ZincSearch
