@@ -1,5 +1,5 @@
 nav:
-    - Welcome: index.md
+    - Introduction: index.md
     - Getting started: getting-started.md
     - Screenshots: screenshots.md
     - Quickstart: quickstart.md

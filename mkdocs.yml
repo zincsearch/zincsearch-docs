@@ -1,4 +1,4 @@
-site_name: ZincSearch
+site_name: ZincObserve
 
 # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin required for nav
 plugins:
@@ -15,13 +15,13 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/linkedin 
-      link: https://www.linkedin.com/company/zincsearch
+      link: https://www.linkedin.com/company/zinclabsinc
     - icon: fontawesome/brands/github 
-      link: https://github.com/zinclabs/zincsearch
+      link: https://github.com/zinclabs/zincobserve
     - icon: fontawesome/brands/docker 
       link: https://gallery.ecr.aws/zinclabs/zinc
     - icon: fontawesome/brands/slack 
-      link: https://join.slack.com/t/zinc-nvh4832/shared_invite/zt-11r96hv2b-UwxUILuSJ1duzl_6mhJwVg
+      link: https://join.slack.com/t/zincobserve/shared_invite/zt-11r96hv2b-UwxUILuSJ1duzl_6mhJwVg
   generator: false
   version:
     provider: mike
@@ -29,7 +29,7 @@ extra:
     provider: google
     property: G-ZM6P0XB94J
 theme:
-  logo: images/logo.svg
+  logo: images/zinc.png
   name: material
   custom_dir: overrides
   features:
@@ -41,18 +41,18 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
+      primary: white
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate 
-      primary: indigo
+      primary: black
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-repo_url: https://github.com/zinclabs/zincsearch
-repo_name: zinclabs/zincsearch
+repo_url: https://github.com/zinclabs/zincobserve
+repo_name: zinclabs/zincobserve
 edit_uri: https://github.com/zinclabs/zincsearch-docs/edit/main/docs/
 markdown_extensions:
   - tables

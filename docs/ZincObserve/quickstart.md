@@ -16,7 +16,7 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
     Binaries can be downloaded from [releases](https://github.com/zinclabs/zincobserve/releases) page for appropriate platform.
 
 
-        set ZO_ROOT_USER_EMAIL=admin
+        set ZO_ROOT_USER_EMAIL=admin@example.com
         set ZO_ROOT_USER_PASSWORD=Complexpass#123
         mkdir data
         zincobserve.exe
@@ -31,7 +31,7 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
         brew tap zinclabs/tap
         brew install zinclabs/tap/zinc
         mkdir data
-        ZO_ROOT_USER_EMAIL=admin ZO_ROOT_USER_PASSWORD=Complexpass#123 zincobserve 
+        ZO_ROOT_USER_EMAIL=admin@example.com ZO_ROOT_USER_PASSWORD=Complexpass#123 zincobserve 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
@@ -41,7 +41,7 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
     Create a data folder that will store the data
 
         mkdir data
-        ZO_ROOT_USER_EMAIL=admin@zinc.dev ZO_ROOT_USER_PASSWORD=Complexpass#123 ./zincobserve
+        ZO_ROOT_USER_EMAIL=admin@example.com ZO_ROOT_USER_PASSWORD=Complexpass#123 ./zincobserve
 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
@@ -55,7 +55,7 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
 
         mkdir data
         docker run -v /full/path/of/data:/data -e ZO_DATA_DIR="/data" -p 5080:5080 \
-            -e ZO_ROOT_USER_EMAIL=admin -e ZO_ROOT_USER_PASSWORD=Complexpass#123 \
+            -e ZO_ROOT_USER_EMAIL=admin@example.com -e ZO_ROOT_USER_PASSWORD=Complexpass#123 \
             --name zinc public.ecr.aws/zinclabs/zincobserve:latest
 
 
@@ -112,7 +112,7 @@ We will use JSON API to load sample log data.
 ```shell
 curl -L https://zinc-public-data.s3.us-west-2.amazonaws.com/zinc-enl/sample-k8s-logs/k8slog_json.json.zip -o k8slog_json.json.zip
 unzip k8slog_json.json.zip
-curl http://localhost:5080/api/default/quickstart1/_json -i -u admin:Complexpass#123  --data-binary "@k8slog_json.json"
+curl http://localhost:5080/api/default/quickstart1/_json -i -u admin@example.com:Complexpass#123  --data-binary "@k8slog_json.json"
 ```
 
 
