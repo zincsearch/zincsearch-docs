@@ -41,7 +41,7 @@ RFC 2822 date and time string such as Tue, 1 Jul 2003 10:52:37 +0200
 
 > Applicable only to open source version
 
-If user wants support for key other than _timestamp/@timestamp user can use ZIOX_TIME_STAMP_COL configuation to specify timestamp key.
+If user wants support for key other than _timestamp/@timestamp user can use ZO_TIME_STAMP_COL configuation to specify timestamp key.
 
 ## Searching
 ### Full text search

@@ -30,11 +30,11 @@ ZincObserve can use MinIO for storing stream data , following environment variab
 
 | Environment Variable          | Default Value | Mandatory     | Description                                                               |
 | ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
-| ZIOX_S3_SERVER_URL            | -             | No            | default for aws s3 & leave it empty, but for `minIO`, `gcs` one should configure it. |
-| ZIOX_S3_REGION_NAME           | -             | No            | region name |
-| ZIOX_S3_ACCESS_KEY            | -             | No            | access key |
-| ZIOX_S3_SECRET_KEY            | -             | No            | secret key |
-| ZIOX_S3_BUCKET_NAME           | -             | No            | bucket name |
+| ZO_S3_SERVER_URL            | -             | No            | default for aws s3 & leave it empty, but for `minIO`, `gcs` one should configure it. |
+| ZO_S3_REGION_NAME           | -             | No            | region name |
+| ZO_S3_ACCESS_KEY            | -             | No            | access key |
+| ZO_S3_SECRET_KEY            | -             | No            | secret key |
+| ZO_S3_BUCKET_NAME           | -             | No            | bucket name |
 
 ## MinIO
 
@@ -43,11 +43,11 @@ ZincObserve can use MinIO for storing stream data , following environment variab
 
 | Environment Variable          | Default Value | Mandatory     | Description                                                               |
 | ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
-| ZIOX_S3_SERVER_URL            | -             | No            | default for aws s3 & leave it empty, but for `minIO`, `gcs` one should configure it. |
-| ZIOX_S3_REGION_NAME           | -             | No            | region name |
-| ZIOX_S3_ACCESS_KEY            | -             | No            | access key |
-| ZIOX_S3_SECRET_KEY            | -             | No            | secret key |
-| ZIOX_S3_BUCKET_NAME           | -             | No            | bucket name |
+| ZO_S3_SERVER_URL            | -             | No            | default for aws s3 & leave it empty, but for `minIO`, `gcs` one should configure it. |
+| ZO_S3_REGION_NAME           | -             | No            | region name |
+| ZO_S3_ACCESS_KEY            | -             | No            | access key |
+| ZO_S3_SECRET_KEY            | -             | No            | secret key |
+| ZO_S3_BUCKET_NAME           | -             | No            | bucket name |
                                          
 ## gcs
 
@@ -56,8 +56,8 @@ ZincObserve can use gcs for storing stream data , following environment variable
 
 | Environment Variable          | Default Value | Mandatory     | Description                                                               |
 | ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
-| ZIOX_S3_SERVER_URL            | -             | No            | default for aws s3 & leave it empty, but for `minIO`, `gcs` one should configure it. |
-| ZIOX_S3_REGION_NAME           | -             | No            | region name |
-| ZIOX_S3_ACCESS_KEY            | -             | No            | access key |
-| ZIOX_S3_SECRET_KEY            | -             | No            | secret key |
-| ZIOX_S3_BUCKET_NAME           | -             | No            | bucket name |
+| ZO_S3_SERVER_URL            | -             | No            | default for aws s3 & leave it empty, but for `minIO`, `gcs` one should configure it. |
+| ZO_S3_REGION_NAME           | -             | No            | region name |
+| ZO_S3_ACCESS_KEY            | -             | No            | access key |
+| ZO_S3_SECRET_KEY            | -             | No            | secret key |
+| ZO_S3_BUCKET_NAME           | -             | No            | bucket name |
