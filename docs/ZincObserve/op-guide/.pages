@@ -1,2 +1,3 @@
 nav:
     - Etcd: etcd.md
+    - Mimalloc: mimalloc.md

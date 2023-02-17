@@ -1,4 +1,4 @@
-# fluentd
+# Fluentd
 
 ```toml
 <source>

@@ -1,4 +1,4 @@
-# fluent-bit
+# Fluent-bit
 
 ```toml
 [OUTPUT]
