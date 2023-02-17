@@ -7,7 +7,7 @@ We prefer environment variables for configuration as opposed to configuration fi
 | ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
 | ZIOX_USER_NAME         | -             | On first run  | User name of first/super admin user  |
 | ZIOX_USER_PASSWORD     | -             | On first run  | Password for first/super admin user |
-| ZIOX_LOCAL_MODE        | true          | No            | If local mode is set to true ,zinc observe becomes single node deployment, false indicates cluster mode deployment which supports multiple nodes with different roles. For local mode one needs to configure `sled db`, for cluster mode one needs to config `redis`. |
+| ZIOX_LOCAL_MODE        | true          | No            | If local mode is set to true ,ZincObserve becomes single node deployment, false indicates cluster mode deployment which supports multiple nodes with different roles. For local mode one needs to configure `sled db`, for cluster mode one needs to config `redis`. |
 | ZIOX_LOCAL_MODE_STORAGE | disk         | No            | Applicable only for local mode , by default local disk is used as stoarge, we also support s3 in local mode. |
 | ZIOX_NODE_ROLE         | all           | No            | Possible values are : all, ingester, quierier, compactor, router, alertmanager |
 | ZIOX_HTTP_PORT         | 5080          | No            | zinc server listen http port |

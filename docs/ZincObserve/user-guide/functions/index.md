@@ -2,7 +2,7 @@
 
 ## What are functions?
 
-Functions in zinc observe are defined using [lua script](https://www.lua.org/) & can used during ingestion & query to aid advanced capabilities like enrichment, redaction, log reduction, compliance, etc. 
+Functions in ZincObserve are defined using [lua script](https://www.lua.org/) & can used during ingestion & query to aid advanced capabilities like enrichment, redaction, log reduction, compliance, etc. 
 
 Based on function applicability , functions can be categorized as :
 
@@ -15,7 +15,7 @@ Based on function applicability , functions can be categorized as :
 
 There are also inbuilt query functions like match_all , match_all_no_case which can be used for full text search based on users settings for stream or default settings.
 
-To navigate to functions in zinc observe , select preferred organization using organization selection control, then click on ![Functions](../../images/functions.jpg) menu , which will take one to  functions list screen. The screen lists all (ingest time & query type) the functions for selected organization.  
+To navigate to functions in ZincObserve , select preferred organization using organization selection control, then click on ![Functions](../../images/functions.jpg) menu , which will take one to  functions list screen. The screen lists all (ingest time & query type) the functions for selected organization.  
 
 <kbd>
 ![Functions](../../images/functions_list.jpg)

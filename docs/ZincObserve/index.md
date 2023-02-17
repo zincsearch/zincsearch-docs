@@ -1,4 +1,4 @@
-# Welcome to Zinc Observe
+# Welcome to ZincObserve
 
 ZincObserve is a search engine built specifically for log search & analytics. One can use it to search & analyze terabytes of logs.
 

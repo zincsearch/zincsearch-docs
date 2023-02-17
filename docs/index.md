@@ -1,10 +1,10 @@
 # Introduction
 
-Zinc (classic) and Zinc Observe
+ZincObserve and ZincSearch
 
-Depending on your needs you could use Zinc Observe or Zinc (classic) .
+Depending on your needs you could use ZincObserve or ZincSearch .
 
-Use Zinc Observe if you:
+Use ZincObserve if you:
 
 1. need a solution for log search.
 1. need to reduce your logging costs.
@@ -14,7 +14,7 @@ Use Zinc Observe if you:
 1. need to use log forwarders like fluentbit, fluentd, vector, etc.
 
 
-Use Zinc (classic) if you need:
+Use ZincSearch if you need:
 
 1. a solution for app search (Think of search field on a website)
 1. to store upto a couple hundred GB of data

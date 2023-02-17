@@ -2,10 +2,10 @@
 
 > Applicable to cloud version
 
-Users are indiviuals using zinc observe by logging in with appropriate credentials. As of today we support google as social account for login ,one can also sign up by providing valid email. 
+Users are indiviuals using ZincObserve by logging in with appropriate credentials. As of today we support google as social account for login ,one can also sign up by providing valid email. 
 A user will always access all the entities & associated data in context of an organization, one user can also belong to multiple organizations. By default for every user default organization is created, additionally user can be invited to other organizations by admin & owner of the organization.
 
-To navigate to users in zinc observe , select preferred organization using organization selection control, then click on ![Users](../../images/users_menu.jpg) menu , which will take one to users list screen. The screen lists all users for selected organization.  
+To navigate to users in ZincObserve , select preferred organization using organization selection control, then click on ![Users](../../images/users_menu.jpg) menu , which will take one to users list screen. The screen lists all users for selected organization.  
 
 
 <kbd>

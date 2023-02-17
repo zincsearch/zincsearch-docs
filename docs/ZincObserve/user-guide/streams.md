@@ -1,10 +1,10 @@
 # Streams
 
-A stream in zinc observe is sequence of events(logs/metrics/traces) ,sharing the same source for eg: logs from a specific application or from an enterprize.
+A stream in ZincObserve is sequence of events(logs/metrics/traces) ,sharing the same source for eg: logs from a specific application or from an enterprize.
 
-Currently zinc observe support steams of type logs , in future streams types metrics & traces will be supported.
+Currently ZincObserve support steams of type logs , in future streams types metrics & traces will be supported.
 
-To navigate to streams in zinc observe , select preferred organization using organization selection control, then click on ![Streams](../../images/streams_menu.jpg) menu , which will take one to stream list screen. The screen lists all streams for selected organization.  
+To navigate to streams in ZincObserve , select preferred organization using organization selection control, then click on ![Streams](../../images/streams_menu.jpg) menu , which will take one to stream list screen. The screen lists all streams for selected organization.  
 
 <kbd>
 ![Streams](../../images/streams_list.jpg)
