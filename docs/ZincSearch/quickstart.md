@@ -14,7 +14,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
 === "Windows" 
 
-    Binaries can be downloaded from [releases](https://github.com/zinclabs/zinc/releases) page for appropriate platform.
+    Binaries can be downloaded from [releases](https://github.com/zinclabs/zincsearch/releases) page for appropriate platform.
 
 
         set ZINC_FIRST_ADMIN_USER=admin
@@ -32,12 +32,12 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
         brew tap zinclabs/tap
         brew install zinclabs/tap/zinc
         mkdir data
-        ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 zinc 
+        ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 zincsearch
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
 
 === "MacOS/Linux Binaries"
-    Binaries can be downloaded from [releases](https://github.com/zinclabs/zinc/releases) page for appropriate platform.
+    Binaries can be downloaded from [releases](https://github.com/zinclabs/zincsearch/releases) page for appropriate platform.
 
     Create a data folder that will store the data
 
@@ -57,7 +57,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
         mkdir data
         docker run -v /full/path/of/data:/data -e ZINC_DATA_PATH="/data" -p 4080:4080 \
             -e ZINC_FIRST_ADMIN_USER=admin -e ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 \
-            --name zinc public.ecr.aws/zinclabs/zinc:latest
+            --name zincsearch public.ecr.aws/zinclabs/zinc:latest
 
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
@@ -77,29 +77,29 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
     Create the deployment and port forward:
 
-        kubectl apply -f https://raw.githubusercontent.com/zinclabs/zinc/main/k8s/kube-deployment.yaml
+        kubectl apply -f https://raw.githubusercontent.com/zinclabs/zincsearch/main/k8s/kube-deployment.yaml
     
-    Expose the zinc service by port-forwarding:
+    Expose the zincsearch service by port-forwarding:
 
-        kubectl -n zinc port-forward svc/z 4080:4080
+        kubectl -n zincsearch port-forward svc/z 4080:4080
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
 
 === "Kubernetes - Helm"
 
-    Update Helm values located in [values.yaml](https://github.com/zinclabs/zinc/blob/main/helm/zinc/values.yaml)
+    Update Helm values located in [values.yaml](https://github.com/zinclabs/zincsearch/blob/main/helm/zinc/values.yaml)
 
     Create the namespace:
 
-        kubectl create ns zinc
+        kubectl create ns zincsearch
 
     Install the chart:
 
-        helm install zinc helm/zinc -n zinc
+        helm install zincsearch helm/zincsearch -n zincsearch
 
     ZincSearch can be made available with an ingress or port-forward:
     
-        kubectl -n zinc port-forward svc/zinc 4080:4080
+        kubectl -n zincsearch port-forward svc/zincsearch 4080:4080
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
 
@@ -111,7 +111,7 @@ We will use bulk API to load sample data
 
 
 ```shell
-curl -L https://github.com/zinclabs/zinc/releases/download/v0.1.1/olympics.ndjson.gz -o olympics.ndjson.gz
+curl -L https://github.com/zinclabs/zincsearch/releases/download/v0.1.1/olympics.ndjson.gz -o olympics.ndjson.gz
 gzip -d  olympics.ndjson.gz 
 curl http://localhost:4080/api/_bulk -i -u admin:Complexpass#123  --data-binary "@olympics.ndjson"
 ```

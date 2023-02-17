@@ -137,7 +137,7 @@ When create index you can set `storage_type` to `s3` to enable s3 storage.
 Before use s3, you should config aws first.
 
 1. Config your ~/.aws/credentials
-1. Create bucket for zinc in s3
+1. Create bucket for ZincSearch in s3
 1. Set environment `ZINC_S3_BUCKET=bucketName`, the bucket name is just you created
 1. Create index set `storage_type` to `s3`, you will see the index data in s3 bucket
 

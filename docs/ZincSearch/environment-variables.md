@@ -6,8 +6,8 @@ We prefer environment variables for configuration as opposed to configuration fi
 | ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
 | ZINC_FIRST_ADMIN_USER         | -             | On first run  | First admin user of ZincSearch. Not required after first run of ZincSearch.  |
 | ZINC_FIRST_ADMIN_PASSWORD     | -             | On first run  | Password for first admin user                                             |
-| ZINC_SERVER_ADDRESS           | 0.0.0.0       | No            | zinc server IP address to bind to                                         |
-| ZINC_SERVER_PORT              | 4080          | No            | zinc server listen http port                                              |
+| ZINC_SERVER_ADDRESS           | 0.0.0.0       | No            | ZincSearch server IP address to bind to                                         |
+| ZINC_SERVER_PORT              | 4080          | No            | ZincSearch server listen http port                                              |
 | GIN_MODE                      | -             | No            | if the value is release then gin will run in production mode.             |
 | ZINC_DATA_PATH                | ./data        | No            | Defaults to "data" folder in current working directory if not provided.   |
 | ZINC_ICE_COMPRESSOR           | zstd          | No            | Algorithm of compress segment file, default is: zstd, supports: snappy, s2, zstd |

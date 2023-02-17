@@ -14,7 +14,7 @@ We provide prebuilt binaries/docker images for multiple platforms. More likely t
 
 1. Binary releases 
     - Tagged 
-        - [https://github.com/zinclabs/zinc/releases](https://github.com/zinclabs/zinc/releases)
+        - [https://github.com/zinclabs/zincsearch/releases](https://github.com/zinclabs/zincsearch/releases)
         - [http://zincsearch-releases.s3-website-us-west-2.amazonaws.com/tagged](http://zincsearch-releases.s3-website-us-west-2.amazonaws.com/tagged)
     - Dev
         - [http://zincsearch-releases.s3-website-us-west-2.amazonaws.com/dev](http://zincsearch-releases.s3-website-us-west-2.amazonaws.com/dev)

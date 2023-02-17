@@ -17,7 +17,7 @@ extra:
     - icon: fontawesome/brands/linkedin 
       link: https://www.linkedin.com/company/zincsearch
     - icon: fontawesome/brands/github 
-      link: https://github.com/zinclabs/zinc
+      link: https://github.com/zinclabs/zincsearch
     - icon: fontawesome/brands/docker 
       link: https://gallery.ecr.aws/zinclabs/zinc
     - icon: fontawesome/brands/slack 
@@ -51,8 +51,8 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-repo_url: https://github.com/zinclabs/zinc
-repo_name: zinclabs/zinc
+repo_url: https://github.com/zinclabs/zincsearch
+repo_name: zinclabs/zincsearch
 edit_uri: https://github.com/zinclabs/zincsearch-docs/edit/main/docs/
 markdown_extensions:
   - tables

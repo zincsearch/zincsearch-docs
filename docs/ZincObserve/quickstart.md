@@ -7,19 +7,19 @@ We will do 2 things as part of the quickstart:
 
 ## Installation
 
-You would need ZO_USER_NAME and ZO_USER_PASSWORD environment variables when you start ZincObserve for the first time. You don't need them on subsequent runs of ZincObserve.
+You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variables when you start ZincObserve for the first time. You don't need them on subsequent runs of ZincObserve.
 
 
 
 === "Windows" 
 
-    Binaries can be downloaded from [releases](https://github.com/zinclabs/zinc/releases) page for appropriate platform.
+    Binaries can be downloaded from [releases](https://github.com/zinclabs/zincobserve/releases) page for appropriate platform.
 
 
-        set ZO_USER_NAME=admin
-        set ZO_USER_PASSWORD=Complexpass#123
+        set ZO_ROOT_USER_EMAIL=admin
+        set ZO_ROOT_USER_PASSWORD=Complexpass#123
         mkdir data
-        zinc-observe.exe
+        zincobserve.exe
 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
@@ -31,17 +31,17 @@ You would need ZO_USER_NAME and ZO_USER_PASSWORD environment variables when you 
         brew tap zinclabs/tap
         brew install zinclabs/tap/zinc
         mkdir data
-        ZO_USER_NAME=admin ZO_USER_PASSWORD=Complexpass#123 zinc-observe 
+        ZO_ROOT_USER_EMAIL=admin ZO_ROOT_USER_PASSWORD=Complexpass#123 zincobserve 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
 === "MacOS/Linux Binaries"
-    Binaries can be downloaded from [releases](https://github.com/zinclabs/zinc/releases) page for appropriate platform.
+    Binaries can be downloaded from [releases](https://github.com/zinclabs/zincobserve/releases) page for appropriate platform.
 
     Create a data folder that will store the data
 
         mkdir data
-        ZO_USER_NAME=admin ZO_USER_PASSWORD=Complexpass#123 ./zinc-observe
+        ZO_ROOT_USER_EMAIL=admin@zinc.dev ZO_ROOT_USER_PASSWORD=Complexpass#123 ./zincobserve
 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
@@ -51,12 +51,12 @@ You would need ZO_USER_NAME and ZO_USER_PASSWORD environment variables when you 
     ------------------------
 
 
-    Docker images are available at [https://gallery.ecr.aws/zinclabs/zinc](https://gallery.ecr.aws/zinclabs/zinc)
+    Docker images are available at [https://gallery.ecr.aws/zinclabs/zincobserve](https://gallery.ecr.aws/zinclabs/zincobserve)
 
         mkdir data
         docker run -v /full/path/of/data:/data -e ZO_DATA_DIR="/data" -p 5080:5080 \
-            -e ZO_USER_NAME=admin -e ZO_USER_PASSWORD=Complexpass#123 \
-            --name zinc public.ecr.aws/zinclabs/zinc-observe:latest
+            -e ZO_ROOT_USER_EMAIL=admin -e ZO_ROOT_USER_PASSWORD=Complexpass#123 \
+            --name zinc public.ecr.aws/zinclabs/zincobserve:latest
 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
@@ -76,7 +76,7 @@ You would need ZO_USER_NAME and ZO_USER_PASSWORD environment variables when you 
 
     Create the deployment and port forward:
 
-        kubectl apply -f https://raw.githubusercontent.com/zinclabs/zinc/main/k8s/kube-deployment.yaml
+        kubectl apply -f https://raw.githubusercontent.com/zinclabs/zincobserve/main/k8s/kube-deployment.yaml
     
     Expose the zinc service by port-forwarding:
 
@@ -86,7 +86,7 @@ You would need ZO_USER_NAME and ZO_USER_PASSWORD environment variables when you 
 
 === "Kubernetes - Helm"
 
-    Update Helm values located in [values.yaml](https://github.com/zinclabs/zinc/blob/main/helm/zinc/values.yaml)
+    Update Helm values located in [values.yaml](https://github.com/zinclabs/zincobserve/blob/main/helm/zinc/values.yaml)
 
     Create the namespace:
 

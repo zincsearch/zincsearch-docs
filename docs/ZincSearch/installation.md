@@ -6,7 +6,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
 === "Windows" 
 
-    Binaries can be downloaded from [releases](https://github.com/zinclabs/zinc/releases) page for appropriate platform.
+    Binaries can be downloaded from [releases](https://github.com/zinclabs/zincsearch/releases) page for appropriate platform.
 
 
         set ZINC_FIRST_ADMIN_USER=admin
@@ -24,17 +24,17 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
         brew tap zinclabs/tap
         brew install zinclabs/tap/zinc
         mkdir data
-        ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 zinc 
+        ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 zincsearch
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
 
 === "MacOS/Linux Binaries"
-    Binaries can be downloaded from [releases](https://github.com/zinclabs/zinc/releases) page for appropriate platform.
+    Binaries can be downloaded from [releases](https://github.com/zinclabs/zincsearch/releases) page for appropriate platform.
 
     Create a data folder that will store the data
 
         mkdir data
-        ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 ./zinc 
+        ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 ./zincsearch 
 
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
@@ -49,7 +49,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
         mkdir data
         docker run -v /full/path/of/data:/data -e ZINC_DATA_PATH="/data" -p 4080:4080 \
             -e ZINC_FIRST_ADMIN_USER=admin -e ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 \
-            --name zinc public.ecr.aws/zinclabs/zinc:latest
+            --name zincsearch public.ecr.aws/zinclabs/zinc:latest
 
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
@@ -60,7 +60,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
         aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
     
-    Error - 2  : If you get error around permission denied when running docker command then you may want to fix permissions of data folder. zinc executable in docker runs as non-root and would need permissions to write to data folder. You can run below command to fix it:
+    Error - 2  : If you get error around permission denied when running docker command then you may want to fix permissions of data folder. zincsearch executable in docker runs as non-root and would need permissions to write to data folder. You can run below command to fix it:
 
         chmod a+rwx ./data
 
@@ -73,35 +73,35 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
     Create the deployment and port forward:
 
-        kubectl apply -f https://raw.githubusercontent.com/zinclabs/zinc/main/k8s/kube-deployment.yaml
+        kubectl apply -f https://raw.githubusercontent.com/zinclabs/zincsearch/main/k8s/kube-deployment.yaml
     
     Expose the ZincSearch service by port-forwarding:
 
-        kubectl -n zinc port-forward svc/z 4080:4080
+        kubectl -n zincsearch port-forward svc/z 4080:4080
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
 
 === "Kubernetes - Helm"
 
-    Update Helm values located in [values.yaml](https://github.com/zinclabs/zinc/blob/main/helm/zinc/values.yaml)
+    Update Helm values located in [values.yaml](https://github.com/zinclabs/zincsearch/blob/main/helm/zinc/values.yaml)
 
     Create the namespace:
 
-        kubectl create ns zinc
+        kubectl create ns zincsearch
 
     Install the chart:
 
-        helm install zinc helm/zinc -n zinc
+        helm install zincsearch helm/zincsearch -n zincsearch
 
     ZincSearch can be made available with an ingress or port-forward:
     
-        kubectl -n zinc port-forward svc/zinc 4080:4080
+        kubectl -n zincsearch port-forward svc/zinc 4080:4080
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
 
 === "Kubernetes - Juju"
 
-    You can use [Juju](https://juju.is) to deploy Zinc on any CNCF-conformant Kubnernetes. 
+    You can use [Juju](https://juju.is) to deploy ZincSearch on any CNCF-conformant Kubnernetes. 
     
     To get started, ensure that you have bootstrapped Juju on Kubernetes. You can find how-to guides for various Kubernetes platforms in the Juju docs ([MicroK8s](https://juju.is/docs/olm/microk8s) / [EKS](https://juju.is/docs/olm/amazon-elastic-kubernetes-service-(amazon-eks)) / [AKS](https://juju.is/docs/olm/azure-kubernetes-service-(azure-aks)) / [GKE](https://juju.is/docs/olm/google-kubernetes-engine-(gke))).
 
@@ -121,10 +121,10 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
     
         juju run-action --wait zinc-k8s/0 get-admin-password
 
-    If you're deployed on MicroK8s, you can use the address shown in `juju status` to reach Zinc directly. For other Kubernetes platforms, you can access Zinc using a port-forward:
+    If you're deployed on MicroK8s, you can use the address shown in `juju status` to reach ZincSearch directly. For other Kubernetes platforms, you can access ZincSearch using a port-forward:
     
-        kubectl -n zinc port-forward svc/zinc-k8s 4080:4080
+        kubectl -n zincsearch port-forward svc/zinc-k8s 4080:4080
     
     Point your browser to [http://localhost:4080](http://localhost:4080) and login!
     
-    Now Zinc is deployed, you can also deploy the [Canonical Observability Stack](https://charmhub.io/topics/canonical-observability-stack) and create relations to Zinc to enable automatic scraping with Prometheus, and Grafana dashboard integration.
+    Now ZincSearch is deployed, you can also deploy the [Canonical Observability Stack](https://charmhub.io/topics/canonical-observability-stack) and create relations to ZincSearch to enable automatic scraping with Prometheus, and Grafana dashboard integration.

@@ -1,4 +1,4 @@
-# Welcome to Zinc (classic)
+# Welcome to ZincSearch
 
 
 ## Why ZincSearch
@@ -12,7 +12,7 @@ You may also want to read the initial blog regarding launch of [ZincSearch](http
 
 ## Features:
 1. Provides full text indexing capability
-1. Single binary for installation and running. Binaries available under [releases](https://github.com/zinclabs/zinc/releases) for multiple platforms.
+1. Single binary for installation and running. Binaries available under [releases](https://github.com/zinclabs/zincsearch/releases) for multiple platforms.
 1. Embedded Web UI for querying data written in Vue
 1. Full Compatibility with Elasticsearch APIs for ingestion of data (single record and bulk API)
 1. Compatibility with Elasticsearch DSL for querying data. Check /es endpoints (This is work in progress. If somerthing does not work, let us know by raising a github issue)
