@@ -16,25 +16,27 @@ ZincObserve is currently in alpha. Following is the list of available features a
 | 5 | Support of S3, MinIO and GCS for data storage                 | Available           |
 | 6 | Advanced GUI                                                  | Available           |
 | 7 | SQL based query language                                      | Available           |
-| 8 | User defined Ingest and Query functions (Lua based)           | Available           |
-| 9 | Multi-tenancy                                                 | Available           |
-| 10 | Ingestion API compatibility with Elasticsearch               | Available           |
-| 11 | Scheduled Alerts (Based on logs)                             | Available           |
-| 12 | Real time Alerts (Based on logs)                             | Available           |
-| 13 | High Availability (HA) and clustering                        | Available           |
-| 14 | Stateless nodes                                              | Available           |
-| 15 | Localization for multiple languages                          | Available           |
-| 16 | Prebuilt binaries for multiple platforms                     | Available           |
-| 17 | Prebuilt container images for multiple platforms             | Available           |
-| 18 | Prebuilt container images for with SIMD acceleration         | Available           |
-| 19 | SIMD support for vectorized processing (AVX512 and Neon)     | Available           |
-| 20 | Allows to sleep better at night                              | Available           |
-| 21 | Search and aggregation API compatibility with Elasticsearch  | Under development   |
-| 22 | Dashboards                                                   | Under development   |
-| 23 | Metrics                                                      | Under development   |
-| 24 | Traces                                                       | Under development   |
-| 25 | WASM based ingest and query functions                        | To Start            |
-| 26 | Alerts (Based on metrics)                                    | To Start            |
+| 8 | Support for very high cardinality data                        | Available           |
+| 9 | User defined Ingest and Query functions (Lua based)           | Available           |
+| 10 | Multi-tenancy                                                | Available           |
+| 11 | Ingestion API compatibility with Elasticsearch               | Available           |
+| 12 | Scheduled Alerts (Based on logs)                             | Available           |
+| 13 | Real time Alerts (Based on logs)                             | Available           |
+| 14 | High Availability (HA) and clustering                        | Available           |
+| 15 | Stateless nodes                                              | Available           |
+| 16 | Localization for multiple languages                          | Available           |
+| 17 | Prebuilt binaries for multiple platforms                     | Available           |
+| 18 | Prebuilt container images for multiple platforms             | Available           |
+| 19 | Prebuilt container images for with SIMD acceleration         | Available           |
+| 20 | SIMD support for vectorized processing (AVX512 and Neon)     | Available           |
+| 21 | Allows to sleep better at night                              | Available           |
+| 22 | Search and aggregation API compatibility with Elasticsearch  | Under development   |
+| 23 | Dashboards                                                   | Under development   |
+| 24 | Metrics                                                      | Under development   |
+| 25 | Traces                                                       | Under development   |
+| 26 | WASM based ingest and query functions                        | To Start            |
+| 27 | Alerts (Based on metrics)                                    | To Start            |
+| 28 | Alerts (Based on metrics)                                    | To Start            |
 
 
 Please raise any new feature requests via github issue tracker.
@@ -70,10 +72,13 @@ We want to build the best software in the observability category in the world, a
 
 Elasticsearch is a general purpose search engine which can be used app search or log search. ZincObserve is built specifically for log search. If you are looking for a lightweight alternative of Elasticsearch then you should take a look at ZincSearch.
 
-ZincObserve does not rely on indexing of the data. It stores unindexed data in compressed format in local disk or object store in parquet columnar format. This allows for much lower compute requirement during data ingestion and very high compression rates resulting in ~140x lower storge cost. No indexing of data means that full scan searches may be slower than Elasticsearch but should still be fast due to multiple other techniques used. [Uber found 80% of queries in their production environment to be aggregation queries](https://www.uber.com/en-IN/blog/logging/) and columnar data storage of ZincObserve means that aggregation queries will typically be much faster than Elasticsearch.
+ZincObserve does not rely on indexing of the data. It stores unindexed data in compressed format in local disk or object store in parquet columnar format. This allows for much lower compute requirement during data ingestion and very high compression rates resulting in ~140x lower storge cost. No indexing of data means that full scan searches may be slower than Elasticsearch but should still be fast due to multiple other techniques like partitioning and caching. [Uber found 80% of queries in their production environment to be aggregation queries](https://www.uber.com/en-IN/blog/logging/) and columnar data storage of ZincObserve means that aggregation queries will typically be much faster than Elasticsearch.
 
-Below is the result when we sent real life log data from our kubernetes cluster to both Elasticsearch and ZincObserve. This only pertains to storage.
+Below is the result when we sent real life log data from our kubernetes cluster to both Elasticsearch and ZincObserve using fluentbit. This only pertains to storage. Cost of EBS volume is [8 cents/GB/Month (GP3)](https://aws.amazon.com/ebs/pricing/), cost of s3 is [2.3 cents/GB/month](https://aws.amazon.com/s3/pricing/). In HA mode in Elasticsearch you generally have 1 primary node and 2 replicas. You don't need to replicate s3 for data durability/availability as [AWS redundantly store your objects on multiple devices across a minimum of three Availability Zones (AZs) in an Amazon S3 Region](https://aws.amazon.com/s3/faqs/).
+
 ![ZincObserve Vs Elasticsearch storage](./images/zo_vs_es.png)
+
+ZincObserve enjoys 140x lower storage costs compared to Elasticsearch in the above scenario. That does not even consider additional unused EBS volume capacity that needs to be available in order to no run out of disk space and the effort that it requires to keep monitoring disk usage so it is not filled.
 
 ZincObserve is built in rust and enjoys its fast performance with no challaneges of JVM.
 

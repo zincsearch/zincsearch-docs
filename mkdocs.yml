@@ -30,6 +30,7 @@ extra:
     property: G-ZM6P0XB94J
 theme:
   logo: images/zinc.png
+  favicon: images/zinc.png
   name: material
   custom_dir: overrides
   features:
