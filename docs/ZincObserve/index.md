@@ -1,6 +1,6 @@
 # ZincObserve: Introduction
 
-‘ZincObserve’ is a cloud native observability platform that provides ~140x (YMMV. Could be higher or lower based on data entropy) lower storage costs (compared to elasticsearch) for real life log data, significantly lower operational cost and ease of use. It can scale to petabytes of data, is highly performant and allows you to sleep better at night 😀. If you are looking for an observability tool for logs, metrics and traces do evaluate ZincObserve and how its approach towards observability could help you build better software, get more sleep and save money on observability costs.
+‘ZincObserve’ is a cloud native observability platform that provides ~140x (YMMV. Could be higher or lower based on data entropy) lower storage costs (compared to Elasticsearch) for real life log data, significantly lower operational cost and ease of use. It can scale to petabytes of data, is highly performant and allows you to sleep better at night 😀. If you are looking for an observability tool for logs, metrics and traces do evaluate ZincObserve and how its approach towards observability could help you build better software, get more sleep and save money on observability costs.
 
 ## Features:
 1. Best in class GUI.
@@ -38,16 +38,54 @@ We want to build the best software in the observability category in the world, a
     1. System should be highly performant for most of the use cases in the real world.
     1. Many a times performance requires a tradeoff. In situations of tradeoffs, it should be generally acceptable to the majority of the users for the use case with excellent tradeoff value in return.
 
-## ZincObserve is a 10x better engine than elasticsearch / splunk.
+## Project Status and roadmap
 
-1. Stop indexing to reduce compute cost used for indexing , as most indexed data is rarely used
-1. Compress the data & store it in S3 as opposed to EBS volumes,resulting in reduced storage & ingestion costs by 30x-50x.
-1. Caching recent/hot data (configurable)
-1. Search using brute force & amortize compute cost across multiple customers.
-1. Used rust to build highly efficient engine. 
-1. Used stateless nodes in a cluster coordinated using etcd.
+ZincObserve is currently in alpha. Following is the list of available features and roadmap.
+
+| # | Feature                                                       | Status              |
+|---|---------------------------------------------------------------|---------------------|
+| 1 | Logs                                                          | Available           |
+| 2 | Highly compressed storage of data                             | Available           |
+| 3 | Support of S3, MinIO and GCS for data storage                 | Available           |
+| 4 | Advanced GUI                                                  | Available           |
+| 5 | SQL based query language                                      | Available           |
+| 6 | User defined Ingest and Query functions (Lua based)           | Available           |
+| 7 | Multi-tenancy                                                 | Available           |
+| 8 | Ingestion API compatibility with Elasticsearch                | Available           |
+| 9 | Scheduled Alerts (Based on logs)                              | Available           |
+| 10 | Real time Alerts (Based on logs)                             | Available           |
+| 11 | High Availability (HA) and clustering                        | Available           |
+| 12 | Stateless nodes                                              | Available           |
+| 13 | Localization for multiple languages                          | Available           |
+| 14 | Prebuilt binaries for multiple platforms                     | Available           |
+| 15 | Prebuilt container images for multiple platforms             | Available           |
+| 16 | Prebuilt container images for with SIMD acceleration         | Available           |
+| 17 | SIMD support for vectorized processing (AVX512 and Neon)     | Available           |
+| 18 | Alerts (Based on metrics)                                    | To Start   | 
+| 19 | Search and aggregation API compatibility with Elasticsearch  | Under development   |
+| 20 | Dashboards                                                   | Under development   |
+| 21 | Metrics                                                      | Under development   |
+| 22 | Traces                                                       | Under development   |
+| 23 | WASM based ingest and query functions                        | To Start            |
+
+Please raise any new feature requests via github issue tracker.
+
+You can use either the open source version or [Zinc Cloud](https://observe.zinc.dev). [Zinc Cloud](https://observe.zinc.dev) is built on top of open source ZincObserve but has minor differences. We will highlight the differences in the documentation whenever possible.
+
+## How does ZincObserve compare to Elasticsearch
+
+Elasticsearch is a general purpose search engine which can be used app search or log search. ZincObserve is built specifically for log search. If you are looking for a lightweight alternative of Elasticsearch then you should take a look at ZincSearch.
+
+ZincObserve does not rely on indexing of the data. It stores unindexed data in compressed format in local disk or object store in parquet columnar format. This allows for much lower ingestion compute requirement and very high compression rates resulting in ~140x lower storge cost. No indexing of data means that full scan searches may be slower than Elasticsearch but should still be fast due to multiple other techniques used. [Uber found 80% of queries in their production environment to be aggregation queries](https://www.uber.com/en-IN/blog/logging/) and columnar data storage of ZincObserve means that aggregation queries will typically be much faster than Elasticsearch.
+
+Below is the result when we sent real life log data from our kubernetes cluster to both Elasticsearch and ZincObserve.
+![ZincObserve Vs Elasticsearch storage](./images/zo_vs_es.png)
+
+ZincObserve is built in rust and enjoys its fast performance with no challaneges of JVM.
+
+Statelss node architecture allows ZincObserve to scale horizontally without worrying about data replication.
 
 
-## Project Status:
 
-ZincObserve is Generally available for logs now. 
+
+
