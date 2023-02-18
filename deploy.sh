@@ -10,5 +10,5 @@ mkdocs build
 aws s3 sync ./site s3://zincsearch-docs/ --profile=zinc-prod
 
 # invalidate cloudfront cache so that latest files can be served docs.zincsearch.com
-aws cloudfront create-invalidation --distribution-id EYQSDB90PCYFD --paths=/* --profile=zinc-prod
+aws cloudfront create-invalidation --distribution-id E3HCNV07Z16XSM --paths=/* --profile=zinc-prod
 
