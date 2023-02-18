@@ -62,31 +62,14 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
 
     Create the deployment and port forward:
 
-        kubectl apply -f https://raw.githubusercontent.com/zinclabs/zincobserve/main/k8s/kube-deployment.yaml
+        kubectl apply -f https://raw.githubusercontent.com/zinclabs/zincobserve/main/deploy/k8s/statefulset.yaml
     
     Expose the zinc service by port-forwarding:
 
-        kubectl -n zinc port-forward svc/z 5080:5080
+        kubectl -n zincobserve port-forward svc/zincobserve 5080:5080
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
-=== "Kubernetes - Helm"
-
-    Update Helm values located in [values.yaml](https://github.com/zinclabs/zincobserve/blob/main/helm/zinc/values.yaml)
-
-    Create the namespace:
-
-        kubectl create ns zinc
-
-    Install the chart:
-
-        helm install zinc helm/zinc -n zinc
-
-    ZincObserve can be made available with an ingress or port-forward:
-    
-        kubectl -n zinc port-forward svc/zinc 5080:5080
-
-    Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
 
 
@@ -110,14 +93,14 @@ Point your browser to [http://localhost:5080](http://localhost:5080) and login
 1. Search for match_all('error') in search bar and click the search button on right.
 
 Click on the "syntax guide" button next to the search bar to see examples on how to search.
-
-Now let's try to ingest a lot more data in a loop.
+## Load 5.5 GB of data
+We will try to ingest a lot more data in a loop.
 
 ```shell
 for i in {1..100}; do; curl http://localhost:5080/api/default/quickstart1/_json -i -u admin@example.com:Complexpass#123  --data-binary "@k8slog_json.json"; done
 ```
 
-The above command will ingest 5.5 GB of data in ZincObserve. This could take a couple minutes depending on how fast your machine is. So be patient.
+The above command will ingest 5.5 GB of data in ZincObserve. This could take a couple minutes depending on how fast your machine is. So be little patient.
 
 Once the ingestion is complete, feel free to search through the data again and be amazed at speed and simplicity.
 
