@@ -23,3 +23,7 @@
 .md-typeset code {
   color: #ef5552;
 }
+
+html {
+  font-size: 125%;
+}

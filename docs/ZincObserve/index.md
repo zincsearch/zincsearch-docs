@@ -16,27 +16,27 @@
 
 ## Guiding principles
 
-Following are the guiding principles for building ZincObserve.
+We want to build the best software in the observability category in the world, and we believe that the below principles will keep us aligned towards that:
 
-1. Day 1: Ease of getting started
+1. Day 1: It should be easy to setup and use
     1. You should be able to install (for self hosted option) or sign up (for SaaS platform) in under 2 minutes.
-    2. You should be able to start ingesting data in under 2 minutes and start observing the behavior of your applications without any major configuration.
-2. Day 2: Keep it up and running
-    3. Application should be stable and in the case of issues should be able to heal itself automatically.
-    4. Majority of the users should be able to start using the system efficiently with ZERO configuration.
-    5. Scaling up/down should be as easy as changing the number of nodes in an autoscaling group (in AWS) or changing the number of replicas (in k8s).
-    6. Majority of the folks should not need backups or should be able to do it without DBA level skills.
-    7. Fear of upgrades should not make you lose your sleep
-3. Features and Usability
-    8. System should be highly usable from the get go - providing excellent ROI on the invested time. A great UI and API are important to achieve it.
-    9. Logs themselves do not provide you visibility into your application. You need metrics and traces as well.
-4. Cost
-    10. You should not have to mortgage your house or company assets in order to run the system either in self hosted mode (with or without licensing cost) or for SaaS platform.
-5. Learning curve
-    11. A user who has never used the system should be able to set up and use the system efficiently for basic needs or should be able to use existing skills for advanced purposes.
-6. Performance
-    12. System should be highly performant for most of the use cases in the real world.
-    13. Performance is generally a tradeoff. In situations of tradeoffs, it should be generally acceptable to the majority of the users with excellent tradeoff value in return.
+    1. You should be able to start ingesting data in under 2 minutes and start observing the behavior of your applications without any major configuration.
+2. Day 2: It should not be painful to keep the system up and running
+    1. Application should be stable and in the case of issues should be able to heal itself automatically.
+    1. Majority of the users should be able to start using the system efficiently with ZERO configuration.
+    1. Scaling up/down should be as easy as changing the number of nodes in an autoscaling group (in AWS) or changing the number of replicas (in k8s).
+    1. Majority of the folks should not need backups or should be able to do it without DBA level skills.
+    1. Fear of upgrades should not make you lose your sleep
+3. Features and Usability: It should have good features and functionality to do the job efficiently
+    1. System should be highly usable from the get go - providing excellent ROI on the invested time. A great UI and API are important to achieve it.
+    1. Logs themselves do not provide you visibility into your application. You need metrics and traces as well.
+4. Cost: It should be cost effective
+    1. You should not have to mortgage your house or company assets in order to run the system either in self hosted mode (with or without licensing cost) or for SaaS platform.
+5. Learning curve: It should allow beginner to do a lot of tasks easily and advanced users should be able to use most of their existing skills
+    1. A user who has never used the system should be able to set up and use the system efficiently for basic needs or should be able to use existing skills for advanced purposes.
+6. Performance: It should be highly performant
+    1. System should be highly performant for most of the use cases in the real world.
+    1. Many a times performance requires a tradeoff. In situations of tradeoffs, it should be generally acceptable to the majority of the users for the use case with excellent tradeoff value in return.
 
 ## ZincObserve is a 10x better engine than elasticsearch / splunk.
 

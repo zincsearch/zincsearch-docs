@@ -18,29 +18,15 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
 
         set ZO_ROOT_USER_EMAIL=admin@example.com
         set ZO_ROOT_USER_PASSWORD=Complexpass#123
-        mkdir data
         zincobserve.exe
 
-
-    Now point your browser to [http://localhost:5080](http://localhost:5080) and login
-
-=== "MacOS - Homebrew"
-
-    In your terminal:
-
-        brew tap zinclabs/tap
-        brew install zinclabs/tap/zinc
-        mkdir data
-        ZO_ROOT_USER_EMAIL=admin@example.com ZO_ROOT_USER_PASSWORD=Complexpass#123 zincobserve 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
 === "MacOS/Linux Binaries"
     Binaries can be downloaded from [releases](https://github.com/zinclabs/zincobserve/releases) page for appropriate platform.
 
-    Create a data folder that will store the data
 
-        mkdir data
         ZO_ROOT_USER_EMAIL=admin@example.com ZO_ROOT_USER_PASSWORD=Complexpass#123 ./zincobserve
 
 
@@ -54,7 +40,7 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
     Docker images are available at [https://gallery.ecr.aws/zinclabs/zincobserve](https://gallery.ecr.aws/zinclabs/zincobserve)
 
         mkdir data
-        docker run -v /full/path/of/data:/data -e ZO_DATA_DIR="/data" -p 5080:5080 \
+        docker run -v $PWD/data:/data -e ZO_DATA_DIR="/data" -p 5080:5080 \
             -e ZO_ROOT_USER_EMAIL=admin@example.com -e ZO_ROOT_USER_PASSWORD=Complexpass#123 \
             --name zinc public.ecr.aws/zinclabs/zincobserve:latest
 
@@ -72,7 +58,7 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
 
     Create a namespace:
 
-        kubectl create ns zinc
+        kubectl create ns zincobserve
 
     Create the deployment and port forward:
 
@@ -123,4 +109,15 @@ Point your browser to [http://localhost:5080](http://localhost:5080) and login
 1. Select the index quickstart1 from drop down in the left
 1. Search for match_all('error') in search bar and click the search button on right.
 
-Click on the info button next to the search bar to see examples on how to search.
+Click on the "syntax guide" button next to the search bar to see examples on how to search.
+
+Now let's try to ingest a lot more data in a loop.
+
+```shell
+for i in {1..100}; do; curl http://localhost:5080/api/default/quickstart1/_json -i -u admin@example.com:Complexpass#123  --data-binary "@k8slog_json.json"; done
+```
+
+The above command will ingest 5.5 GB of data in ZincObserve. This could take a couple minutes depending on how fast your machine is. So be patient.
+
+Once the ingestion is complete, feel free to search through the data again and be amazed at speed and simplicity.
+
