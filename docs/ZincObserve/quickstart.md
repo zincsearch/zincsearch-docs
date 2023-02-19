@@ -77,6 +77,7 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
 
 We will use JSON API to load sample log data. 
 
+Below commands will download a sample file of real life log data, unzip it and load it in ZincObserve using the JSON ingestion API.
 
 ```shell
 curl -L https://zinc-public-data.s3.us-west-2.amazonaws.com/zinc-enl/sample-k8s-logs/k8slog_json.json.zip -o k8slog_json.json.zip
