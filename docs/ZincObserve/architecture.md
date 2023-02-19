@@ -26,3 +26,16 @@ Use this mode for light usage and testing. This is the default mode for running 
 
 Router, Querier and ingester nodes can be horizontally scaled to accomodate for higher traffic.
 
+## Components
+
+### Ingester
+
+### Querier
+
+### Compactor
+
+### Router
+
+### AlertManager
+
+

@@ -4,7 +4,6 @@ nav:
     - Screenshots: screenshots.md
     - Quickstart: quickstart.md
     - Architecture: architecture.md
-    - Components: components.md
     - Environment Variables: environment-variables.md
     - Storage: storage.md
     - User Guide: user-guide
