@@ -1,5 +1,7 @@
 # Vector
 
+( .toml format)
+
 ```toml
 [sinks.zinc]
 type = "http"
