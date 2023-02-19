@@ -9,7 +9,7 @@ We prefer environment variables for configuration as opposed to configuration fi
 | ZO_ROOT_USER_PASSWORD     | -             | On first run  | Password for first/super admin user |
 | ZO_LOCAL_MODE        | true          | No            | If local mode is set to true ,ZincObserve becomes single node deployment, false indicates cluster mode deployment which supports multiple nodes with different roles. For local mode one needs to configure `sled db`, for cluster mode one needs to config `etcd`. |
 | ZO_LOCAL_MODE_STORAGE | disk         | No            | Applicable only for local mode , by default local disk is used as stoarge, we also support s3 in local mode. |
-| ZO_NODE_ROLE         | all           | No            | Possible values are : all, ingester, quierier, compactor, router, alertmanager |
+| ZO_NODE_ROLE         | all           | No            | Possible values are : all, ingester, quierier, compactor, router, alertmanager. A single node can have multiple roles id desired. Specify roles sperated by comma. e.g. compactor,alertmanager |
 | ZO_HTTP_PORT         | 5080          | No            | zinc server listen http port |
 | ZO_GRPC_PORT         | 5081          | No            | zinc server listen grpc port |
 | ZO_GRPC_TIMEOUT      | 600           | No            | grpc query timeout, default is 500 seconds | 
@@ -48,7 +48,7 @@ We prefer environment variables for configuration as opposed to configuration fi
 
 
 > For local mode, we use sled db as the metadata store.
-> For cluster mode, we use etcd as the metadata store. We plan to support redis, postgreSQL for cluster mode in future.
+> For cluster mode, we use etcd as the metadata store.
 
 ## Etcd
 
