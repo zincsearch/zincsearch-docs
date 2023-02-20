@@ -1,3 +1,4 @@
+> Applicable to cloud & enterprise version
 # Organizations
 
 An organization is logical entity using which various streams , users , functions etc are grouped in ZincObserve An organization can represent a enterprize , a department of an enterprize or an application. All streams , users , functions etc are scoped to an organization.

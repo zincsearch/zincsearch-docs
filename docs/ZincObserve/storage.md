@@ -1,3 +1,4 @@
+> Applicable to open source & enterprise version
 
 There are 2 primary items that need to be stored in ZincObserve. 
 
