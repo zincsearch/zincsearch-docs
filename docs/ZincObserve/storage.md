@@ -21,20 +21,6 @@ To use S3 for storing stream data following needs to be done:
     - Instance metadata on an EC2 Instance/Fargate container/ECS container. You do this providing an IAM role to an EC2 instance or a task role to an ECS task - IMDS/IMDSv2 . ECS is not recommended as it does not have support for stateful workloads off EBS as of now.
     - IAM Roles for service Accounts in EKS
 
-  
-
-## MinIO
-
-ZincObserve can use MinIO for storing stream data , following environment variables needs to be setup:
-
-
-| Environment Variable          | Default Value | Mandatory     | Description                                                               |
-| ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
-| ZO_S3_SERVER_URL            | -             | No            | default for aws s3 & leave it empty, but for `minIO`, `gcs` one should configure it. |
-| ZO_S3_REGION_NAME           | -             | No            | region name |
-| ZO_S3_ACCESS_KEY            | -             | No            | access key |
-| ZO_S3_SECRET_KEY            | -             | No            | secret key |
-| ZO_S3_BUCKET_NAME           | -             | No            | bucket name |
 
 ## MinIO
 
