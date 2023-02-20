@@ -1,6 +1,6 @@
 # Delete user
 
-Endpoint: `DELETE /api/{organization}/user/{user_name}`
+Endpoint: `DELETE /api/{organization}/users/{user_email}`
 
 ## Request
 
