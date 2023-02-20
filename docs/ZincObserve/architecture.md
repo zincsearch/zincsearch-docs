@@ -1,3 +1,4 @@
+> Applicable to open source & enterprise version
 # Architecture and deployment modes
 
 ZincObserve can be run in single node or in HA mode in a cluster. 

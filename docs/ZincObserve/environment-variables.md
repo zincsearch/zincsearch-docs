@@ -1,3 +1,4 @@
+> Applicable to open source & enterprise version
 
 ZincObserve is configure through the use of below environment variables.
 
