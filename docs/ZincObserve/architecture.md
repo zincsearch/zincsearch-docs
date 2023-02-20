@@ -1,12 +1,12 @@
 # Architecture and deployment modes
 
-ZincObserve can be run in single node or in HA mode in a cluster.
+ZincObserve can be run in single node or in HA mode in a cluster. 
 
 ## Single Node
 
 ### Sled and Local disk
 
-Use this mode for light usage and testing. This is the default mode for running ZincObserve.
+Use this mode for light usage and testing or if HA is not a requirement for you. (You could still ingest and search over 2 TB on a single machine per day. On a mac M2 in our tests, you can ingest at ~31 MB/Second or 1.8 GB/Min or 2.6 TB/Day with default configuration). This is the default mode for running ZincObserve. Check [Quickstart](/ZincObserve/quickstart) to find various ways to get this setup done.
 
 ![Single node architecture using Sled and local disk](./images/arch-sled-local.png)
 

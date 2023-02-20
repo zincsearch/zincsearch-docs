@@ -2,7 +2,7 @@
 
 ## ZincObserve 
 
-Use ZincObserve if you:
+Use [ZincObserve](ZincObserve) if you:
 
 1. need a solution for log search and observability in general.
 1. need to reduce your logging costs.
@@ -14,7 +14,7 @@ Use ZincObserve if you:
 
 ## ZincSearch
 
-Use ZincSearch if you need:
+Use [ZincSearch](ZincSearch) if you need:
 
 1. a solution for app search (Think of search field on a website)
 1. to store upto a couple hundred GB of data

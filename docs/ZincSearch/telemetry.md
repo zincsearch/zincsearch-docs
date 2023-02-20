@@ -1,15 +1,9 @@
 # Telemetry
 
-## What is your stance on Privacy?
-We think of privacy as essential human right. We do not want our privacy to be violated and we would treat you the same way we would ourselves want to be trerated by others. We therefore do not collect any PIIs.
-
 ## Why do you collect telemetry data?
-We collects anonymized data from users in order to understand ZincSearch's usage and improve ZincSearch. This can be deactivated at any time, and any data that has already been collected can be deleted on request. Please send an email to admin+privacy@zinclabs.io to request deletion of the anonymized data. Please send the install
+We collects anonymized data from users in order to understand ZincSearch's usage and improve ZincSearch. This can be deactivated at any time, and any data that has already been collected can be deleted on request. Please send an email to admin+privacy@zinclabs.io to request deletion of the anonymized data. 
 
-## Do you collect any PII (Personally Identifiable Information) data?
-No. Purpose of telemetry data is to understand and improve ZincSearch usage and not track you or push you advertisements.
-
-## What tools do we use to collect and visualize data?
+## What tools do ZincSearch uses to collect and visualize data?
 We use Segment, a platform for data collection and management, to collect usage data. We then feed that data into Amplitude, a tool for graphing and highlighting data, so that we can build visualizations according to our needs.
 
 ## What Telemetry data is being collected?
