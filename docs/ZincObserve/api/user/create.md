@@ -6,7 +6,7 @@ Endpoint: `POST /api/{organization}/users`
 
 ```json
 {
-	"email": "newuser",
+	"email": "admin@zinc.dev",
 	"first_name": "ming",
 	"last_name": "xing",
 	"password": "complex#pass",
@@ -18,7 +18,7 @@ Description
 
 | Field name | Data type | Default value | Description |
 |------------|-----------|---------------|-------------|
-| email      | string    | -             | user name |
+| email      | string    | -             | user email |
 | first_name | string    | -             | first name |
 | last_name  | string    | -             | last name |
 | password   | string    | -             | user password |
