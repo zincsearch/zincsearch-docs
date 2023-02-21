@@ -9,14 +9,12 @@ We will do 2 things as part of the quickstart:
 
 You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variables when you start ZincObserve for the first time. You don't need them on subsequent runs of ZincObserve.
 
-
-
-=== "Windows" 
+=== "Windows"
 
     Binaries can be downloaded from [releases](https://github.com/zinclabs/zincobserve/releases) page for appropriate platform.
 
 
-        set ZO_ROOT_USER_EMAIL=admin@example.com
+        set ZO_ROOT_USER_EMAIL=root@example.com
         set ZO_ROOT_USER_PASSWORD=Complexpass#123
         zincobserve.exe
 
@@ -24,10 +22,9 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
 === "MacOS/Linux Binaries"
-    Binaries can be downloaded from [releases](https://github.com/zinclabs/zincobserve/releases) page for appropriate platform.
+Binaries can be downloaded from [releases](https://github.com/zinclabs/zincobserve/releases) page for appropriate platform.
 
-
-        ZO_ROOT_USER_EMAIL=admin@example.com ZO_ROOT_USER_PASSWORD=Complexpass#123 ./zincobserve
+        ZO_ROOT_USER_EMAIL=root@example.com ZO_ROOT_USER_PASSWORD=Complexpass#123 ./zincobserve
 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
@@ -41,7 +38,7 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
 
         mkdir data
         docker run -v $PWD/data:/data -e ZO_DATA_DIR="/data" -p 5080:5080 \
-            -e ZO_ROOT_USER_EMAIL=admin@example.com -e ZO_ROOT_USER_PASSWORD=Complexpass#123 \
+            -e ZO_ROOT_USER_EMAIL=root@example.com -e ZO_ROOT_USER_PASSWORD=Complexpass#123 \
             --name zinc public.ecr.aws/zinclabs/zincobserve:latest
 
 
@@ -53,7 +50,6 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
 
         aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
 
-
 === "Kubernetes - Manifest"
 
     Create a namespace:
@@ -63,28 +59,24 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
     Create the deployment and port forward:
 
         kubectl apply -f https://raw.githubusercontent.com/zinclabs/zincobserve/main/deploy/k8s/statefulset.yaml
-    
+
     Expose the zinc service by port-forwarding:
 
         kubectl -n zincobserve port-forward svc/zincobserve 5080:5080
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
-
-
-
 ## Load sample data
 
-We will use JSON API to load sample log data. 
+We will use JSON API to load sample log data.
 
 Below commands will download a sample file of real life log data, unzip it and load it in ZincObserve using the JSON ingestion API.
 
 ```shell
 curl -L https://zinc-public-data.s3.us-west-2.amazonaws.com/zinc-enl/sample-k8s-logs/k8slog_json.json.zip -o k8slog_json.json.zip
 unzip k8slog_json.json.zip
-curl http://localhost:5080/api/default/quickstart1/_json -i -u admin@example.com:Complexpass#123  --data-binary "@k8slog_json.json"
+curl http://localhost:5080/api/default/quickstart1/_json -i -u root@example.com:Complexpass#123  --data-binary "@k8slog_json.json"
 ```
-
 
 ## Search for data
 
@@ -94,14 +86,15 @@ Point your browser to [http://localhost:5080](http://localhost:5080) and login
 1. Search for match_all('error') in search bar and click the search button on right.
 
 Click on the "syntax guide" button next to the search bar to see examples on how to search.
+
 ## Load 5.5 GB of data
+
 We will try to ingest a lot more data in a loop.
 
 ```shell
-for i in {1..100}; do; curl http://localhost:5080/api/default/quickstart1/_json -i -u admin@example.com:Complexpass#123  --data-binary "@k8slog_json.json"; done
+for i in {1..100}; do; curl http://localhost:5080/api/default/quickstart1/_json -i -u root@example.com:Complexpass#123  --data-binary "@k8slog_json.json"; done
 ```
 
 The above command will ingest 5.5 GB of data in ZincObserve. This could take a couple minutes depending on how fast your machine is. So be little patient.
 
 Once the ingestion is complete, feel free to search through the data again and be amazed at speed and simplicity.
-
