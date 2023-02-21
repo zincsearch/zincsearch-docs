@@ -94,4 +94,4 @@ for i in {1..100}; do; curl http://localhost:5080/api/default/quickstart1/_json 
 
 The above command will ingest 5.5 GB of data in ZincObserve. This could take a couple minutes depending on how fast your machine is. So be little patient.
 
-Once the ingestion is complete, feel free to search through the data again and be amazed at speed and simplicity.
+Once the ingestion is complete, feel free to search through the data again and be amazed at the simplicity.
