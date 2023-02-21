@@ -13,7 +13,7 @@ Endpoint: `POST /api/{organization}/_search`
         "from": 0,
         "size": 0,
         "track_total_hits": false,
-        "sql_mode":"full"
+        "sql_mode":"context"
     },
     "aggs": {
         "agg1": "SELECT histogram(_timestamp, '5 minute') AS key, COUNT(*) AS num FROM query GROUP BY key ORDER BY key",
