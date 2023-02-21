@@ -22,7 +22,7 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
 === "MacOS/Linux Binaries"
-Binaries can be downloaded from [releases](https://github.com/zinclabs/zincobserve/releases) page for appropriate platform.
+    Binaries can be downloaded from [releases](https://github.com/zinclabs/zincobserve/releases) page for appropriate platform.
 
         ZO_ROOT_USER_EMAIL=root@example.com ZO_ROOT_USER_PASSWORD=Complexpass#123 ./zincobserve
 
@@ -30,9 +30,6 @@ Binaries can be downloaded from [releases](https://github.com/zinclabs/zincobser
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
 
 === "Docker"
-
-    ------------------------
-
 
     Docker images are available at [https://gallery.ecr.aws/zinclabs/zincobserve](https://gallery.ecr.aws/zinclabs/zincobserve)
 
