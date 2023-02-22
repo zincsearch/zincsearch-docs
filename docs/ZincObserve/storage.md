@@ -58,7 +58,7 @@ ZincObserve can use google cloud storage for storing stream data , following env
 | ZO_S3_SECRET_KEY            | -             | No            | secret key |
 | ZO_S3_BUCKET_NAME           | -             | No            | bucket name |
 
-You can refer to: https://cloud.google.com/storage/docs/aws-simple-migration
+You can refer to: [https://cloud.google.com/storage/docs/aws-simple-migration](https://cloud.google.com/storage/docs/aws-simple-migration)
 
 ## Alibaba OSS (aliyun)
 
@@ -72,7 +72,7 @@ ZincObserve can use google cloud storage for storing stream data , following env
 | ZO_S3_SECRET_KEY            | -             | No            | secret key |
 | ZO_S3_BUCKET_NAME           | -             | No            | bucket name |
 
-You can refer to: https://help.aliyun.com/document_detail/64919.html
+You can refer to: [https://help.aliyun.com/document_detail/64919.html](https://help.aliyun.com/document_detail/64919.html)
 
 ## Tencent COS
 
@@ -86,4 +86,4 @@ ZincObserve can use tencent cloud storage for storing stream data , following en
 | ZO_S3_SECRET_KEY            | -             | No            | secret key |
 | ZO_S3_BUCKET_NAME           | -             | No            | bucket name |
 
-You can refer to: https://cloud.tencent.com/document/product/436/37421
+You can refer to: [https://cloud.tencent.com/document/product/436/37421](https://cloud.tencent.com/document/product/436/37421)
