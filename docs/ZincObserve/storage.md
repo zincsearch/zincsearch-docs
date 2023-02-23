@@ -62,7 +62,7 @@ You can refer to: [https://cloud.google.com/storage/docs/aws-simple-migration](h
 
 ## Alibaba OSS (aliyun)
 
-ZincObserve can use google cloud storage for storing stream data , following environment variables needs to be setup:
+ZincObserve can use Alibaba(aliyun) OSS for storing stream data , following environment variables needs to be setup:
 
 | Environment Variable        | Default Value | Mandatory     | Description                                                               |
 | --------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
