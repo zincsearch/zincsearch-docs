@@ -66,8 +66,8 @@ ZincObserve can use google cloud storage for storing stream data , following env
 
 | Environment Variable        | Default Value | Mandatory     | Description                                                               |
 | --------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
-| ZO_S3_SERVER_URL            | -             | No            | oss endpoint address |
-| ZO_S3_REGION_NAME           | -             | No            | region name, oss region name |
+| ZO_S3_SERVER_URL            | -             | No            | oss endpoint address, eg: `https://oss-cn-beijing.aliyuncs.com` |
+| ZO_S3_REGION_NAME           | -             | No            | region name, oss region name, eg: `oss-cn-beijing` |
 | ZO_S3_ACCESS_KEY            | -             | No            | access key |
 | ZO_S3_SECRET_KEY            | -             | No            | secret key |
 | ZO_S3_BUCKET_NAME           | -             | No            | bucket name |
