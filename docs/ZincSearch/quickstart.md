@@ -42,7 +42,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
     Create a data folder that will store the data
 
         mkdir data
-        ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 ./zinc 
+        ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 ./zincsearch 
 
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
