@@ -9,7 +9,7 @@ ZincObserve is configure through the use of below environment variables.
 | ZO_ROOT_USER_EMAIL            | -             | On first run  | Email of first/super admin user  |
 | ZO_ROOT_USER_PASSWORD         | -             | On first run  | Password for first/super admin user |
 | ZO_LOCAL_MODE                 | true          | No            | If local mode is set to true ,ZincObserve becomes single node deployment, false indicates cluster mode deployment which supports multiple nodes with different roles. For local mode one needs to configure `sled db`, for cluster mode one needs to config `etcd`. |
-| ZO_LOCAL_MODE_STORAGE         | disk          | No            | Applicable only for local mode , by default local disk is used as stoarge, we also support s3 in local mode. |
+| ZO_LOCAL_MODE_STORAGE         | disk          | No            | `disk` or `s3`, Applicable only for local mode , by default local disk is used as stoarge, we also support s3 in local mode. |
 | ZO_NODE_ROLE                  | all           | No            | Possible values are : all, ingester, quierier, compactor, router, alertmanager. A single node can have multiple roles id desired. Specify roles sperated by comma. e.g. compactor,alertmanager |
 | ZO_HTTP_PORT                  | 5080          | No            | zinc server listen http port |
 | ZO_GRPC_PORT                  | 5081          | No            | zinc server listen grpc port |
@@ -45,6 +45,8 @@ ZincObserve is configure through the use of below environment variables.
 | ZO_MEMORY_CACHE_CACHE_LATEST_FILES | false    | No            | by default we just cache files required by data being queried, enable this option to cache all the latest generated files.Caching all latest generated files can accelerate the queries on latest data, the time range for latest cached files depends on the max cache size. |
 | ZO_MEMORY_CACHE_MAX_SIZE      | -             | No            | default 50% of the total memory as used for in-memory cache , one can set it to desired amount unit: MB |
 | ZO_MEMORY_CACHE_RELEASE_SIZE  | -             | No            | default drop 1% entries from in-memory cache as cache is full, one can set it to desired amount unit: MB |
+| ZO_TELEMETRY                  | true          | No            | Send anonymous telemetry info for improving ZincObserve. You can disable by set it to `false` |
+| ZO_TELEMETRY_URL              | https://e1.zinclabs.dev | No  | OpenTelemetry report URL. You can report to your own server. |
 | RUST_LOG                      | info          | No            | log level, default is info, supports: error, warn, info, debug, trace |
 
 
