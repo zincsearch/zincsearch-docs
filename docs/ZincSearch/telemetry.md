@@ -19,7 +19,7 @@ We use Segment, a platform for data collection and management, to collect usage 
 | total_memory              | Total memory                          | 2                     |
 | memory_used_percent       | Total memory used percentage          | 40                    |
 | search_type               | Kind of search queries                | querystring, match    |
-| search_index_storage      | Where are indexes being stored        | disk, minio, s3       |
+| search_index_storage      | Where are indexes being stored        | disk, minio (deprecated), s3 (deprecated) |
 | search_index_size_in_mb   | Size of the index that was queried    | 2                     |
 | time_taken_to_search_in_ms| Time taken for search                 | 340                   |
 | aggregations_count        | Total aggregations in search query    | 1                     |

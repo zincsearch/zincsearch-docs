@@ -11,11 +11,11 @@ We prefer environment variables for configuration as opposed to configuration fi
 | GIN_MODE                      | -             | No            | if the value is release then gin will run in production mode.             |
 | ZINC_DATA_PATH                | ./data        | No            | Defaults to "data" folder in current working directory if not provided.   |
 | ZINC_ICE_COMPRESSOR           | zstd          | No            | Algorithm of compress segment file, default is: zstd, supports: snappy, s2, zstd |
-| ZINC_S3_BUCKET                | -             | No            | S3 bucket to be used for index storage                                    |
-| ZINC_MINIO_ENDPOINT           | -             | No            | MinIO server endpoint. e.g localhost:9000 . See no http                   |
-| ZINC_MINIO_ACCESS_KEY_ID      | -             | No            | MinIO ACCESS_KEY_ID                                                       |
-| ZINC_MINIO_SECRET_ACCESS_KEY  | -             | No            | MinIO SECRET_ACCESS_KEY                                                   |
-| ZINC_MINIO_BUCKET             | -             | No            | MinIO bucket for index storage                                            |
+| ZINC_S3_BUCKET                | -             | No            | (deprecated) S3 bucket to be used for index storage                                    |
+| ZINC_MINIO_ENDPOINT           | -             | No            | (deprecated) MinIO server endpoint. e.g localhost:9000 . See no http                   |
+| ZINC_MINIO_ACCESS_KEY_ID      | -             | No            | (deprecated) MinIO ACCESS_KEY_ID                                                       |
+| ZINC_MINIO_SECRET_ACCESS_KEY  | -             | No            | (deprecated) MinIO SECRET_ACCESS_KEY                                                   |
+| ZINC_MINIO_BUCKET             | -             | No            | (deprecated) MinIO bucket for index storage                                            |
 | ZINC_MAX_RESULTS              | 100           | No            | Maximum results to be returned from server. Defaults to 1000              |
 | ZINC_BATCH_SIZE               | 1024          | No            | Internal batch size for batching records when bulk indexing is done.      |
 | ZINC_AGGREGATION_TERMS_SIZE   | 1000          | No            | terms aggregation returns max bucket size                                 |

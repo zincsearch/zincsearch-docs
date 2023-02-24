@@ -50,7 +50,7 @@ Request Body:
 }
 ```
 
-OR use `s3` to storage data:
+OR use `s3` to storage data (deprecated):
 
 ```json
 {
@@ -89,7 +89,7 @@ OR use `s3` to storage data:
 }
 ```
 
-OR use `minIO` to storage data:
+OR use `minIO` to storage data (deprecated):
 
 ```json
 {
@@ -130,7 +130,7 @@ OR use `minIO` to storage data:
 
 Default `storage_type` is `disk`
 
-## Use S3
+## Use S3 (deprecated)
 
 When create index you can set `storage_type` to `s3` to enable s3 storage.
 
@@ -142,7 +142,7 @@ Before use s3, you should config aws first.
 1. Create index set `storage_type` to `s3`, you will see the index data in s3 bucket
 
 
-## Use MinIO
+## Use MinIO (deprecated)
 
 When create index you can set `storage_type` to `minio` to enable minIO storage.
 

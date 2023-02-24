@@ -12,7 +12,7 @@ Indexes can be stored in 3 different places.
 
 Disk is default storage place for indexes. Make sure that you have enough storage available on your disk for index storage. During data ingestion the index name that you provide may not be present. In that case a new disk based index will be created automatically for storing the index data.
 
-## S3
+## S3 (deprecated)
 
 To use S3 for storing index data following needs to be done:
 
@@ -36,7 +36,7 @@ Request Body:
     - IAM Roles for service Accounts in EKS
 
 
-## MinIO
+## MinIO (deprecated)
 
 ZincSearch can use MinIO for storing indexes. Just like S3 storage, for using MinIO the index needs to be precreated.
 
