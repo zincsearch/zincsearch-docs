@@ -95,7 +95,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
     ZincSearch can be made available with an ingress or port-forward:
     
-        kubectl -n zincsearch port-forward svc/zinc 4080:4080
+        kubectl -n zincsearch port-forward svc/zincsearch 4080:4080
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
 
