@@ -17,7 +17,7 @@ ZincObserve is configure through the use of below environment variables.
 | ZO_GRPC_ORG_HEADER_KEY        | zinc-org-id   | No            | header key for sending orgnization information for `traces` using OTLP over grpc |
 | ZO_ROUTE_TIMEOUT              | 600           | No            | timeout for router node.             |
 | ZO_INSTANCE_NAME              | -             | No            | in the cluster mode, each node has a instance name, default is instance hostname. |
-| ZINC_DATA_DIR                 | ./data        | No            | Defaults to "data" folder in current working directory if not provided.   |
+| ZO_DATA_DIR                   | ./data        | No            | Defaults to "data" folder in current working directory if not provided.   |
 | ZO_DATA_WAL_DIR               | ./data/wal/   | No            | local WAL data directory. |
 | ZO_DATA_STREAM_DIR            | ./data/stream/   | No         | streams local data storage directory ,applicable only for local mode. |
 | ZO_TIME_STAMP_COL             | _timestamp    | No            | for each log line, if not present with this key , we add a timestamp with this key, used for queries with time range. |
