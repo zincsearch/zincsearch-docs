@@ -30,8 +30,8 @@ To view details or to update stream settings click on stream details control on 
 Streams details screen:
 
 1. Name of the stream
-1. Start & end time for steam , these are based timestamps on log records in stream
+1. Start & end time for steam, these are based timestamps on log records in stream
 1. Name of property/field belonging to the stream
-1. Inferred type of the property , zinc obsever infers schema for data being ingested
-1. Checkbox to select/deselect a property of the stream as full text search keys , full text search keys are used to search a term when using match_all ,match_all_no_case
-1. Checkbox to select/deselect a property of the stream as partitioning key , data ingested after updating the setting will be partitioned using updated keys
+1. Inferred type of the property, zinc obsever infers schema for data being ingested
+1. Checkbox to select/deselect a property of the stream as full text search keys, full text search keys are used to search a term when using match_all, match_all_ignore_case
+1. Checkbox to select/deselect a property of the stream as partitioning key, data ingested after updating the setting will be partitioned using updated keys

@@ -8,7 +8,7 @@
 
 filter the keyword in the field.
 
-### str_match_no_case(field, 'v')
+### str_match_ignore_case(field, 'v')
 
 filter the keyword in the field with case_insensitive. it can match `KeyWord` or `keyWord`.
 
@@ -16,7 +16,7 @@ filter the keyword in the field with case_insensitive. it can match `KeyWord` or
 
 filter the kekyword in multiple fields. default will search in fields: `log`, `message`, `content`, `data`. you can set the full text search fields in the UI or through `index.setting` API.
 
-### match_all_no_case('v')
+### match_all_ignore_case('v')
 
 filter the kekyword in multiple fields with case_insensitive.
 

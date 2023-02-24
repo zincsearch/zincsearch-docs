@@ -45,4 +45,4 @@ If user wants support for key other than _timestamp/@timestamp user can use ZO_T
 
 ## Searching
 ### Full text search
-For full text search user can use query in-built query functions like match_all , match_all_no_case , please note user can restrict full text search to specific fields/columns in log stream by selecting fields/columns from stream in stream details screen.
+For full text search user can use query in-built query functions like match_all, match_all_ignore_case, please note user can restrict full text search to specific fields/columns in log stream by selecting fields/columns from stream in stream details screen.

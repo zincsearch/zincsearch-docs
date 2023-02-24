@@ -17,7 +17,7 @@ Logs screen details :
 
 1. Controls to toggle visibility or query mode for search,query, fields & histogram control toggle visbility of Query editor(3) , Fields(6) & Histogram(5) respectively. SQL mode toggle query mode to intelisense mode or full sql mode , based on SQL mode Syntaz guide is shown to user.
 1. Controls for absolute & relative date-time selection , refresh options for screen  & initianting search
-1. Query editor , the behaviour which is affected by sql mode , one can use inbuilt functions like match all , match_all_no_case or can write complete sql for search
+1. Query editor , the behaviour which is affected by sql mode , one can use inbuilt functions like match all, match_all_ignore_case or can write complete sql for search
 1. Name of stream belonging to organization which will be target for search , one can change the target stream by selecting one from list
 1. Histogram depicting details like how many records are being shown out of total number of records & total scanned volumn(size in mb) elligible for search criteria provided
 1. List of all fields belonging to stream , one can choose to add the field to add to query(3) or to search results table(7)
