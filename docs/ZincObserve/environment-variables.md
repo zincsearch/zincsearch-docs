@@ -47,7 +47,7 @@ ZincObserve is configure through the use of below environment variables.
 | ZO_MEMORY_CACHE_RELEASE_SIZE  | -             | No            | default drop 1% entries from in-memory cache as cache is full, one can set it to desired amount unit: MB |
 | ZO_TELEMETRY                  | true          | No            | Send anonymous telemetry info for improving ZincObserve. You can disable by set it to `false` |
 | ZO_TELEMETRY_URL              | https://e1.zinclabs.dev | No  | OpenTelemetry report URL. You can report to your own server. |
-| ZO_PROMETHEUS_ENABLE	        | false         | No            | Enables prometheus metrics on /metrics endpoint              |
+| ZO_PROMETHEUS_ENABLED	        | false         | No            | Enables prometheus metrics on /metrics endpoint              |
 | RUST_LOG                      | info          | No            | log level, default is info, supports: error, warn, info, debug, trace |
 
 
