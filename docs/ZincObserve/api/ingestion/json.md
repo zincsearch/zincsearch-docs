@@ -87,7 +87,7 @@ Returns successful and failed count for each stream.
 ## Restriction on number of fields/columns per record
 > Applicable to cloud version
 
-Please note only records having 1000 or less fields/columns will be considered for ingestion , records having more than 1000 fields/columns will be discarded with failed status.
+Please note only records having 200 or less fields/columns will be considered for ingestion , records having more than 200 fields/columns will be discarded with failed status.
 
 > Applicable to open source version
 
