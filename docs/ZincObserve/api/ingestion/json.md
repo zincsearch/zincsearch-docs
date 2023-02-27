@@ -84,6 +84,15 @@ Each line is one record.
 
 Returns successful and failed count for each stream.
 
+## Restriction on number of fields/columns per record
+> Applicable to cloud version
+
+Please note only records having 1000 or less fields/columns will be considered for ingestion , records having more than 1000 fields/columns will be discarded with failed status.
+
+> Applicable to open source version
+
+One can configure ZO_COLS_PER_RECORD_LIMIT to set desired value for allowed number of fields/columns per record.
+
 ## Timestamp
 
 By default we add a field `_timestamp` for each record with the value of `NOW` in microseconds (unix epoch value). 

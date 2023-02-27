@@ -49,6 +49,7 @@ ZincObserve is configure through the use of below environment variables.
 | ZO_TELEMETRY_URL              | https://e1.zinclabs.dev | No  | OpenTelemetry report URL. You can report to your own server. |
 | ZO_PROMETHEUS_ENABLED	        | false         | No            | Enables prometheus metrics on /metrics endpoint              |
 | RUST_LOG                      | info          | No            | log level, default is info, supports: error, warn, info, debug, trace |
+| ZO_COLS_PER_RECORD_LIMIT      | 1000          | No            | number of fields allowed per records during ingestion , records having more fields than configured value will be discarded |
 
 
 > For local mode, ZincObserve use sled db as the metadata store.
