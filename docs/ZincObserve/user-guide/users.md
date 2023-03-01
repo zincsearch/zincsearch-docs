@@ -25,6 +25,23 @@ Users screen details :
 1. Update/view user details control , open side panel to update/view selected user , please note this control is enabled for users with role admin
 
 > Applicable only to user with admin & owner role 
+
+## Create User
+
+To create user click on Add user button on users page to open : 
+
+<kbd>
+![Users](../../images/create_user_os.jpg)
+</kbd>
+
+1. Email id of the user being added
+1. Password for the new user being added 
+1. First name of new user being added (optional)
+1. Last name of new user being added (optional)
+1. Role for the new organization member possible values are admin & member
+1. Save button
+
+
 ## Update User
 
 To update user click on update user control on users page , only role of the user can be changed to admin or member.
@@ -53,19 +70,4 @@ To navigate to users in ZincObserve , select preferred organization using organi
 1. Role of the organization member possible values are root,admin,member
 1. Update/view user details control , open side panel to update/view selected user , please note this control is enabled for users with role admin
 
-
-## Create User
-
-To create user click on Add user button on users page to open : 
-
-<kbd>
-![Users](../../images/create_user_os.jpg)
-</kbd>
-
-1. Email id of the user being added
-1. Password for the new user being added 
-1. First name of new user being added (optional)
-1. Last name of new user being added (optional)
-1. Role for the new organization member possible values are admin & member
-1. Save button
 

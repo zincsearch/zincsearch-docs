@@ -4,6 +4,7 @@ nav:
     - Screenshots: screenshots.md
     - Quickstart: quickstart.md
     - Architecture: architecture.md
+    - HA Deployment: ha_deployment.md
     - Environment Variables: environment-variables.md
     - Storage: storage.md
     - User Guide: user-guide
