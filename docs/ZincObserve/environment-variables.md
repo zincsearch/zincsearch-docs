@@ -17,9 +17,9 @@ ZincObserve is configure through the use of below environment variables.
 | ZO_GRPC_ORG_HEADER_KEY        | zinc-org-id   | No            | header key for sending orgnization information for `traces` using OTLP over grpc |
 | ZO_ROUTE_TIMEOUT              | 600           | No            | timeout for router node.             |
 | ZO_INSTANCE_NAME              | -             | No            | in the cluster mode, each node has a instance name, default is instance hostname. |
-| ZO_DATA_DIR                   | ./data        | No            | Defaults to "data" folder in current working directory if not provided.   |
-| ZO_DATA_WAL_DIR               | ./data/wal/   | No            | local WAL data directory. |
-| ZO_DATA_STREAM_DIR            | ./data/stream/   | No         | streams local data storage directory ,applicable only for local mode. |
+| ZO_DATA_DIR                   | ./data/zincobserve/        | No         | Defaults to "data" folder in current working directory if not provided.   |
+| ZO_DATA_WAL_DIR               | ./data/zincobserve/wal/    | No         | local WAL data directory. |
+| ZO_DATA_STREAM_DIR            | ./data/zincobserve/stream/ | No         | streams local data storage directory ,applicable only for local mode. |
 | ZO_TIME_STAMP_COL             | _timestamp    | No            | for each log line, if not present with this key , we add a timestamp with this key, used for queries with time range. |
 | ZO_WIDENING_SCHEMA_EVOLUTION  | false         | No            | if set to false user can add new columns to data being ingested but changes to existing data for data type are not supported . |
 | ZO_FEATURE_PER_THREAD_LOCK    | false         | No            | default we share a lock for each thread for WAL, enable this option to create one lock for per thread, it improves ingest performance, but results in more small data files, which will be merged by compactor to create larger merged files. This is particularly helpful when you are ingesting high speed data in a  single stream. |
@@ -59,35 +59,35 @@ ZincObserve is configure through the use of below environment variables.
 
 | Environment Variable          | Default Value | Mandatory     | Description                                                               |
 | ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
-| ZO_ETCD_ADDR                | localhost:2379 | No           | default etcd endpoint |
-| ZO_ETCD_PREFIX              | /zinc/oxide/  | No            | etcd keys prefix      |
-| ZO_ETCD_CONNECT_TIMEOUT     | 2             | No            | endpoint connection timeout, unit: seconds |
-| ZO_ETCD_COMMAND_TIMEOUT     | 5             | No            | command execute timeout, unit: seconds |
-| ZO_ETCD_LOCK_WAIT_TIMEOUT   | 60            | No            | max ttl for a lock, the lock will report timeout above this limit. |
-| ZO_ETCD_LOAD_PAGE_SIZE      | 10000         | No            | set/change this to detect pagenation size for loading data from etcd. |
-| ZO_ETCD_USER                | -             | No            | authentication, username, refer: https://etcd.io/docs/v3.5/op-guide/authentication/rbac/ |
-| ZO_ETCD_PASSWORD            | -             | No            | authentication, password |
-| ZO_ETCD_CLIENT_CERT_AUTH    | false         | No            | authentication with TLS, default is disabled, refer: https://etcd.io/docs/v3.5/op-guide/security/ |
-| ZO_ETCD_TRUSTED_CA_FILE     | -             | No            | authentication with TLS, ca file path |
-| ZO_ETCD_CERT_FILE           | -             | No            | authentication with TLS, cert file path |
-| ZO_ETCD_KEY_FILE            | -             | No            | authentication with TLS, key file path |
-| ZO_ETCD_DOMAIN_NAME         | -             | No            | authentication with TLS, cert domain name, default is empty, ZincObserve uses the domain in the cert |
+| ZO_ETCD_ADDR                  | localhost:2379 | No           | default etcd endpoint |
+| ZO_ETCD_PREFIX                | /zinc/oxide/  | No            | etcd keys prefix      |
+| ZO_ETCD_CONNECT_TIMEOUT       | 2             | No            | endpoint connection timeout, unit: seconds |
+| ZO_ETCD_COMMAND_TIMEOUT       | 5             | No            | command execute timeout, unit: seconds |
+| ZO_ETCD_LOCK_WAIT_TIMEOUT     | 60            | No            | max ttl for a lock, the lock will report timeout above this limit. |
+| ZO_ETCD_LOAD_PAGE_SIZE        | 10000         | No            | set/change this to detect pagenation size for loading data from etcd. |
+| ZO_ETCD_USER                  | -             | No            | authentication, username, refer: https://etcd.io/docs/v3.5/op-guide/authentication/rbac/ |
+| ZO_ETCD_PASSWORD              | -             | No            | authentication, password |
+| ZO_ETCD_CLIENT_CERT_AUTH      | false         | No            | authentication with TLS, default is disabled, refer: https://etcd.io/docs/v3.5/op-guide/security/ |
+| ZO_ETCD_TRUSTED_CA_FILE       | -             | No            | authentication with TLS, ca file path |
+| ZO_ETCD_CERT_FILE             | -             | No            | authentication with TLS, cert file path |
+| ZO_ETCD_KEY_FILE              | -             | No            | authentication with TLS, key file path |
+| ZO_ETCD_DOMAIN_NAME           | -             | No            | authentication with TLS, cert domain name, default is empty, ZincObserve uses the domain in the cert |
 
 
 ## sled db
 
 | Environment Variable          | Default Value | Mandatory     | Description                                                               |
 | ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
-| ZO_SLED_DATA_DIR            | ./data/db/    | No            | sled db data directory. |
-| ZO_SLED_PREFIX              | /zinc/oxide/  | No            | sled db keys prefix . |
+| ZO_SLED_DATA_DIR              | ./data/zincobserve/db/  | No  | sled db data directory. |
+| ZO_SLED_PREFIX                | /zinc/oxide/  | No            | sled db keys prefix . |
 
 
 ## S3
 
 | Environment Variable          | Default Value | Mandatory     | Description                                                               |
 | ----------------------------- | ------------- |-------------- | ------------------------------------------------------------------------- |
-| ZO_S3_SERVER_URL            | -             | No            | default for aws s3 & leave it empty, but for `minIO`, `gcs` one should configure it. |
-| ZO_S3_REGION_NAME           | -             | No            | region name |
-| ZO_S3_ACCESS_KEY            | -             | No            | access key |
-| ZO_S3_SECRET_KEY            | -             | No            | secret key |
-| ZO_S3_BUCKET_NAME           | -             | No            | bucket name |
+| ZO_S3_SERVER_URL              | -             | No            | default for aws s3 & leave it empty, but for `minIO`, `gcs` one should configure it. |
+| ZO_S3_REGION_NAME             | -             | No            | region name |
+| ZO_S3_ACCESS_KEY              | -             | No            | access key |
+| ZO_S3_SECRET_KEY              | -             | No            | secret key |
+| ZO_S3_BUCKET_NAME             | -             | No            | bucket name |
