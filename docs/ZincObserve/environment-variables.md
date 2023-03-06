@@ -35,7 +35,8 @@ ZincObserve is configure through the use of below environment variables.
 | ZO_FILE_PUSH_INTERVAL         | 10            | No            | interval at which job moves files from WAL to storage, default 10s, unit: second |
 | ZO_FILE_MOVE_THREAD_NUM       | -             | No            | number of threads for job to move WAL to storage, default equal to cpu_num. |
 | ZO_QUERY_THREAD_NUM           | -             | No            | number of threads for searching in data files. |
-| ZO_TS_ALLOWED_UPTO            | 5             | No            | allow historical data ingest upto `now - 5 hours` data, default 5 hours, unit: hours  |
+| ZO_INGEST_ALLOWED_UPTO        | 5             | No            | allow historical data ingest upto `now - 5 hours` data, default 5 hours, unit: hours  |
+| ZO_DATA_LIFECYCLE             | 0             | No            | Data lifecycle, unit: day, default is 0 means disable. you can set it to 30, it means will auto delete data older than 30 days. |
 | ZO_METRICS_LEADER_PUSH_INTERVAL | 15          | No            | interval at which current leader information is updated to metadata store , default 15s, unit: second |
 | ZO_METRICS_LEADER_ELECTION_INTERVAL | 30      | No            | interval after which new leader for metrics will be elected , when data isnt received from current leader, default 30s, unit: second  |
 | ZO_COMPACT_ENABLED            | true          | No            | enable compact for small files. |

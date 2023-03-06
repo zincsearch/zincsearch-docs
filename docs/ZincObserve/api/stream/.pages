@@ -2,3 +2,4 @@ nav:
     - Schema: schema.md
     - Settings: setting.md
     - List: list.md
+    - Delete: delete.md
