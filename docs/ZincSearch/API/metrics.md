@@ -11,5 +11,5 @@ You should set environment `ZINC_PROMETHEUS_ENABLE=true` enable prometheus metri
 ## Request
 
 e.g. 
-PUT http://localhost:4080/metrics
+GET http://localhost:4080/metrics
 
