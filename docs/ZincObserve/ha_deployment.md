@@ -34,6 +34,8 @@ You must set a minimum of 2 values:
 
 Once you have configured the above in your values.yaml file, you can run the below commands to install ZicnObserve.
 
+Follow [AWS documentation](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) to enable and create an IAM role that you can use. You can also refer to the [IRSA introduction blog](https://aws.amazon.com/blogs/opensource/introducing-fine-grained-iam-roles-service-accounts/).
+
 ### Any Kubernetes + s3
 
 Add/Modify following to values.yaml
@@ -72,7 +74,7 @@ Add/Modify following to values.yaml
       ZO_S3_SECRET_KEY: "e.g.wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
     ```
 
-You can generate  keys for GC bucket using following steps:
+You can generate  keys for GCS bucket using following steps:
 
 1. Go to [Google cloud console > Cloud Storage > Settings > Interoperability](https://console.cloud.google.com/storage/settings;tab=interoperability) 
 1. Make sure you are in the right project.
