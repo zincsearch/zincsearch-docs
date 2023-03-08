@@ -1,4 +1,4 @@
-# Delete user
+# Remove user from organization
 
 Endpoint: `DELETE /api/{organization}/users/{user_email}`
 
@@ -11,6 +11,6 @@ None
 ```json
 {
 	"code": 200,
-	"message": "User deleted"
+	"message": "User removed from organization"
 }
 ```
