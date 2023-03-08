@@ -36,6 +36,29 @@ Once you have configured the above in your values.yaml file, you can run the bel
 
 Follow [AWS documentation](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) to enable and create an IAM role that you can use. You can also refer to the [IRSA introduction blog](https://aws.amazon.com/blogs/opensource/introducing-fine-grained-iam-roles-service-accounts/).
 
+Sample IAM policy.
+
+```json
+{
+  "Id": "Policy1678319681097",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1678319677242",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:ListBucket",
+        "s3:DeleteObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::mysuperduperbucket/*",
+      "Principal": "*"
+    }
+  ]
+}
+```
+
 ### Any Kubernetes + s3
 
 Add/Modify following to values.yaml
