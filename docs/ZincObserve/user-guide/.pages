@@ -6,3 +6,5 @@ nav:
     - Streams: streams.md
     - Functions: functions
     - Ingestion: ingestion.md
+    - Alerts: alerts.md
+   
