@@ -52,8 +52,7 @@ Sample IAM policy.
         "s3:DeleteObject"
       ],
       "Effect": "Allow",
-      "Resource": "arn:aws:s3:::mysuperduperbucket/*",
-      "Principal": "*"
+      "Resource": "arn:aws:s3:::mysuperduperbucket/*"
     }
   ]
 }
