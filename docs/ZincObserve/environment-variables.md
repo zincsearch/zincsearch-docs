@@ -17,6 +17,7 @@ ZincObserve is configure through the use of below environment variables.
 | ZO_GRPC_ORG_HEADER_KEY        | zinc-org-id   | No            | header key for sending orgnization information for `traces` using OTLP over grpc |
 | ZO_ROUTE_TIMEOUT              | 600           | No            | timeout for router node.             |
 | ZO_INSTANCE_NAME              | -             | No            | in the cluster mode, each node has a instance name, default is instance hostname. |
+| ZO_BASE_URI                   | -             | No            | if you set ZincObserve with a prefix in k8s nginx ingress, you can set the prefix path. |
 | ZO_DATA_DIR                   | ./data/zincobserve/        | No         | Defaults to "data" folder in current working directory if not provided.   |
 | ZO_DATA_WAL_DIR               | ./data/zincobserve/wal/    | No         | local WAL data directory. |
 | ZO_DATA_STREAM_DIR            | ./data/zincobserve/stream/ | No         | streams local data storage directory ,applicable only for local mode. |
@@ -92,3 +93,4 @@ ZincObserve is configure through the use of below environment variables.
 | ZO_S3_ACCESS_KEY              | -             | No            | access key |
 | ZO_S3_SECRET_KEY              | -             | No            | secret key |
 | ZO_S3_BUCKET_NAME             | -             | No            | bucket name |
+| ZO_S3_PROVIDER                | -             | No            | s3 provider name, like: gcs, oss, minio |
