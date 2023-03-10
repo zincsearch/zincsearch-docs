@@ -43,7 +43,7 @@ ZincObserve can use MinIO for storing stream data , following environment variab
 | ZO_S3_ACCESS_KEY            | -             | No            | access key |
 | ZO_S3_SECRET_KEY            | -             | No            | secret key |
 | ZO_S3_BUCKET_NAME           | -             | No            | bucket name |
-| ZO_S3_PROVIDER              | minio         | No            | provider name, used to do something compatible |
+| ZO_S3_PROVIDER              | minio         | Yes           | provider name, used to do something compatible |
 
 > You need to create the bucket in minIO first.
 
