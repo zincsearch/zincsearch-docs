@@ -81,6 +81,7 @@ Add/Modify following to values.yaml
       ZO_S3_BUCKET_NAME: "mysuperduperbucket"
       ZO_S3_ACCESS_KEY: "e.g.AKIAIOSFODNN7EXAMPLE"
       ZO_S3_SECRET_KEY: "e.g.wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+      ZO_S3_PROVIDER:	"minio"	
     ```
 
 ### Any Kubernetes + GCS
