@@ -36,7 +36,7 @@ You would need ZO_ROOT_USER_EMAIL and ZO_ROOT_USER_PASSWORD environment variable
         mkdir data
         docker run -v $PWD/data:/data -e ZO_DATA_DIR="/data" -p 5080:5080 \
             -e ZO_ROOT_USER_EMAIL=root@example.com -e ZO_ROOT_USER_PASSWORD=Complexpass#123 \
-            --name zinc public.ecr.aws/zinclabs/zincobserve:latest
+            public.ecr.aws/zinclabs/zincobserve:latest
 
 
     Now point your browser to [http://localhost:5080](http://localhost:5080) and login
