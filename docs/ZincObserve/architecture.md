@@ -28,57 +28,57 @@ Local disk storage is not supported in HA mode. Please refer to [HA Deployment](
 ### etcd and object storage
 ![Single node architecture using etcd and s3](./images/arch-ha.png)
 
-Router, Querier and ingester nodes can be horizontally scaled to accomodate for higher traffic.
+Router, Querier and Ingester nodes can be horizontally scaled to accomodate for higher traffic.
 
-Etcd used to store metadata like organization, users, functions, alert rules and cluster node information.
+Etcd is used to store metadata like organization, users, functions, alert rules and cluster node information.
 
-Object Storage store all the data of parquet files and file list index.
+Object Storage (e.g. s3, minio, gcs, etc...) stores all the data of parquet files and file list index.
 
 ## Components
 
 ### Ingester
 
-Ingester used to receive ingest request and convert data into storage. 
+Ingester is used to receive ingest request and convert data into parquet format and store it in object storage. They store data temporarily in WAL before transferring it to object storage.
 
 The data ingestion flow is:
 
 1. receive data from http API request.
 1. parse line by line.
-1. check if there are some functions used to transform data. will call each transform function by the function order. like `func(row)` and expect return a row, if return empty will drop the line.
-1. check timestamp field, convert timestamp, and will set to current timestamp if there is no time field.
-1. check stream schema if need to do evoluation.
-1. write to WAL file by timestamp hourly.
-1. when reach the max file size or the frequency will convert WAL file to parquet file and move to storage(local or s3).
+1. check if there are some functions (ingest time functions) used to transform data. will call each ingest function by the function order. like `func(row)` and will expect to return a row. if empty row is returned then it will drop the recortd.
+1. check timestamp field, convert timestamp, and set current timestamp if there is no time field.
+1. check stream schema to identify if schema needs to be evolved.
+1. write to WAL file by timestamp in hourly buckets.
+1. when max file size or the time is reached, it will convert WAL file to parquet file and move to storage(local or s3). e.g max_file_size=10MB, max_time=10 minutes, then if the file size reaches 10 MB or elapsed time is 10 minutes whichever occurs first, the file will be moved to object storage.
+1. Ingester also does the work of evaluating any real time alerts that have been defined.
 
 ### Querier
 
-Querier used to query data. this type node is stateless.
+Querier is used to query data. Queriers nodes are fully stateless.
 
 The data query flow is:
 
-1. receive search request from http API.
-1. parse and verify SQL.
-1. find the data time range and get file list from file list index.
-1. fetch queirer nodes from cluster metadata.
-1. do a file list partition by queriers.
-1. call gRPC service to dispatch search query to each querier node.
-1. collect and merge the result back to user.
+1. receive search request from http API. The node that receives the query request is called `LEADER querier for the query`. Other queriers are called `WORKER` queriers.
+1. `LEADER` parses and verifies SQL.
+1. `LEADER` finds the data time range and get file list from file list index.
+1. `LEADER` fetch querier nodes from cluster metadata.
+1. `LEADER` partitions list of files to be queried by each querier. e.g. If 100 files need to be queried and there are 5 nodes, then each querier gets to query 20 files `LEADER` works on 20 files, `WORKERS` work on 20 files each.
+1. `LEADER` calls gRPC service running on each `WORKER` querier to dispatch search query to the querier node. Inter querier communication happens using gRPC.
+1. `LEADDER` collects, merges and sends the result back to the user.
 
 Tips:
 
-1. The querier will cache parquet files in memory by default. you can configure it by environment.
-1. In distribute environment each querier node just cache a part of the data.
-1. We also have an option to enable cache latest parquet files in memory. The ingester will notice qurier to cache the file when ingester generate a new parquet file in storage.
-1. We have a limitation of cache size in memory, default is 50% of total memory size. and use LRU to drop old files in cache.
+1. The querier will cache parquet files in memory by default. You can configure the amount of memory used by querier for caching through environment variable `ZO_MEMORY_CACHE_MAX_SIZE`.  Default caching is done through 50% of the memory available to the particular querier.
+1. In distributed environment each querier node will just cache a part of the data.
+1. We also have an option to enable caching latest parquet files in memory. The ingester will send a notice to queriers to cache the files when ingester generates a new parquet file and sends it to object storage.
 
 ### Compactor
 
-Compactor merge small files into a big file let the search more efficient. Compactor also handle the data policy, full delete stream and update file list index.
+Compactor will merge small files into a big file to make the search more efficient. Compactor also handles the data retention policy, full stream deletion and update of file list index.
 
 ### Router
 
-Router provide the UI and dispatch requests to ingester or querier.
+Router dispatches requests to ingester or querier. It also responds with the GUI in the browser. Router is a super simple proxy to send appropriate requests between ingester and querier.
 
 ### AlertManager
 
-AlertManager run the schedule alert queries and send notification.
+AlertManager runs the scheduled alert queries and sends notification.
