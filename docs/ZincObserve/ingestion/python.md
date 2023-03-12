@@ -4,7 +4,7 @@
 import base64, json
 import requests
 
-user = "admin"
+user = "root@example.com"
 password = "Complexpass#123"
 bas64encoded_creds = base64.b64encode(bytes(user + ":" + password, "utf-8")).decode("utf-8")
 
@@ -36,7 +36,7 @@ data = [{
 
 headers = {"Content-type": "application/json", "Authorization": "Basic " + bas64encoded_creds}
 org = "org1"
-stream = "stream1"
+stream = "quickstart1"
 zinc_host = "http://localhost:5080"
 zinc_url = zinc_host + "/api/" + org + "/" + stream + "/_json"
 

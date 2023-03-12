@@ -14,7 +14,7 @@
   json_array true
   <auth>
     method basic
-    username admin
+    username root@example.com
     password password
   </auth>
 </match>

@@ -37,11 +37,11 @@ func main() {
         "log": "ts=2022-12-27T14:09:59.212Z caller=klog.go:108 level=warn component=k8s_client_runtime func=Warningf msg=\"pkg/mod/k8s.io/client-go@v0.25.1/tools/cache/reflector.go:169: failed to list *v1.Pod: pods is forbidden: User \\\"system:serviceaccount:monitoring:prometheus-k8s\\\" cannot list resource \\\"pods\\\" in API group \\\"\\\" at the cluster scope\"",
         "stream": "stderr"
     }]`
-    req, err := http.NewRequest("POST", "http://localhost:5080/api/org1/stream1/_json", strings.NewReader(data))
+    req, err := http.NewRequest("POST", "http://localhost:5080/api/default/quickstart1/_json", strings.NewReader(data))
     if err != nil {
         log.Fatal(err)
     }
-    req.SetBasicAuth("admin", "Complexpass#123")
+    req.SetBasicAuth("root@example.com", "Complexpass#123")
     req.Header.Set("Content-Type", "application/json")
     req.Header.Set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36")
 

@@ -6,12 +6,12 @@
 [sinks.zinc]
 type = "http"
 inputs = [ source or transform id ]
-endpoint = "http://localhost:5080/api/{organization}/{stream}/_json"
+uri = "http://localhost:5080/api/{organization}/{stream}/_json"
+method = "post"
 auth.strategy = "basic"
-auth.user = "hengfei.yang@gmail.com"
-auth.password = "29ClqBTg7HS34861A5P0"
-acknowledgements = null
-compression = "none"
+auth.user = "root@example.com"
+auth.password = "password"
+compression = "gzip"
 encoding.codec = "json"
 encoding.timestamp_format = "rfc3339"
 healthcheck.enabled = false
