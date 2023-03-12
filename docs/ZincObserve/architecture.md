@@ -57,7 +57,7 @@ Querier is used to query data. Queriers nodes are fully stateless.
 
 The data query flow is:
 
-1. receive search request from http API. The node that receives the query request is called `LEADER querier for the query`. Other queriers are called `WORKER` queriers.
+1. receive search request from http API. The node that receives the query request is called `LEADER querier for the query`. Other queriers are called `WORKER queriers for that query`.
 1. `LEADER` parses and verifies SQL.
 1. `LEADER` finds the data time range and get file list from file list index.
 1. `LEADER` fetch querier nodes from cluster metadata.
