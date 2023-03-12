@@ -16,9 +16,10 @@ POST http://localhost:4080/api/stackoverflow-6/_search
 Request Body: 
 ```json
 {
-    "search_type": "matchphrase",
+    "search_type": "match",
     "query": {
         "term": "shell window",
+        "field": "_all",
         "start_time": "2021-12-25T15:08:48.777Z",
         "end_time": "2021-12-28T16:08:48.777Z"
     },
