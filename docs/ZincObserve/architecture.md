@@ -44,7 +44,7 @@ The data ingestion flow is:
 
 1. receive data from http API request.
 1. parse line by line.
-1. check if there are some functions (ingest time functions) used to transform data. will call each ingest function by the function order. like `func(row)` and will expect to return a row. if empty row is returned then it will drop the recortd.
+1. check if there are some functions (ingest time functions) used to transform data. will call each ingest function by the function order. like `func(row)` and will expect to return a row. if empty row is returned then it will drop the record.
 1. check timestamp field, convert timestamp, and set current timestamp if there is no time field.
 1. check stream schema to identify if schema needs to be evolved.
 1. write to WAL file by timestamp in hourly buckets.
