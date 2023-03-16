@@ -43,9 +43,9 @@ ZincObserve can use MinIO for storing stream data , following environment variab
 | ZO_S3_ACCESS_KEY            | -             | No            | access key |
 | ZO_S3_SECRET_KEY            | -             | No            | secret key |
 | ZO_S3_BUCKET_NAME           | -             | No            | bucket name |
-| ZO_S3_PROVIDER              | minio         | Yes           | provider name, used to do something compatible |
+| ZO_S3_PROVIDER              | minio         | Yes           | used to specify settings like force_style=true |
 
-> You need to create the bucket in minIO first.
+> You need to create the bucket in MinIO first.
 
 ## Google GCS
 
@@ -58,6 +58,7 @@ ZincObserve can use google cloud storage for storing stream data , following env
 | ZO_S3_ACCESS_KEY            | -             | No            | access key |
 | ZO_S3_SECRET_KEY            | -             | No            | secret key |
 | ZO_S3_BUCKET_NAME           | -             | No            | bucket name |
+| ZO_S3_PROVIDER              | gcs         | Yes           | GCS does not support DeleteObjects API. Compactor needs to use DeleteObject API|
 
 You can refer to: [https://cloud.google.com/storage/docs/aws-simple-migration](https://cloud.google.com/storage/docs/aws-simple-migration)
 

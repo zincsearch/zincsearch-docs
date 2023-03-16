@@ -33,13 +33,15 @@ Following is the list of available features and roadmap.
 | 20 | Prebuilt container images for with SIMD acceleration         | Available           |
 | 21 | SIMD support for vectorized processing (AVX512 and Neon)     | Available           |
 | 22 | Allows to sleep better at night 😀                            | Available           |
-| 23 | Search and aggregation API compatibility with Elasticsearch  | Under development   |
+| 23 | Search and aggregation API compatibility with Elasticsearch  | Available (Enterprise edition)   |
 | 24 | Dashboards                                                   | Under development   |
 | 25 | Metrics                                                      | Under development   |
 | 26 | Traces                                                       | Under development   |
 | 27 | WASM based ingest and query functions                        | To Start            |
 | 28 | Alerts (Based on metrics)                                    | To Start            |
 | 29 | Alerts (Based on metrics)                                    | To Start            |
+| 30 | Template based alert target (Allows alerting to slack, teams and many more)             | Available  |
+| 31 | Send alerts to Prometheus alertmanager                       | Available  |
 
 
 Please raise any new feature requests via [github issue tracker](https://github.com/zinclabs/zincobserve/issues).
