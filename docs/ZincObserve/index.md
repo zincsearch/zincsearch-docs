@@ -23,25 +23,24 @@ Following is the list of available features and roadmap.
 | 10 | User defined Ingest and Query functions (Lua based)          | Available           |
 | 11 | Multi-tenancy                                                | Available           |
 | 12 | Ingestion API compatibility with Elasticsearch               | Available           |
-| 13 | Scheduled Alerts (Based on logs)                             | Available           |
-| 14 | Real time Alerts (Based on logs)                             | Available           |
-| 15 | High Availability (HA) and clustering                        | Available           |
-| 16 | Stateless nodes                                              | Available           |
-| 17 | Localization for multiple languages                          | Available           |
-| 18 | Prebuilt binaries for multiple platforms                     | Available           |
-| 19 | Prebuilt container images for multiple platforms             | Available           |
-| 20 | Prebuilt container images for with SIMD acceleration         | Available           |
-| 21 | SIMD support for vectorized processing (AVX512 and Neon)     | Available           |
-| 22 | Allows to sleep better at night 😀                            | Available           |
-| 23 | Search and aggregation API compatibility with Elasticsearch  | Available (Enterprise edition)   |
+| 13 | Search and aggregation API compatibility with Elasticsearch  | Available (Enterprise edition)   |
+| 14 | Scheduled Alerts (Based on logs)                             | Available           |
+| 15 | Real time Alerts (Based on logs)                             | Available           |
+| 16 | High Availability (HA) and clustering                        | Available           |
+| 17 | Stateless nodes                                              | Available           |
+| 18 | Localization for multiple languages                          | Available           |
+| 19 | Prebuilt binaries for multiple platforms                     | Available           |
+| 20 | Prebuilt container images for multiple platforms             | Available           |
+| 22 | Prebuilt container images for with SIMD acceleration         | Available           |
+| 23 | SIMD support for vectorized processing (AVX512 and Neon)     | Available           |
 | 24 | Dashboards                                                   | Under development   |
 | 25 | Metrics                                                      | Under development   |
 | 26 | Traces                                                       | Under development   |
 | 27 | WASM based ingest and query functions                        | To Start            |
 | 28 | Alerts (Based on metrics)                                    | To Start            |
 | 29 | Alerts (Based on metrics)                                    | To Start            |
-| 30 | Template based alert target (Allows alerting to slack, teams and many more)             | Available  |
-| 31 | Send alerts to Prometheus alertmanager                       | Available  |
+| 30 | Template based alert target (Allows alerting to slack, teams and many more)  | Available  |
+| 31 | Send alerts to Prometheus alertmanager                       | Available           |
 
 
 Please raise any new feature requests via [github issue tracker](https://github.com/zinclabs/zincobserve/issues).
