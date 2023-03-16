@@ -222,7 +222,7 @@ Here list some common examples, if you want more example please create a issue t
 ```json
 {
     "query": {
-       "sql": "SELECT histogram(_timestamp, '5 minute') AS key, COUNT(*) AS num FROM {stream} GROUP BY key ORDER BY key",
+       "sql": "SELECT histogram(_timestamp, '5 minute') AS key, COUNT(*) AS num FROM {stream} GROUP BY key ORDER BY key LIMIT 10 OFFSET 1",
         "start_time": 1674789786006000,
         "end_time": 1674789786006000,
         "sql_mode": "full"

@@ -31,6 +31,8 @@ ZincObserve is configure through the use of below environment variables.
 | OTEL_OTLP_HTTP_ENDPOINT       | -             | No            | remote trace server endpoint. |
 | ZO_TRACING_HEADER_KEY         | Authorization | No            | remote trace server endpoint authentication header key. |
 | ZO_TRACING_HEADER_VALUE       | -             | No            | remote trace server endpoint authentication header value. |
+| ZO_JSON_LIMIT                 | 209715200     | No            | The max playload size of json limit. |
+| ZO_PAYLOAD_LIMIT              | 209715200     | No            | The max playload size of http request body limit. |
 | ZO_MAX_FILE_SIZE_ON_DISK      | 10            | No            | max WAL file size before moving it to storage, default is 10MB, unit: MB |
 | ZO_MAX_FILE_RETENTION_TIME    | 600           | No            | max WAL file retention ttl, default is 600s, unit: second |
 | ZO_FILE_PUSH_INTERVAL         | 10            | No            | interval at which job moves files from WAL to storage, default 10s, unit: second |
