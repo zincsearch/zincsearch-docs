@@ -81,7 +81,7 @@ Below is the result when we sent real life log data from our kubernetes cluster 
 
 ![ZincObserve Vs Elasticsearch storage](./images/zo_vs_es.png)
 
-ZincObserve enjoys 140x lower storage costs compared to Elasticsearch in the above scenario (YMMV, you could get higher or lower values based on entropy of data). That does not even consider additional unused EBS volume capacity that needs to be available in order to no run out of disk space and the effort that it requires to keep monitoring disk usage so it is not filled.
+ZincObserve enjoys 140x lower storage costs compared to Elasticsearch in the above scenario (YMMV, you could get higher or lower values based on entropy of data). That does not even consider additional unused EBS volume capacity that needs to be available in order to not run out of disk space and the effort that it requires to keep monitoring disk usage so it is not filled.
 
 ZincObserve is built in rust and enjoys its fast performance with no challenges of JVM.
 
