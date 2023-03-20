@@ -11,3 +11,6 @@ nav:
     - Operator Guide: op-guide
     - API Reference: api
     - Ingestion: ingestion
+    - SQL functions reference: functions.md
+    - Telemetry: telemetry.md
+    - Open API Specifications: api_specs.md

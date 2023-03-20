@@ -11,4 +11,5 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 RUN pip3 install mkdocs-material
 RUN pip3 install mkdocs-awesome-pages-plugin
 
+RUN npm install -g openapi-explorer
 RUN npm install -g live-server
