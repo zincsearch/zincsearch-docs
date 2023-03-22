@@ -287,12 +287,13 @@ Aggregate functions operate on a set of values to compute a single result. Pleas
 
 ### histogram
 
-`histogram(field, 'interval')`
+`histogram(field, 'interval')` or  `histogram(field, num)`
 
 histogram of the field values
 
 - field: must be a timestamp field
-- interval: step of histogram
+- interval: step of histogram, it will auto generate if value miss.
+- num: generate how many bucket, it depends on `time_range`, the expression is: `time_range / num = interval`
 
 The `interval` supported:
 
@@ -327,6 +328,18 @@ response:
         "num": 731871
     }
 ]
+```
+
+it will auto generate interval based on time_range:
+
+```sql
+SELECT histogram(_timestamp) AS key, COUNT(*) AS num FROM {stream} WHERE time_range(_timestamp, '2022-10-19T15:19:24.587Z','2022-10-19T15:34:24.587Z') GROUP BY key ORDER BY key
+```
+
+you can ask for always generate `100` buckets:
+
+```sql
+SELECT histogram(_timestamp, 100) AS key, COUNT(*) AS num FROM {stream} WHERE time_range(_timestamp, '2022-10-19T15:19:24.587Z','2022-10-19T15:34:24.587Z') GROUP BY key ORDER BY key
 ```
 
 ### min
