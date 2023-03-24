@@ -1,4 +1,4 @@
-site_name: ZincObserve
+site_name: zincsearch
 
 # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin required for nav
 plugins:
@@ -19,11 +19,11 @@ extra:
     - icon: fontawesome/brands/linkedin 
       link: https://www.linkedin.com/company/zinclabsinc
     - icon: fontawesome/brands/github 
-      link: https://github.com/zinclabs/zincobserve
+      link: https://github.com/zinclabs/zincsearch
     - icon: fontawesome/brands/docker 
       link: https://gallery.ecr.aws/zinclabs/zinc
     - icon: fontawesome/brands/slack 
-      link: https://join.slack.com/t/zincobserve/shared_invite/zt-11r96hv2b-UwxUILuSJ1duzl_6mhJwVg
+      link: https://join.slack.com/t/zincsearch/shared_invite/zt-11r96hv2b-UwxUILuSJ1duzl_6mhJwVg
   alternate:
     # - name: English
     #   link: /en/ 
