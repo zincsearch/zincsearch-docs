@@ -44,7 +44,7 @@ theme:
   custom_dir: overrides
   features:
     # - navigation.expand
-    - navigation.tabs
+    # - navigation.tabs
     - navigation.tabs.sticky
     - navigation.instant
     - navigation.tracking
@@ -63,8 +63,8 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-repo_url: https://github.com/zinclabs/zincobserve
-repo_name: zinclabs/zincobserve
+repo_url: https://github.com/zinclabs/zincsearch
+repo_name: zinclabs/zincsearch
 edit_uri: https://github.com/zinclabs/zincsearch-docs/edit/main/docs/
 markdown_extensions:
   - tables

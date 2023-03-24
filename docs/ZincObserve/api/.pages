@@ -1,7 +1,0 @@
-nav:
-    - Streams: stream
-    - Ingestion: ingestion
-    - Search: search
-    - Functions: function
-    - Users: user
-
