@@ -12,7 +12,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
         set ZINC_FIRST_ADMIN_USER=admin
         set ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123
         mkdir data
-        zinc.exe
+        zincsearch.exe
 
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
