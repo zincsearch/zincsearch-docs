@@ -14,12 +14,12 @@ We use Segment, a platform for data collection and management, to collect usage 
 | total_index_size_mb       | Total size of all indexes             | 600                   |
 | os                        | Running operating system              | linux                 |
 | arch                      | Architecture of the machine           | amd64                 |
-| zinc_version              | version of ZincSearch being used            | 0.1.7                 |
+| zinc_version              | version of ZincSearch being used      | 0.4.2                 |
 | cpu_count                 | Total count of CPUs                   | 8                     |
 | total_memory              | Total memory                          | 2                     |
 | memory_used_percent       | Total memory used percentage          | 40                    |
 | search_type               | Kind of search queries                | querystring, match    |
-| search_index_storage      | Where are indexes being stored        | disk, minio (deprecated), s3 (deprecated) |
+| search_index_storage      | Where are indexes being stored        | disk                  |
 | search_index_size_in_mb   | Size of the index that was queried    | 2                     |
 | time_taken_to_search_in_ms| Time taken for search                 | 340                   |
 | aggregations_count        | Total aggregations in search query    | 1                     |

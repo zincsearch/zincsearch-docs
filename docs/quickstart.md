@@ -14,7 +14,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
 === "Windows" 
 
-    Binaries can be downloaded from [releases](https://github.com/zinclabs/zincsearch/releases) page for appropriate platform.
+    Binaries can be downloaded from [releases](https://github.com/zincsearch/zincsearch/releases) page for appropriate platform.
 
 
         set ZINC_FIRST_ADMIN_USER=admin
@@ -37,7 +37,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
 
 === "MacOS/Linux Binaries"
-    Binaries can be downloaded from [releases](https://github.com/zinclabs/zincsearch/releases) page for appropriate platform.
+    Binaries can be downloaded from [releases](https://github.com/zincsearch/zincsearch/releases) page for appropriate platform.
 
     Create a data folder that will store the data
 
@@ -77,7 +77,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
     Create the deployment and port forward:
 
-        kubectl apply -f https://raw.githubusercontent.com/zinclabs/zincsearch/main/k8s/kube-deployment.yaml
+        kubectl apply -f https://raw.githubusercontent.com/zincsearch/zincsearch/main/k8s/kube-deployment.yaml
     
     Expose the zincsearch service by port-forwarding:
 
@@ -87,7 +87,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
 === "Kubernetes - Helm"
 
-    Update Helm values located in [values.yaml](https://github.com/zinclabs/zincsearch/blob/main/helm/zinc/values.yaml)
+    Update Helm values located in [values.yaml](https://github.com/zincsearch/zincsearch/blob/main/helm/zinc/values.yaml)
 
     Create the namespace:
 
@@ -111,7 +111,7 @@ We will use bulk API to load sample data
 
 
 ```shell
-curl -L https://github.com/zinclabs/zincsearch/releases/download/v0.1.1/olympics.ndjson.gz -o olympics.ndjson.gz
+curl -L https://github.com/zincsearch/zincsearch/releases/download/v0.1.1/olympics.ndjson.gz -o olympics.ndjson.gz
 gzip -d  olympics.ndjson.gz 
 curl http://localhost:4080/api/_bulk -i -u admin:Complexpass#123  --data-binary "@olympics.ndjson"
 ```

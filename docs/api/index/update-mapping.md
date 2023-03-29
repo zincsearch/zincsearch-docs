@@ -83,7 +83,7 @@ By default, all string value parse to `text` type, it can supports `match` and m
 
 And text type supports two params `analyzer` and `search_analyzer`.
 
-`analyzer` and `search_analyzer` you should reference to [https://docs.zincsearch.com/api/index/analyze/](https://docs.zincsearch.com/api/index/analyze/)
+`analyzer` and `search_analyzer` you should reference to [https://zincsearch-docs.zinc.dev/api/index/analyze/](https://zincsearch-docs.zinc.dev/api/index/analyze/)
 
 ### keyword
 
