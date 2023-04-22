@@ -30,7 +30,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
     In your terminal:
 
         brew tap zinclabs/tap
-        brew install zinclabs/tap/zinc
+        brew install zinclabs/tap/zincsearch
         mkdir data
         ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 zincsearch
 
@@ -52,12 +52,12 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
     ------------------------
 
 
-    Docker images are available at [https://gallery.ecr.aws/zinclabs/zinc](https://gallery.ecr.aws/zinclabs/zinc)
+    Docker images are available at [https://gallery.ecr.aws/zinclabs/zincsearch](https://gallery.ecr.aws/zinclabs/zincsearch)
 
         mkdir data
         docker run -v /full/path/of/data:/data -e ZINC_DATA_PATH="/data" -p 4080:4080 \
             -e ZINC_FIRST_ADMIN_USER=admin -e ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 \
-            --name zincsearch public.ecr.aws/zinclabs/zinc:latest
+            --name zincsearch public.ecr.aws/zinclabs/zincsearch:latest
 
 
     Now point your browser to [http://localhost:4080](http://localhost:4080) and login
@@ -73,7 +73,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
     Create a namespace:
 
-        kubectl create ns zinc
+        kubectl create ns zincsearch
 
     Create the deployment and port forward:
 
@@ -87,7 +87,7 @@ You would need ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD environment v
 
 === "Kubernetes - Helm"
 
-    Update Helm values located in [values.yaml](https://github.com/zincsearch/zincsearch/blob/main/helm/zinc/values.yaml)
+    Update Helm values located in [values.yaml](https://github.com/zincsearch/zincsearch/blob/main/helm/zincsearch/values.yaml)
 
     Create the namespace:
 

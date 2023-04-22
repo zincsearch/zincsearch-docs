@@ -23,16 +23,7 @@ We provide prebuilt binaries/docker images for multiple platforms. More likely t
 
 1. Docker images can be found at 
     - Tagged
-        - [https://gallery.ecr.aws/zinclabs/zinc](https://gallery.ecr.aws/zinclabs/zinc)
+        - [https://gallery.ecr.aws/zinclabs/zincsearch](https://gallery.ecr.aws/zinclabs/zincsearch)
     - Dev 
-        - [https://gallery.ecr.aws/zinclabs/zinc-dev](https://gallery.ecr.aws/zinclabs/zinc-dev)
-    - Nighly 
-        - [https://gallery.ecr.aws/zinclabs/zinc-nightly](https://gallery.ecr.aws/zinclabs/zinc-nightly)
-
-
-
-
-
-
-
+        - [https://gallery.ecr.aws/zinclabs/zincsearch-dev](https://gallery.ecr.aws/zinclabs/zincsearch-dev)
 
