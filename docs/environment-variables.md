@@ -30,6 +30,7 @@ We prefer environment variables for configuration as opposed to configuration fi
 | ZINC_PROFILER_API_KEY         | -             | No            | pyroscope server api key                                                  |
 | ZINC_PROFILER_FRIENDLY_PROFILE_ID | -         | No            | pyroscope identifier id, example: zinc-alex                               |
 | ZINC_ENABLE_TEXT_KEYWORD_MAPPING | false      | No            | create a keyword field for text field. named `field.keyword`              |
+| ZINC_SWAGGER_ENABLE           | true          | No            | Default is true, Enable swagger api document
 | ZINC_WAL_SYNC_INTERVAL        | 1s            | No            | ZinCsearch uses WAL to ensure no loss data, and asynchorous write to backend index. defaults every 1s sync to storage |
 | ZINC_WAL_REDOLOG_NO_SYNC      | false         | No            | ZinCsearch uses REDO log to ensure asynchorous is correct, but redo log do a sync to disk every time, we can disable SYNC to have better performance, but it has a risk duplicated documents with a ZINC_BATCH_SIZE |
 
