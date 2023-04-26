@@ -11,7 +11,7 @@ We prefer environment variables for configuration as opposed to configuration fi
 | GIN_MODE                      | -             | No            | if the value is release then gin will run in production mode.             |
 | ZINC_DATA_PATH                | ./data        | No            | Defaults to "data" folder in current working directory if not provided.   |
 | ZINC_ICE_COMPRESSOR           | zstd          | No            | Algorithm of compress segment file, default is: zstd, supports: snappy, s2, zstd |
-| ZINC_MAX_RESULTS              | 100           | No            | Maximum results to be returned from server. Defaults to 1000              |
+| ZINC_MAX_RESULTS              | 100           | No            | Maximum results to be returned from server. Defaults to 100               |
 | ZINC_BATCH_SIZE               | 1024          | No            | Internal batch size for batching records when bulk indexing is done.      |
 | ZINC_AGGREGATION_TERMS_SIZE   | 1000          | No            | terms aggregation returns max bucket size                                 |
 | ZINC_SHARD_NUM                | 3             | No            | We use shards to improve performance                                      |
